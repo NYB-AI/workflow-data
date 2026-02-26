@@ -66,6 +66,26 @@
       "tooltip": "Select the bioactivity engine: **DTIGN** for speed, **Ligospace** for higher accuracy."
     },
     {
+      "key": "insertChemBLID",
+      "type": "text",
+      "label": "Insert ChemBLID",
+      "tooltip": "Insert ChemBLID for bioactivity prediction",
+      "defaultValue": "CHEMBL3720901"
+    },
+    {
+      "key": "metric",
+      "type": "select",
+      "label": "Choose Metric",
+      "options": [
+        {
+          "value": "ec50",
+          "label": "EC50"
+        }
+      ],
+      "defaultValue": "ec50",
+      "tooltip": "Select the metric for bioactivity prediction"
+    },
+    {
       "key": "dockingFiles",
       "type": "file",
       "label": "Docking Files",
