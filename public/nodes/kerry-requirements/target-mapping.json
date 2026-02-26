@@ -72,7 +72,7 @@
       "id": "pdb_1",
       "name": "PDBs",
       "type": "structure",
-      "tooltip": "- 9NOU: Human sweet taste receptor (TAS1R2 + TAS1R3) VFT domains from the combined datasets\n\n9NOR: Human sweet taste receptor composed of TAS1R2 and TAS1R3 GPCRs from the combined datasets"
+      "tooltip": "- 9NOU: Human sweet taste receptor (TAS1R2 + TAS1R3) VFT domains from the combined datasets\n\n- 9NOR: Human sweet taste receptor composed of TAS1R2 and TAS1R3 GPCRs from the combined datasets"
     },
     {
       "id": "pdb_2",

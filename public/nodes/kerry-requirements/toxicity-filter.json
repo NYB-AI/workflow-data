@@ -101,9 +101,9 @@
     },
     {
       "key": "herg_range",
-      "type": "range",
+      "type": "text",
       "label": "hERG IC₅₀ Range (µM)",
-      "defaultValue": [10, 1000],
+      "defaultValue": ">200",
       "tooltip": "hERG channel IC₅₀ range (min - max µM). Values below 10 µM indicate cardiac risk."
     },
     {
