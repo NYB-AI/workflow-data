@@ -1,0 +1,65 @@
+{
+  "type": "sequence-generation",
+  "label": "Sequence Generation",
+  "category": "analysis",
+  "icon": "dna",
+  "color": "violet",
+  "description": "De novo designs peptide or protein sequences conditioned on structural constraints, target surface topology, or functional objectives using generative deep learning and structure-aware modeling.",
+  "pricing": {
+    "credits": 2500,
+    "executionTime": 45
+  },
+  "outputMockLabel": "Generated Sequences",
+  "defaultInputs": [
+    {
+      "id": "conditioning_data",
+      "name": "Conditioning Data",
+      "type": "string",
+      "required": false,
+      "tooltip": "Optional data for conditioning or seeding the generation."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "generated_sequences_csv",
+      "name": "Generated Sequences",
+      "type": "string",
+      "tooltip": "CSV containing generated sequences and scores."
+    },
+    {
+      "id": "generation_log_txt",
+      "name": "Generation Log",
+      "type": "string",
+      "tooltip": "Log file with generation parameters and details."
+    },
+    {
+      "id": "filtered_candidates_fasta",
+      "name": "Filtered Candidates (FASTA)",
+      "type": "string",
+      "tooltip": "FASTA file of the best candidates."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "task",
+      "type": "select",
+      "label": "Task",
+      "options": [
+        { "value": "binder_design", "label": "Binder Design" },
+        { "value": "binder_redesign", "label": "Binder Redesign" },
+        { "value": "motif_scaffolding", "label": "Motif Scaffolding" },
+        { "value": "partial_diffusion", "label": "Partial Diffusion" }
+      ],
+      "defaultValue": "binder_design",
+      "tooltip": "Select what task you'd like to perform with RFdiffusion."
+    },
+    {
+      "key": "pdb_file",
+      "type": "file",
+      "label": "PDB File",
+      "accept": ".pdb",
+      "tooltip": "Upload a PDB file."
+    }
+  ],
+  "feedsTo": ["candidate-library", "structure-prediction", "peptide-finetune"]
+}

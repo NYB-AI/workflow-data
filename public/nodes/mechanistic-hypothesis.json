@@ -82,38 +82,22 @@
   ],
   "configSchema": [
     {
-      "key": "evidence_weighting",
-      "type": "json",
-      "label": "Evidence Weighting",
-      "defaultValue": {
-        "electrostatics": 0.25,
-        "hydrophobic": 0.2,
-        "md_contacts": 0.25,
-        "energetics": 0.2,
-        "ml_scores": 0.1
-      },
-      "tooltip": "Weights for different data sources in the hypothesis generation."
-    },
-    {
-      "key": "hypothesis_thresholds",
-      "type": "json",
-      "label": "Hypothesis Thresholds",
-      "defaultValue": {
-        "contact_fraction": 0.5,
-        "ddG_contribution": -1.0
-      },
-      "tooltip": "Thresholds for determining significant interactions."
-    },
-    {
-      "key": "report_format",
-      "type": "multiselect",
-      "label": "Report Format",
+      "key": "export_format",
+      "type": "select",
+      "label": "Export Format",
       "options": [
-        { "value": "pdf", "label": "PDF" },
+        { "value": "pdf", "label": "PDF Document" },
         { "value": "html", "label": "HTML" }
       ],
-      "defaultValue": ["pdf"],
-      "tooltip": "Format(s) for the final report."
+      "defaultValue": "pdf",
+      "tooltip": "Format for the final report."
+    },
+    {
+      "key": "template_id",
+      "type": "text",
+      "label": "Template ID",
+      "defaultValue": "default-template",
+      "tooltip": "ID of the template to use for the final report."
     }
   ],
   "feedsTo": ["experimental-design"]
