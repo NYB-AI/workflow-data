@@ -115,7 +115,7 @@
           "label": "HADDOCK"
         }
       ],
-      "defaultValue": "haddock",
+      "defaultValue": "vina",
       "tooltip": "Select a docking backend:\n- **AutoDock Vina** – accurate classical docking.\n- **DiffDock** – fast ML‑based pose prediction.\n- **SwissDock** – convenient web‑style presets for quick exploration."
     },
     {
