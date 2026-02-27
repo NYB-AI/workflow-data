@@ -1,0 +1,174 @@
+{
+  "type": "energetics",
+  "label": "Energetics / Binding Free Energy",
+  "category": "analysis",
+  "icon": "zap",
+  "color": "red",
+  "description": "Estimates ligand binding free energy using post-MD calculations (e.g., MM/PBSA, MM/GBSA) and decomposes contributions by residue and energy component.",
+  "pricing": {
+    "credits": 2000,
+    "executionTime": 30
+  },
+  "outputMockLabel": "Energy Results",
+  "defaultInputs": [
+    {
+      "id": "input_source",
+      "name": "Input Trajectory or Structure",
+      "type": "structure",
+      "required": true,
+      "tooltip": "MD trajectory (XTC) or single complex structure (PDB)."
+    },
+    {
+      "id": "topology_file",
+      "name": "Topology File",
+      "type": "string",
+      "required": false,
+      "tooltip": "Topology file (TPR/PRMTOP) required if input is a trajectory."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "mmpbsa_results_csv",
+      "name": "MMPBSA Results",
+      "type": "string",
+      "tooltip": "CSV containing binding free energy components (vdW, electrostatic, solvation)."
+    },
+    {
+      "id": "per_residue_decomp_csv",
+      "name": "Per-Residue Decomposition",
+      "type": "string",
+      "tooltip": "CSV detailing energetic contributions per residue."
+    },
+    {
+      "id": "prodigy_result_json",
+      "name": "PRODIGY Results",
+      "type": "object",
+      "tooltip": "JSON object with predicted DeltaG and Kd from PRODIGY."
+    },
+    {
+      "id": "mutation_ddg_csv",
+      "name": "Mutation DeltaDeltaG",
+      "type": "string",
+      "tooltip": "CSV containing predicted stability changes upon mutation."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "topology_file",
+      "type": "file",
+      "label": "Topology File (.tpr)",
+      "accept": ".tpr",
+      "tooltip": "GROMACS run input file containing topology and simulation parameters"
+    },
+    {
+      "key": "trajectory_file",
+      "type": "file",
+      "label": "Trajectory File (.xtc)",
+      "accept": ".xtc",
+      "tooltip": "Trajectory file from your MD simulation"
+    },
+    {
+      "key": "group_definition_method",
+      "type": "select",
+      "label": "Group Definition Method",
+      "options": [
+        { "value": "use_index_file", "label": "Use Index File" },
+        { "value": "specify_groups", "label": "Specify Groups" }
+      ],
+      "defaultValue": "use_index_file"
+    },
+    {
+      "key": "index_file_description",
+      "type": "description",
+      "label": "",
+      "content": "Provide an existing index file with group definitions",
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["use_index_file"]
+        }
+      ]
+    },
+    {
+      "key": "specify_groups_description",
+      "type": "description",
+      "label": "",
+      "content": "Define receptor and ligand groups by residue ranges",
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["specify_groups"]
+        }
+      ]
+    },
+    {
+      "key": "index_file",
+      "type": "file",
+      "label": "Index File (.ndx)",
+      "accept": ".ndx",
+      "tooltip": "Index file defining group names for receptor and ligand",
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["use_index_file"]
+        }
+      ]
+    },
+    {
+      "key": "receptor_group_name",
+      "type": "text",
+      "label": "Receptor Group Name *",
+      "required": true,
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["use_index_file"]
+        }
+      ]
+    },
+    {
+      "key": "ligand_group_name",
+      "type": "text",
+      "label": "Ligand Group Name *",
+      "required": true,
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["use_index_file"]
+        }
+      ]
+    },
+    {
+      "key": "receptor_selection",
+      "type": "textarea",
+      "label": "Receptor Selection *",
+      "required": true,
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["specify_groups"]
+        }
+      ]
+    },
+    {
+      "key": "ligand_selection",
+      "type": "textarea",
+      "label": "Ligand Selection *",
+      "required": true,
+      "showWhen": [
+        {
+          "field": "group_definition_method",
+          "in": ["specify_groups"]
+        }
+      ]
+    },
+    {
+      "key": "protein_dielectric_constant",
+      "type": "number",
+      "label": "Protein Dielectric Constant",
+      "defaultValue": 2,
+      "advanced": true
+    }
+  ],
+  "feedsTo": ["mechanistic-hypothesis", "experimental-design"]
+}

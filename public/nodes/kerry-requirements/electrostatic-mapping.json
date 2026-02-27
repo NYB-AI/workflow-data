@@ -67,137 +67,144 @@
   ],
   "configSchema": [
     {
-      "key": "input_mode",
+      "key": "structure_file",
+      "type": "file",
+      "label": "Upload structure file",
+      "accept": ".pdb,.pqr",
+      "tooltip": "Upload structure file, in either PDB or PQR format. If you provide PQR file, you will not be able to select pH."
+    },
+    {
+      "key": "force_field",
       "type": "select",
-      "label": "Input Mode",
+      "label": "Select force field parameters for protonation (Default: Amber)",
       "options": [
-        { "value": "complex", "label": "Complex Model (Single PDB)" },
-        { "value": "components", "label": "Receptor + Peptide (Separate)" }
+        { "value": "Amber", "label": "Amber" },
+        { "value": "CHARMM", "label": "CHARMM" },
+        { "value": "PARSE", "label": "PARSE" },
+        { "value": "TYL06", "label": "TYL06" }
       ],
-      "defaultValue": "complex",
-      "tooltip": "Select the input structure mode."
+      "defaultValue": "Amber"
     },
     {
-      "key": "complex_model_file",
-      "type": ["text", "file"],
-      "label": "Complex PDB File",
-      "suggestedField": ["complex_model", "pdb_file"],
-      "accept": ".pdb",
-      "tooltip": "Upload or select a PDB file for the complex.",
-      "showWhen": [
-        {
-          "field": "input_mode",
-          "in": ["complex"]
-        }
-      ]
+      "key": "ph",
+      "type": "number",
+      "label": "Specify pH (Default: 7)",
+      "defaultValue": 7.0
     },
     {
-      "key": "receptor_clean_file",
-      "type": ["text", "file"],
-      "label": "Receptor PDB File",
-      "suggestedField": ["receptor_clean", "receptor_pdb"],
-      "accept": ".pdb",
-      "tooltip": "Upload or select a PDB file for the receptor.",
-      "showWhen": [
-        {
-          "field": "input_mode",
-          "in": ["components"]
-        }
-      ]
-    },
-    {
-      "key": "peptide_clean_file",
-      "type": ["text", "file"],
-      "label": "Peptide PDB File",
-      "suggestedField": ["peptide_clean", "peptide_pdb"],
-      "accept": ".pdb",
-      "tooltip": "Upload or select a PDB file for the peptide.",
-      "showWhen": [
-        {
-          "field": "input_mode",
-          "in": ["components"]
-        }
-      ]
-    },
-    {
-      "key": "structure_selection",
+      "key": "solver",
       "type": "select",
-      "label": "Structure Selection",
+      "label": "While solving Poisson-Boltzmann equation, use a linear or non-linear solver? (Default: Linear)",
       "options": [
-        { "value": "centroid", "label": "Centroid" },
-        { "value": "ensemble", "label": "Ensemble" }
+        { "value": "Linear", "label": "Linear" },
+        { "value": "Non-Linear", "label": "Non-Linear" }
       ],
-      "defaultValue": "centroid",
-      "tooltip": "For ensemble inputs, select whether to use the centroid or the full ensemble."
+      "defaultValue": "Linear"
     },
     {
-      "key": "protonation_pH",
+      "key": "perfil",
       "type": "number",
-      "label": "Protonation pH",
-      "defaultValue": 7.4,
-      "placeholder": "7.4",
-      "tooltip": "pH value for protonation state assignment."
+      "label": "Percent of the box to be filled by molecule (Default: perfil=70)",
+      "defaultValue": 70
     },
     {
-      "key": "forcefield",
+      "key": "scale",
+      "type": "number",
+      "label": "Resolution grids/Angstroms (Default: scale=1)",
+      "defaultValue": 1.0
+    },
+    {
+      "key": "indi",
+      "type": "number",
+      "label": "Internal dielectric constant (Default: indi=4.0)",
+      "defaultValue": 4.0
+    },
+    {
+      "key": "exdi",
+      "type": "number",
+      "label": "External dielectric constant (Default: exdi=80.0)",
+      "defaultValue": 80.0
+    },
+    {
+      "key": "salt",
+      "type": "number",
+      "label": "Salt concentration (Default: salt=0.15)",
+      "defaultValue": 0.15
+    },
+    {
+      "key": "bndcon",
+      "type": "number",
+      "label": "Boundary conditions (Default: bndcon=2)",
+      "defaultValue": 2,
+      "advanced": true
+    },
+    {
+      "key": "maxc",
+      "type": "number",
+      "label": "Convergence criteria (Default: maxc=0.0001)",
+      "defaultValue": 0.0001,
+      "advanced": true
+    },
+    {
+      "key": "prbrad",
+      "type": "number",
+      "label": "Probe radius (Default: prbrad=1.40)",
+      "defaultValue": 1.4,
+      "advanced": true
+    },
+    {
+      "key": "linit",
+      "type": "number",
+      "label": "Maximum number of linear iterations (Default: linit=800)",
+      "defaultValue": 800,
+      "advanced": true
+    },
+    {
+      "key": "smooth_dielectric",
       "type": "select",
-      "label": "Forcefield",
+      "label": "Invoking Gaussian-based smooth dielectric function (Default: disabled)",
       "options": [
-        { "value": "amber", "label": "AMBER" },
-        { "value": "charmm", "label": "CHARMM" },
-        { "value": "parse", "label": "PARSE" },
-        { "value": "tyl06", "label": "TYL06" }
+        { "value": "disabled", "label": "Disabled" },
+        { "value": "enabled", "label": "Enabled" }
       ],
-      "defaultValue": "amber",
-      "tooltip": "Forcefield to use for parameterization."
-    },
-    {
-      "key": "ionic_strength",
-      "type": "number",
-      "label": "Ionic Strength (M)",
-      "defaultValue": 0.15,
-      "placeholder": "0.15",
-      "tooltip": "Ionic strength of the solvent (Molar)."
-    },
-    {
-      "key": "temperature",
-      "type": "number",
-      "label": "Temperature (K)",
-      "defaultValue": 298.15,
-      "placeholder": "298.15",
-      "tooltip": "Temperature in Kelvin."
-    },
-    {
-      "key": "grid_spacing",
-      "type": "number",
-      "label": "Grid Spacing (Å)",
-      "defaultValue": 0.5,
-      "tooltip": "Grid spacing for APBS calculation.",
+      "defaultValue": "disabled",
       "advanced": true
     },
     {
-      "key": "box_margin",
-      "type": "number",
-      "label": "Box Margin (Å)",
-      "defaultValue": 20.0,
-      "tooltip": "Margin to add to the biomolecule dimensions for the grid box.",
+      "key": "potential_surface",
+      "type": "select",
+      "label": "Invoking calculations of potential on a surface situated at a particular distance from vdW surface (Default: disabled)",
+      "options": [
+        { "value": "disabled", "label": "Disabled" },
+        { "value": "enabled", "label": "Enabled" }
+      ],
+      "defaultValue": "disabled",
       "advanced": true
     },
     {
-      "key": "dielectric_solute",
-      "type": "number",
-      "label": "Dielectric (Solute)",
-      "defaultValue": 2.0,
-      "tooltip": "Dielectric constant of the solute (protein).",
-      "advanced": true
+      "key": "energies_calc",
+      "type": "multiselect",
+      "label": "Types of energies to be calculated (Default: All Checked)",
+      "options": [
+        { "value": "Coulombic", "label": "Coulombic" },
+        { "value": "Solvation", "label": "Solvation" },
+        { "value": "Grid Energy", "label": "Grid Energy" }
+      ],
+      "defaultValue": ["Coulombic", "Solvation", "Grid Energy"]
     },
     {
-      "key": "dielectric_solvent",
-      "type": "number",
-      "label": "Dielectric (Solvent)",
-      "defaultValue": 78.54,
-      "tooltip": "Dielectric constant of the solvent (water).",
-      "advanced": true
+      "key": "visualization_options",
+      "type": "radio",
+      "label": "Output file visualization options (Default: Potential Map)",
+      "options": [
+        { "value": "Potential Map", "label": "Potential Map" },
+        {
+          "value": "Dielectric constant map",
+          "label": "Dielectric constant map"
+        },
+        { "value": "None", "label": "None" }
+      ],
+      "defaultValue": "Potential Map"
     }
   ],
   "feedsTo": ["mechanistic-hypothesis", "md-simulation"]
