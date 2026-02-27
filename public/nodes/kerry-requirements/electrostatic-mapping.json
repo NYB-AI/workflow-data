@@ -194,7 +194,7 @@
     },
     {
       "key": "visualization_options",
-      "type": "radio",
+      "type": "select",
       "label": "Output file visualization options (Default: Potential Map)",
       "options": [
         { "value": "Potential Map", "label": "Potential Map" },

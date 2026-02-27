@@ -78,30 +78,6 @@
       "defaultValue": "use_index_file"
     },
     {
-      "key": "index_file_description",
-      "type": "description",
-      "label": "",
-      "content": "Provide an existing index file with group definitions",
-      "showWhen": [
-        {
-          "field": "group_definition_method",
-          "in": ["use_index_file"]
-        }
-      ]
-    },
-    {
-      "key": "specify_groups_description",
-      "type": "description",
-      "label": "",
-      "content": "Define receptor and ligand groups by residue ranges",
-      "showWhen": [
-        {
-          "field": "group_definition_method",
-          "in": ["specify_groups"]
-        }
-      ]
-    },
-    {
       "key": "index_file",
       "type": "file",
       "label": "Index File (.ndx)",
