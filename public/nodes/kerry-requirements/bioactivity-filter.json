@@ -69,13 +69,13 @@
       "key": "insertChemBLID",
       "type": "text",
       "label": "Insert ChemBLID",
-      "tooltip": "Insert ChemBLID for bioactivity prediction",
+      "tooltip": "Enter the ChEMBL ID for the Target protein",
       "defaultValue": "CHEMBL3720901"
     },
     {
       "key": "metric",
       "type": "select",
-      "label": "Choose Metric",
+      "label": "Choose an assay (ChEMBL Assay ID)",
       "options": [
         {
           "value": "ec50",
@@ -83,7 +83,7 @@
         }
       ],
       "defaultValue": "ec50",
-      "tooltip": "Select the metric for bioactivity prediction"
+      "tooltip": "Select the ChEMBL Assay ID associated with the specified target."
     },
     {
       "key": "dockingFiles",
