@@ -58,7 +58,8 @@
     {
       "key": "functional_goal",
       "type": "text",
-      "label": "Functional Goal"
+      "label": "Functional Goal",
+      "tooltip": "Select functional objective for pathway-based evaluation."
     }
   ],
   "defaultConfig": {}
