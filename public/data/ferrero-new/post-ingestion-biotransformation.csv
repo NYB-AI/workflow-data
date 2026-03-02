@@ -1,0 +1,11 @@
+ingredient,parent_compound,relative_abundance,transformation_type,predicted_digested_product,absorption_likelihood,confidence
+Honey,D-Fructose,High,Direct absorption,Fructose (hepatic metabolism),High,High
+Honey,D-Glucose,High,Direct absorption,Glucose,High,High
+Honey,Sucrose,Low,Sucrase hydrolysis,Glucose + Fructose,High,High
+Honey,Maltose,Low–Moderate,Maltase hydrolysis,Glucose,High,High
+Honey,Melezitose (trisaccharide),Low,Partial digestion + fermentation,SCFAs,Indirect systemic,Moderate
+Honey,Caffeic acid,Low,Phase II conjugation,Caffeic acid glucuronide/sulfate,Moderate,Moderate
+Honey,p-Coumaric acid,Low,Phase II conjugation,Conjugated metabolite,Moderate,Moderate
+Honey,Pinocembrin,Trace,Conjugation + degradation,Pinocembrin-glucuronide,Low–Moderate,Moderate
+Honey,Galangin,Trace,Conjugation,Galangin metabolite,Low,Moderate
+Honey,Gluconic acid,Moderate,Stable,Gluconic acid,Moderate,High

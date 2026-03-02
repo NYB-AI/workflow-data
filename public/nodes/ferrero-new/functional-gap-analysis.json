@@ -1,0 +1,77 @@
+{
+  "type": "functional-gap-analysis",
+  "label": "Functional Gap Analysis",
+  "category": "analysis",
+  "icon": "activity",
+  "color": "blue",
+  "description": "Produced optimization candidates to improve functional goal",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "functional_axis",
+      "name": "Functional Axis",
+      "type": "string",
+      "description": "Functional Axis"
+    },
+    {
+      "id": "current_formula_active_drivers",
+      "name": "Current Formula (Honey 10 g) – Active Drivers",
+      "type": "string",
+      "description": "Current Formula (Honey 10 g) – Active Drivers"
+    },
+    {
+      "id": "coverage_strength",
+      "name": "Coverage Strength",
+      "type": "string",
+      "description": "Coverage Strength"
+    },
+    {
+      "id": "gap_identified",
+      "name": "Gap Identified",
+      "type": "string",
+      "description": "Gap Identified"
+    },
+    {
+      "id": "suggested_ingredient",
+      "name": "Suggested Ingredient",
+      "type": "string",
+      "description": "Suggested Ingredient"
+    },
+    {
+      "id": "key_active_compounds",
+      "name": "Key Active Compound(s)",
+      "type": "string",
+      "description": "Key Active Compound(s)"
+    },
+    {
+      "id": "mechanistic_rationale",
+      "name": "Mechanistic Rationale",
+      "type": "string",
+      "description": "Mechanistic Rationale"
+    },
+    {
+      "id": "expected_optimization_impact",
+      "name": "Expected Optimization Impact",
+      "type": "string",
+      "description": "Expected Optimization Impact"
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredient",
+      "type": "text",
+      "label": "Ingredient",
+      "suggestedField": ["Representative Compounds"]
+    },
+    {
+      "key": "functional_goal",
+      "type": "text",
+      "label": "Functional Goal"
+    }
+  ],
+  "defaultConfig": {}
+}

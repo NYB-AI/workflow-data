@@ -12,6 +12,10 @@ export const CLIENTS = [
     value: "ferrero-chocolate",
   },
   {
+    name: "Ferrero New",
+    value: "ferrero-new",
+  },
+  {
     name: "Kerry",
     value: "kerry",
   },

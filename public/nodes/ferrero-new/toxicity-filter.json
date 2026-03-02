@@ -1,0 +1,251 @@
+{
+    "type": "toxicity-filter",
+    "label": "Toxicity Filter",
+    "category": "analysis",
+    "icon": "filtericon",
+    "color": "red",
+    "description": "Filter compounds based on physicochemical properties and custom rules.",
+    "pricing": {
+        "credits": 800,
+        "executionTime": 1
+    },
+    "outputMockLabel": "38 compounds",
+    "defaultInputs": [
+        {
+            "id": "input-mol-data",
+            "name": "Input Compounds",
+            "type": "array",
+            "required": true,
+            "tooltip": "Table of compounds."
+        }
+    ],
+    "defaultOutputs": [
+        {
+            "id": "Compound",
+            "name": "Compound",
+            "type": "string",
+            "tooltip": "Name of the compound."
+        },
+        {
+            "id": "HIA",
+            "name": "HIA",
+            "type": "number",
+            "tooltip": "Human Intestinal Absorption (0-1 fraction absorbed)."
+        },
+        {
+            "id": "Caco-2",
+            "name": "Caco-2",
+            "type": "number",
+            "tooltip": "Caco-2 permeability (×10⁻⁶ cm/s)."
+        },
+        {
+            "id": "Sol.",
+            "name": "Sol.",
+            "type": "string",
+            "tooltip": "Aqueous solubility (mg/mL or qualitative)."
+        },
+        {
+            "id": "logP",
+            "name": "logP",
+            "type": "number",
+            "tooltip": "Partition coefficient (octanol/water)."
+        },
+        {
+            "id": "logBB",
+            "name": "logBB",
+            "type": "number",
+            "tooltip": "Blood-brain barrier partition coefficient."
+        },
+        {
+            "id": "PPB",
+            "name": "PPB",
+            "type": "number",
+            "tooltip": "Plasma Protein Binding (%)."
+        },
+        {
+            "id": "Cl",
+            "name": "Cl",
+            "type": "number",
+            "tooltip": "Clearance (mL/min/kg)."
+        },
+        {
+            "id": "CYP IC₅₀",
+            "name": "CYP IC₅₀",
+            "type": "string",
+            "tooltip": "Cytochrome P450 inhibition IC₅₀ (µM)."
+        },
+        {
+            "id": "hERG IC₅₀",
+            "name": "hERG IC₅₀",
+            "type": "string",
+            "tooltip": "hERG channel inhibition IC₅₀ (µM)."
+        },
+        {
+            "id": "Ames",
+            "name": "Ames",
+            "type": "number",
+            "tooltip": "Ames mutagenicity probability (0-1)."
+        },
+        {
+            "id": "LD₅₀",
+            "name": "LD₅₀",
+            "type": "number",
+            "tooltip": "Lethal dose 50% (mg/kg)."
+        },
+        {
+            "id": "NOAEL",
+            "name": "NOAEL",
+            "type": "number",
+            "tooltip": "No Observed Adverse Effect Level (mg/kg/day)."
+        },
+        {
+            "id": "Oral irrit.",
+            "name": "Oral irrit.",
+            "type": "number",
+            "tooltip": "Oral irritation score."
+        },
+        {
+            "id": "Decision",
+            "name": "Decision",
+            "type": "string",
+            "tooltip": "Toxicity filter decision (Advance/Reformulate/Reject)."
+        }
+    ],
+    "configSchema": [
+        {
+            "key": "ingredientListText",
+            "type": [
+                "text",
+                "file"
+            ],
+            "label": "Compound List",
+            "tooltip": "Compounds for analysis",
+            "suggestedField": [
+                "smiles",
+                "name",
+                "Compound"
+            ],
+            "accept": ".csv,.txt,.smi"
+        },
+        {
+            "key": "model",
+            "type": "select",
+            "label": "Model",
+            "options": [
+                {
+                    "value": "swiss_adme",
+                    "label": "SwissADME"
+                },
+                {
+                    "value": "admet_ai",
+                    "label": "ADMET-AI"
+                },
+                {
+                    "value": "preadmet",
+                    "label": "preADMET"
+                }
+            ],
+            "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows"
+        },
+        {
+            "key": "hia_range",
+            "type": "range",
+            "label": "HIA Range",
+            "defaultValue": [
+                0.5,
+                1.0
+            ],
+            "tooltip": "Human Intestinal Absorption range (min - max)."
+        },
+        {
+            "key": "logp_range",
+            "type": "range",
+            "label": "logP Range",
+            "defaultValue": [
+                -3.0,
+                5.0
+            ],
+            "tooltip": "Partition coefficient range (min - max)."
+        },
+        {
+            "key": "ppb_range",
+            "type": "range",
+            "label": "PPB Range",
+            "defaultValue": [
+                0,
+                99
+            ],
+            "tooltip": "Plasma Protein Binding range (min - max %)."
+        },
+        {
+            "key": "ames_max",
+            "type": "range",
+            "label": "Ames Max",
+            "defaultValue": [
+                0,
+                0.1
+            ],
+            "tooltip": "Maximum Ames mutagenicity probability."
+        },
+        {
+            "key": "ld50_min",
+            "type": "range",
+            "label": "LD₅₀ Min",
+            "defaultValue": [
+                100,
+                20000
+            ],
+            "tooltip": "Minimum LD₅₀ threshold (mg/kg)."
+        },
+        {
+            "key": "noael_min",
+            "type": "range",
+            "label": "NOAEL Min",
+            "defaultValue": [
+                50,
+                5000
+            ],
+            "tooltip": "Minimum NOAEL threshold (mg/kg/day)."
+        },
+        {
+            "key": "oral_irrit_max",
+            "type": "range",
+            "label": "Oral Irritation Max",
+            "defaultValue": [
+                0,
+                3.0
+            ],
+            "tooltip": "Maximum oral irritation score."
+        }
+    ],
+    "defaultConfig": {
+        "hia_range": [
+            0.5,
+            1.0
+        ],
+        "logp_range": [
+            -3.0,
+            5.0
+        ],
+        "ppb_range": [
+            0,
+            99
+        ],
+        "ames_max": [
+            0,
+            0.1
+        ],
+        "ld50_min": [
+            100,
+            20000
+        ],
+        "noael_min": [
+            50,
+            5000
+        ],
+        "oral_irrit_max": [
+            0,
+            3.0
+        ]
+    }
+}

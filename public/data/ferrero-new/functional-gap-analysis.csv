@@ -1,0 +1,8 @@
+functional_axis,current_formula_active_drivers,coverage_strength,gap_identified,suggested_ingredient,key_active_compounds,mechanistic_rationale,expected_optimization_impact
+Immediate ATP Substrate,Glucose,Strong,No,—,—,Rapid absorption → immediate energy,Baseline strength maintained
+Sustained Energy Release,Fructose (hepatic conversion),Moderate,Partial,Oat extract,β-glucan,Slower glucose release kinetics,Improved energy duration
+Mitochondrial Efficiency,None direct,Weak,Yes,Cocoa powder,Magnesium + theobromine,Supports mitochondrial enzymes & cellular respiration,Moderate–High improvement
+Oxidative Stress Buffering,Caffeic acid metabolites,Low–Moderate,Partial,Blueberry extract,Anthocyanins,Enhances antioxidant capacity during metabolic activation,Moderate improvement
+Electrolyte Balance,Trace potassium,Low,Yes,Coconut water powder,Potassium + magnesium,Supports neuromuscular stability during energy demand,High improvement
+Central Fatigue Modulation,None,Weak,Yes,Green tea extract,Caffeine + L-theanine,Reduces perceived fatigue via adenosine modulation,Moderate–High improvement
+Gut-Metabolic Modulation,SCFAs (minor),Moderate,Partial,Inulin,Prebiotic fiber,Enhances SCFA production & metabolic resilience,Moderate improvement

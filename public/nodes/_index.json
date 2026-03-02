@@ -35,6 +35,10 @@
     "sequence-embeddings",
     "peptide-finetune",
     "sequence-generation",
-    "pocket-identification"
+    "pocket-identification",
+    "post-ingestion-biotransformation",
+    "bioactivity-profiler",
+    "functional-synergistics",
+    "functional-gap-analysis"
   ]
 }

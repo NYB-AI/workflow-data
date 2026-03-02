@@ -1,0 +1,84 @@
+{
+    "type": "bioactivity-filter",
+    "label": "Bioactivity Filter",
+    "category": "analysis",
+    "icon": "activity",
+    "color": "green",
+    "description": "Filter compound bioactivity (AC50) against CHRM1 and DRD1 receptors.",
+    "pricing": {
+        "credits": 800,
+        "executionTime": 1
+    },
+    "outputMockLabel": "3 compounds",
+    "defaultInputs": [
+        {
+            "id": "compoundList",
+            "name": "Compound List",
+            "type": "array",
+            "required": true,
+            "tooltip": "Input table of compounds (IDs and SMILES) to score."
+        },
+        {
+            "id": "targetList",
+            "name": "Target List",
+            "type": "array",
+            "required": true,
+            "tooltip": "Targets or assays (EC50 / IC50) that bioactivity should be predicted against."
+        }
+    ],
+    "defaultOutputs": [
+        {
+            "id": "compound",
+            "name": "Compound",
+            "type": "string",
+            "tooltip": "Compound identifier"
+        },
+        {
+            "id": "chrm1_ac50",
+            "name": "CHRM1 - AC50 (nM)",
+            "type": "string",
+            "tooltip": "AC50 for CHRM1 (Assay: CHEMBL5291759)"
+        },
+        {
+            "id": "drd1_ac50",
+            "name": "DRD1 - AC50 (nM)",
+            "type": "string",
+            "tooltip": "AC50 for DRD1 (Assay: CHEMBL5291777)"
+        }
+    ],
+    "configSchema": [
+        {
+            "key": "dockingListText",
+            "type": "text",
+            "label": "Compound-Target Docking List",
+            "tooltip": "Input the compound-target docking for bioactivity prediction",
+            "suggestedField": [
+                "docked_structure"
+            ]
+        },
+        {
+            "key": "modelType",
+            "type": "select",
+            "label": "Available Tools",
+            "options": [
+                {
+                    "value": "dtign",
+                    "label": "DTIGN - Best for fast predictions"
+                },
+                {
+                    "value": "ligospace",
+                    "label": "Ligospace - Best for accurate predictions"
+                }
+            ],
+            "defaultValue": "Ligospace",
+            "tooltip": "Select the bioactivity engine: **DTIGN** for speed, **Ligospace** for higher accuracy."
+        },
+        {
+            "key": "dockingFiles",
+            "type": "file",
+            "label": "Docking Files",
+            "multiple": true,
+            "tooltip": "Optional upload of docking results."
+        }
+    ]
+}

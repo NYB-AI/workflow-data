@@ -1,0 +1,39 @@
+Compound,SMILES,Taste
+Caffeine,CN1C=NC2=C1C(=O)N(C(=O)N2C)C,Bitter
+Theobromine,CN1C=NC2=C1NC(=O)NC2=O,Bitter
+Theophylline,CN1C=NC2=C1C(=O)NC(=O)N2,Bitter
+(-)-Epicatechin,OC1=C(C(O)=CC2=C1OC(C(O)C2O)O)O,Astringent
+Catechin,OC1=CC(O)=C2OC(C(O)C(O)2)C1,Astringent
+Quercetin,OC1=CC=C2C(=O)C(O)=C(O)C2=C1O,Bitter
+L-Theanine,CC(N)C(=O)NCCS,Umami
+Vanillin,COc1cc(C=O)ccc1O,Sweet
+Ethyl vanillin,CCOC1=CC=C(C=C1)OCC=O,Sweet
+Maltol,CC1=OC(=O)C(O)=CO1,Sweet
+Ethyl maltol,CCOC1=OC(=O)C(O)=CO1,Sweet
+Menthol,CC(C)C1CCC(C)CC1O,Cooling
+Menthone,CC(C)C1CCC(=O)CC1,Cooling
+Limonene,CC1=CCC(CC1)C(=C)C,Citrus
+Linalool,CC(C)=CCC(O)C=C,Floral
+Geraniol,CC(C)=CCC/C(=C\CO)/C,Floral
+Phenethyl alcohol,OCCc1ccccc1,Mild sweet
+Benzyl alcohol,OCc1ccccc1,Mild sweet
+γ-Decalactone,CCCCCCC1OC(=O)CC1,Creamy
+δ-Octalactone,CCCCC1OC(=O)CC1,Creamy
+Acetylpyrazine,CC(=O)N1C=NC=C1,Roasted
+Trimethylpyrazine,CC1=NC(=NC(=N1)C)C,Roasted
+"2,3-Butanedione",CC(=O)C(=O)C,Buttery
+Acetoin,CC(O)C(=O)C,Buttery
+Phenylalanine,NC(Cc1ccccc1)C(=O)O,Bitter
+Tryptophan,NC(Cc1c[nH]c2ccccc12)C(=O)O,Bitter
+Tyrosine,NC(Cc1ccc(O)cc1)C(=O)O,Bitter
+Sucralose,C(C1C(C(C(O1)Cl)O)OCl)OC(C(CO)O)Cl,Sweet
+Steviol glycoside (mock),CC1(C)CCC2(C1)CCC3(C2=CC(=O)OC3O)C,Sweet
+Glycine,NCC(=O)O,Sweet
+Alanine,CC(N)C(=O)O,Sweet
+Proline,O=C(O)C1CCCN1,Sweet
+Citral,CC(=C)CCC=C(C)C=O,Citrus
+Eugenol,COc1cc(CC=C)ccc1O,Spicy
+Anethole,COc1ccc(/C=C/C)cc1,Sweet
+Piperonal,O=CC1=CC2=C(OCO2)C=C1,Sweet
+Coumarin,O=C1OC2=CC=CC=C2C1,Sweet
+Hexanal,CCCCCC=O,Green

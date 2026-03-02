@@ -1,0 +1,69 @@
+{
+  "type": "bioactivity-profiler",
+  "label": "Bioactivity Profiler",
+  "category": "analysis",
+  "icon": "utensils",
+  "color": "blue",
+  "description": "Convert ingredient-level compounds into biologically plausible post-ingestion metabolites",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "ingredient",
+      "name": "Ingredient",
+      "type": "string",
+      "description": "Ingredient"
+    },
+    {
+      "id": "parent_compound",
+      "name": "Parent Compound",
+      "type": "string",
+      "description": "Parent Compound"
+    },
+    {
+      "id": "relative_abundance",
+      "name": "Relative Abundance",
+      "type": "string",
+      "description": "Relative Abundance"
+    },
+    {
+      "id": "transformation_type",
+      "name": "Transformation Type",
+      "type": "string",
+      "description": "Transformation Type"
+    },
+    {
+      "id": "predicted_digested_product",
+      "name": "Predicted Digested Product",
+      "type": "string",
+      "description": "Predicted Digested Product"
+    },
+    {
+      "id": "absorption_likelihood",
+      "name": "Absorption Likelihood",
+      "type": "string",
+      "description": "Absorption Likelihood"
+    },
+    {
+      "id": "confidence",
+      "name": "Confidence",
+      "type": "string",
+      "description": "Confidence"
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredient",
+      "type": "text",
+      "label": "Ingredient",
+      "suggestedField": ["Representative Compounds"]
+    }
+  ],
+  "defaultConfig": {
+    "reportFormat": "pdf",
+    "templateId": "default-template"
+  }
+}

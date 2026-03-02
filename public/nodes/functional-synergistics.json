@@ -1,0 +1,65 @@
+{
+  "type": "bioactivity-profiler",
+  "label": "Bioactivity Profiler",
+  "category": "analysis",
+  "icon": "activity",
+  "color": "green",
+  "description": "Maps compounds to biological targets and pathways aligned to the funcional goal",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "component",
+      "name": "Component",
+      "type": "string",
+      "description": "Component"
+    },
+    {
+      "id": "functional_target_pathway",
+      "name": "Functional Target / Pathway",
+      "type": "string",
+      "description": "Functional Target / Pathway"
+    },
+    {
+      "id": "mechanistic_role",
+      "name": "Mechanistic Role",
+      "type": "string",
+      "description": "Mechanistic Role"
+    },
+    {
+      "id": "functional_relevance",
+      "name": "Functional Relevance",
+      "type": "string",
+      "description": "Functional Relevance"
+    },
+    {
+      "id": "active_principle_classification",
+      "name": "Active Principle Classification",
+      "type": "string",
+      "description": "Active Principle Classification"
+    },
+    {
+      "id": "confidence",
+      "name": "Confidence",
+      "type": "string",
+      "description": "Confidence"
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredient",
+      "type": "text",
+      "label": "Ingredient",
+      "suggestedField": ["predicted_digested_product"]
+    },
+    {
+      "key": "functional_goal",
+      "type": "text",
+      "label": "Functional Goal"
+    }
+  ],
+  "defaultConfig": {}
+}

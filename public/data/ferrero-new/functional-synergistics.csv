@@ -1,0 +1,7 @@
+component_a,component_b,synergy_type,convergence_node,functional_amplification_rationale,synergy_plausibility
+Glucose,Fructose,Complementary (metabolic kinetics),Systemic energy availability,Rapid glucose absorption + slower hepatic glucose release from fructose,High
+Glucose,SCFAs,Network-level (metabolic modulation),Energy homeostasis,Immediate ATP + microbiome-mediated metabolic signaling,Moderate
+Fructose,SCFAs,Convergent (hepatic metabolism axis),Metabolic regulation,Hepatic processing + gut-derived signaling metabolites,Moderate
+Glucose,Caffeic acid metabolites,Stabilizing synergy,Oxidative stress during energy metabolism,ATP production + antioxidant buffering,Moderate
+Glucose,Pinocembrin metabolites,Additive (oxidative balance),Cellular metabolic stability,Energy provision + mild anti-inflammatory modulation,Low–Moderate
+SCFAs,Phenolic metabolites,Convergent (metabolic inflammation control),Metabolic resilience,Gut-derived signaling + systemic antioxidant support,Moderate

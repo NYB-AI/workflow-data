@@ -1,0 +1,9 @@
+component,functional_target_pathway,mechanistic_role,functional_relevance,active_principle_classification,confidence
+Glucose,Neuronal energy metabolism,Direct substrate for ATP production,Immediate cognitive energy support,Primary Active Principle,High
+"Fructose (hepatic metabolism → glucose contribution)",Systemic energy metabolism,Indirect energy contribution via hepatic processing,Sustained energy support (indirect),Secondary,High
+"SCFAs (from melezitose fermentation)",Gut-brain axis signaling,Modulates neurotransmitter balance & inflammation,Indirect cognitive modulation,Context-Dependent,Moderate
+Caffeic acid metabolites,NF-κB / oxidative stress pathways,Anti-inflammatory modulation,Supports neuroprotective environment,Supportive,Moderate
+p-Coumaric acid metabolites,"Antioxidant response pathways (e.g., Nrf2)",Reduces oxidative stress,Mild neural protection support,Supportive,Moderate
+Pinocembrin metabolites,Neuroprotective signaling (reported in literature),Anti-inflammatory & antioxidant effects,Potential neural support,Supportive,Moderate
+Galangin metabolites,Anti-inflammatory pathways,Reduces inflammatory signaling,Secondary neural stabilization,Low–Supportive,Low–Moderate
+Gluconic acid,Gut pH modulation,Alters gut environment,Minimal direct relevance to focus,Low relevance,"High (mechanistically clear but low impact)"

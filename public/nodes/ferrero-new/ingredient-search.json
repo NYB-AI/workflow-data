@@ -1,0 +1,48 @@
+{
+  "type": "ingredient-search",
+  "label": "Ingredient Search",
+  "category": "search",
+  "icon": "search",
+  "color": "green",
+  "description": "Search ingredients suitable for your applications",
+  "pricing": {
+    "credits": 500,
+    "executionTime": 1
+  },
+  "outputPageSize": 30,
+  "outputMockLabel": " ",
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "col1_",
+      "name": "",
+      "type": "string",
+      "tooltip": ""
+    },
+    {
+      "id": "Representative Compounds",
+      "name": "",
+      "type": "string",
+      "tooltip": ""
+    },
+    {
+      "id": "col3_",
+      "name": "",
+      "type": "string",
+      "tooltip": ""
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "query",
+      "type": "textarea",
+      "label": "Search Ingredient",
+      "placeholder": "Search by ingredient function, application, or INCI name",
+      "defaultValue": "",
+      "tooltip": "Enter search terms to find ingredients. You can search by:\n- **Function**: e.g., \"moisturizing\", \"anti-aging\"\n- **Application**: e.g., \"hair care\", \"scalp care\"\n- **INCI name**: e.g., \"Niacinamide\", \"Biotin\""
+    }
+  ],
+  "defaultConfig": {
+    "query": ""
+  }
+}

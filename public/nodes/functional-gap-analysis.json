@@ -1,0 +1,65 @@
+{
+  "type": "functional-gap-analysis",
+  "label": "Functional Gap Analysis",
+  "category": "analysis",
+  "icon": "activity",
+  "color": "blue",
+  "description": "Evaluates multiple active compounds that converge on a defined functional context.",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "component_a",
+      "name": "Component A",
+      "type": "string",
+      "description": "Component A"
+    },
+    {
+      "id": "component_b",
+      "name": "Component B",
+      "type": "string",
+      "description": "Component B"
+    },
+    {
+      "id": "synergy_type",
+      "name": "Synergy Type",
+      "type": "string",
+      "description": "Synergy Type"
+    },
+    {
+      "id": "convergence_node",
+      "name": "Convergence Node",
+      "type": "string",
+      "description": "Convergence Node"
+    },
+    {
+      "id": "functional_amplification_rationale",
+      "name": "Functional Amplification Rationale",
+      "type": "string",
+      "description": "Functional Amplification Rationale"
+    },
+    {
+      "id": "synergy_plausibility",
+      "name": "Synergy Plausibility",
+      "type": "string",
+      "description": "Synergy Plausibility"
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredient",
+      "type": "text",
+      "label": "Ingredient",
+      "suggestedField": ["predicted_digested_product"]
+    },
+    {
+      "key": "functional_goal",
+      "type": "text",
+      "label": "Functional Goal"
+    }
+  ],
+  "defaultConfig": {}
+}

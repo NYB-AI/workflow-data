@@ -1,0 +1,188 @@
+{
+  "type": "formulate",
+  "label": "Formulate",
+  "category": "analysis",
+  "icon": "flask",
+  "color": "purple",
+  "description": "Analyze and deformulate product compositions based on specific requirements",
+  "pricing": {
+    "credits": 800,
+    "executionTime": 1
+  },
+  "outputMockLabel": "9 items",
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "ID",
+      "name": "ID",
+      "type": "string",
+      "description": "Formulation ID"
+    },
+    {
+      "id": "Component",
+      "name": "Component",
+      "type": "string",
+      "description": "Component name"
+    },
+    {
+      "id": "% w/w",
+      "name": "% w/w",
+      "type": "string",
+      "description": "Percentage by weight"
+    },
+    {
+      "id": "Functional role",
+      "name": "Functional role",
+      "type": "string",
+      "description": "Functional role of the component"
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredientList",
+      "type": [
+        "text",
+        "file"
+      ],
+      "label": "Ingredient List",
+      "placeholder": "Select or upload a list of ingredients...",
+      "suggestedField": [
+        "smiles",
+        "name",
+        "ingredient_name",
+        "inci_name"
+      ],
+      "tooltip": "Select or upload a list of ingredients.\nSupported formats: **TXT**, **CSV**, **SMILES**.",
+      "accept": ".txt,.csv,.smi"
+    },
+    {
+      "key": "referenceProduct",
+      "type": "text",
+      "label": "Similar Product (Link/Name)",
+      "suggestedField": [
+        "product",
+        "name"
+      ],
+      "placeholder": "Paste product link or name here..."
+    },
+    {
+      "key": "category",
+      "type": "select",
+      "label": "Category",
+      "options": [
+        {
+          "value": "drug",
+          "label": "Drug"
+        },
+        {
+          "value": "food",
+          "label": "Food"
+        },
+        {
+          "value": "supplements",
+          "label": "Supplements"
+        },
+        {
+          "value": "cosmetics",
+          "label": "Cosmetics"
+        },
+        {
+          "value": "consumer_products",
+          "label": "Consumer Products"
+        }
+      ],
+      "defaultValue": "food",
+      "tooltip": "Select the product category."
+    },
+    {
+      "key": "routeOfAdministration",
+      "type": "select",
+      "label": "Route of Administration/Exposure",
+      "options": [
+        {
+          "value": "oral",
+          "label": "Oral"
+        },
+        {
+          "value": "skin_dermal",
+          "label": "Skin/Dermal"
+        },
+        {
+          "value": "inhalation",
+          "label": "Inhalation"
+        }
+      ],
+      "defaultValue": "oral",
+      "tooltip": "Select the route of administration or exposure.",
+      "showWhen": [
+        {
+          "field": "category",
+          "in": [
+            "food",
+            "supplements",
+            "cosmetics"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "routeOfAdministrationDrug",
+      "type": "select",
+      "label": "Route of Administration/Exposure",
+      "options": [
+        {
+          "value": "oral",
+          "label": "Oral"
+        },
+        {
+          "value": "skin_dermal",
+          "label": "Skin/Dermal"
+        },
+        {
+          "value": "inhalation",
+          "label": "Inhalation"
+        },
+        {
+          "value": "iv",
+          "label": "IV (Intravenous)"
+        },
+        {
+          "value": "intravaginal",
+          "label": "Intravaginal"
+        },
+        {
+          "value": "intramuscular",
+          "label": "Intramuscular"
+        },
+        {
+          "value": "subcutaneous",
+          "label": "Subcutaneous"
+        },
+        {
+          "value": "rectal",
+          "label": "Rectal"
+        },
+        {
+          "value": "ophthalmic",
+          "label": "Ophthalmic"
+        }
+      ],
+      "defaultValue": "oral",
+      "tooltip": "Select the route of administration or exposure.",
+      "showWhen": [
+        {
+          "field": "category",
+          "in": [
+            "drug"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "options",
+      "type": "json",
+      "label": "Advanced Options",
+      "placeholder": "{ \"target user\": \"baby\", \"dosage form\": \"cream\" }"
+    }
+  ]
+}
