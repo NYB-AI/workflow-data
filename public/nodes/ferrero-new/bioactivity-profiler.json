@@ -21,25 +21,25 @@
       "id": "functional_target_pathway",
       "name": "Functional Target / Pathway",
       "type": "string",
-      "description": "Functional Target / Pathway"
+      "description": "Predicted or experimentally supported protein target(s) and associated biological pathway(s) linked to the component, based on chemogenomic mapping and curated databases."
     },
     {
       "id": "mechanistic_role",
       "name": "Mechanistic Role",
       "type": "string",
-      "description": "Mechanistic Role"
+      "description": "Proposed mode of interaction with the identified target or pathway (e.g., modulation, cofactor support, substrate contribution), inferred from bioactivity and pathway mapping data."
     },
     {
       "id": "functional_relevance",
       "name": "Functional Relevance",
       "type": "string",
-      "description": "Functional Relevance"
+      "description": "Degree of alignment between the component’s mechanistic role and the predefined functional objective (e.g., cognitive focus support)."
     },
     {
       "id": "active_principle_classification",
       "name": "Active Principle Classification",
       "type": "string",
-      "description": "Active Principle Classification"
+      "description": "Categorization of the component’s relative contribution within the functional network (e.g., Primary, Secondary, Supportive, Context-Dependent), based on pathway relevance and exposure plausibility."
     },
     {
       "id": "confidence",

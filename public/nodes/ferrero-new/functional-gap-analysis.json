@@ -15,49 +15,49 @@
       "id": "functional_axis",
       "name": "Functional Axis",
       "type": "string",
-      "description": "Functional Axis"
+      "description": "Defined biological process or mechanistic pathway associated with the selected functional objective"
     },
     {
       "id": "current_formula_active_drivers",
       "name": "Current Formula (Honey 10 g) – Active Drivers",
       "type": "string",
-      "description": "Current Formula (Honey 10 g) – Active Drivers"
+      "description": "Identified compounds within the evaluated formula that demonstrate mechanistic alignment with the specified functional axis."
     },
     {
       "id": "coverage_strength",
       "name": "Coverage Strength",
       "type": "string",
-      "description": "Coverage Strength"
+      "description": "Qualitative assessment of how strongly the current formula engages the specified functional axis, based on pathway alignment, exposure plausibility, and compound diversity."
     },
     {
       "id": "gap_identified",
       "name": "Gap Identified",
       "type": "string",
-      "description": "Gap Identified"
+      "description": "Indicates whether the functional axis is underrepresented relative to the defined functional network model."
     },
     {
       "id": "suggested_ingredient",
       "name": "Suggested Ingredient",
       "type": "string",
-      "description": "Suggested Ingredient"
+      "description": "Candidate ingredient recommended to improve coverage of the identified gap, based on compound–target–pathway mapping and complementarity analysis."
     },
     {
       "id": "key_active_compounds",
       "name": "Key Active Compound(s)",
       "type": "string",
-      "description": "Key Active Compound(s)"
+      "description": "Bioactive or nutrient constituents within the suggested ingredient that contribute to engagement of the specified functional axis."
     },
     {
       "id": "mechanistic_rationale",
       "name": "Mechanistic Rationale",
       "type": "string",
-      "description": "Mechanistic Rationale"
+      "description": "Explanation of how the suggested ingredient’s active compounds are predicted to enhance pathway engagement or complement existing network coverage."
     },
     {
       "id": "expected_optimization_impact",
       "name": "Expected Optimization Impact",
       "type": "string",
-      "description": "Expected Optimization Impact"
+      "description": "Predicted qualitative improvement in functional network balance or pathway coverage following integration of the suggested ingredient."
     }
   ],
   "configSchema": [

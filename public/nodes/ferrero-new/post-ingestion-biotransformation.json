@@ -21,31 +21,31 @@
       "id": "parent_compound",
       "name": "Parent Compound",
       "type": "string",
-      "description": "Parent Compound"
+      "description": "Pre-digestion compound"
     },
     {
       "id": "relative_abundance",
       "name": "Relative Abundance",
       "type": "string",
-      "description": "Relative Abundance"
+      "description": "Quantiitative estimate of the compound’s relative concentration within the ingredient"
     },
     {
       "id": "transformation_type",
       "name": "Transformation Type",
       "type": "string",
-      "description": "Transformation Type"
+      "description": "Predicted biological or chemical process affecting the compound post-ingestion."
     },
     {
       "id": "predicted_digested_product",
       "name": "Predicted Digested Product",
       "type": "string",
-      "description": "Predicted Digested Product"
+      "description": "Biologically plausible metabolite or breakdown product generated following gastrointestinal and metabolic processing."
     },
     {
       "id": "absorption_likelihood",
       "name": "Absorption Likelihood",
       "type": "string",
-      "description": "Absorption Likelihood"
+      "description": "Assessment of the predicted metabolite’s potential for systemic absorption, based on physicochemical properties and available metabolomic evidence"
     },
     {
       "id": "confidence",

@@ -27,19 +27,19 @@
       "id": "synergy_type",
       "name": "Synergy Type",
       "type": "string",
-      "description": "Synergy Type"
+      "description": "Classification of the interaction pattern between components (e.g., complementary, convergent, sequential, or stabilizing), based on pathway alignment and network topology."
     },
     {
       "id": "convergence_node",
       "name": "Convergence Node",
       "type": "string",
-      "description": "Convergence Node"
+      "description": "Shared biological pathway, process, or functional axis where both components demonstrate mechanistic alignment."
     },
     {
       "id": "functional_amplification_rationale",
       "name": "Functional Amplification Rationale",
       "type": "string",
-      "description": "Functional Amplification Rationale"
+      "description": "Mechanistic explanation describing how the interaction between components may reinforce or broaden pathway coverage within the defined functional network."
     },
     {
       "id": "synergy_plausibility",
