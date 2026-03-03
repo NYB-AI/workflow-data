@@ -90,31 +90,6 @@
       ],
       "defaultValue": "deepddi",
       "tooltip": "**DeepDDI** - detailed, human-readable interaction predictions; \n **Decagon** - network-scale side effect & synergy modeling."
-    },
-    {
-      "key": "analysisMode",
-      "type": "select",
-      "label": "Analysis Mode",
-      "options": [
-        {
-          "value": "all_pairs",
-          "label": "All Pairs (Exhaustive)"
-        },
-        {
-          "value": "selected_pairs",
-          "label": "Selected Pairs Only"
-        }
-      ],
-      "defaultValue": "all_pairs",
-      "tooltip": "Choose whether to analyze all possible compound pairs or only selected pairs."
-    },
-    {
-      "key": "riskThreshold",
-      "type": "number",
-      "label": "Risk Threshold",
-      "placeholder": "e.g., 0.7",
-      "defaultValue": 0.5,
-      "tooltip": "Minimum confidence threshold for flagging high-risk interactions (0-1 scale)."
     }
   ]
 }
