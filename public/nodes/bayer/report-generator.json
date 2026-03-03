@@ -33,7 +33,7 @@
       "id": "report_name",
       "name": "Report Name",
       "type": "string",
-      "tooltip": "Name or title of the generated report (e.g. \"Kerry Report\")."
+      "tooltip": "Name or title of the generated report (e.g. \"Bayer Report\")."
     },
     {
       "id": "report_type",
@@ -45,7 +45,7 @@
       "id": "category",
       "name": "Category",
       "type": "string",
-      "tooltip": "Product category (e.g. \"Hair growth cream\")."
+      "tooltip": "Product category (e.g. \"Metabolic Support Tablet\")."
     },
     {
       "id": "application",
@@ -85,4 +85,3 @@
     "templateId": "default-template"
   }
 }
-

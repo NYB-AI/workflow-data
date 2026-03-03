@@ -5,7 +5,7 @@
   "icon": "check-circle",
   "color": "green",
   "description": "Validate marketing and scientific claims against regulatory requirements across different markets.",
-  "outputMockLabel": "18 items",
+  "outputMockLabel": "10 items",
   "defaultInputs": [],
   "defaultOutputs": [
     {

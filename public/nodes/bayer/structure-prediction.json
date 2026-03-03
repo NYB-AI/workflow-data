@@ -69,20 +69,24 @@
       "tooltip": "Select proteins for prediction.",
       "options": [
         {
-          "value": "VEGF-A",
-          "label": "VEGF-A"
+          "value": "GLP1R",
+          "label": "GLP1R"
         },
         {
-          "value": "TGF-β1",
-          "label": "TGF-β1"
+          "value": "LEPR",
+          "label": "LEPR"
         },
         {
-          "value": "SRD5A2",
-          "label": "SRD5A2"
+          "value": "PPARG",
+          "label": "PPARG"
         },
         {
-          "value": "SMO",
-          "label": "SMO"
+          "value": "PRKAA2",
+          "label": "PRKAA2"
+        },
+        {
+          "value": "CNR1",
+          "label": "CNR1"
         }
       ],
       "showWhen": [{ "field": "proteinListText", "hasValue": true }]

@@ -5,7 +5,7 @@
   "icon": "shield-check",
   "color": "blue",
   "description": "Check ingredient compliance against global market regulations (Ferrero specific)",
-  "outputMockLabel": "",
+  "outputMockLabel": "9 items",
   "pricing": {
     "credits": 0,
     "executionTime": 1
@@ -22,69 +22,76 @@
   ],
   "defaultOutputs": [
     {
-      "id": "id",
-      "name": "ID",
-      "type": "string"
-    },
-    {
-      "id": "ingredient_name",
+      "id": "Ingredient Name",
       "name": "Ingredient Name",
-      "type": "string"
+      "type": "string",
+      "tooltip": "The name of the evaluated ingredient."
     },
     {
-      "id": "inci_name",
+      "id": "INCI Name",
       "name": "INCI Name",
-      "type": "string"
+      "type": "string",
+      "tooltip": "INCI name of the ingredient."
     },
     {
-      "id": "cas_number",
-      "name": "CAS Number",
-      "type": "string"
+      "id": "CAS",
+      "name": "CAS",
+      "type": "string",
+      "tooltip": "CAS registry number."
     },
     {
-      "id": "concentration",
-      "name": "Concentration",
-      "type": "string"
+      "id": "Formula %",
+      "name": "Formula %",
+      "type": "string",
+      "tooltip": "Percentage by weight in the formulation."
     },
     {
-      "id": "market",
+      "id": "Market",
       "name": "Market",
-      "type": "string"
+      "type": "string",
+      "tooltip": "Target market/region for validation (e.g. \"EU\", \"US\")."
     },
     {
-      "id": "regulatory_status",
+      "id": "Regulatory Status",
       "name": "Regulatory Status",
-      "type": "string"
+      "type": "string",
+      "tooltip": "Overall validation result (e.g., \"Permitted\")."
     },
     {
-      "id": "restriction_type",
-      "name": "Restriction Type",
-      "type": "string"
+      "id": "Restriction Basis",
+      "name": "Restriction Basis",
+      "type": "string",
+      "tooltip": "The regulatory framework or rule that determines the status."
     },
     {
-      "id": "max_allowed_concentration",
-      "name": "Max Allowed Concentration",
-      "type": "string"
+      "id": "Regulatory Maximum",
+      "name": "Regulatory Maximum",
+      "type": "string",
+      "tooltip": "Maximum permitted usage level."
     },
     {
-      "id": "reason",
-      "name": "Reason",
-      "type": "string"
+      "id": "Regulatory Rationale",
+      "name": "Regulatory Rationale",
+      "type": "string",
+      "tooltip": "Brief rationale for why the ingredient is permitted/restricted."
     },
     {
-      "id": "regulation_source",
-      "name": "Regulation Source",
-      "type": "string"
+      "id": "Legal Source",
+      "name": "Legal Source",
+      "type": "string",
+      "tooltip": "Agency or legal body guiding the restriction (e.g., FDA, EFSA)."
     },
     {
-      "id": "last_regulation_update",
-      "name": "Last Regulation Update",
-      "type": "string"
+      "id": "Last Update",
+      "name": "Last Update",
+      "type": "string",
+      "tooltip": "Date the regulation was last updated."
     },
     {
-      "id": "reference",
+      "id": "Reference",
       "name": "Reference",
-      "type": "string"
+      "type": "string",
+      "tooltip": "Specific regulatory code or text reference."
     }
   ],
   "configSchema": [

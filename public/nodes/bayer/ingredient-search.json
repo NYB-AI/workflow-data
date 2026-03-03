@@ -9,15 +9,9 @@
     "credits": 500,
     "executionTime": 1
   },
-  "outputMockLabel": "8 ingredients",
+  "outputMockLabel": "20 ingredients",
   "defaultInputs": [],
   "defaultOutputs": [
-    {
-      "id": "ID",
-      "name": "ID",
-      "type": "string",
-      "tooltip": "Unique identifier for each ingredient search result."
-    },
     {
       "id": "ingredient_name",
       "name": "Ingredient Name",
@@ -43,10 +37,10 @@
       "tooltip": "Number of available suppliers for this ingredient in the database."
     },
     {
-      "id": "sources",
-      "name": "Sources",
+      "id": "Source",
+      "name": "Source",
       "type": "string",
-      "tooltip": "URL link to the supplier list document (PDF) containing detailed supplier information for the ingredient. May be empty if no supplier list is available."
+      "tooltip": "Source manufacturers and suppliers for the ingredient."
     }
   ],
   "configSchema": [

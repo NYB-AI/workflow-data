@@ -4,12 +4,12 @@
   "category": "analysis",
   "icon": "target-icon",
   "color": "blue",
-  "description": "Maps protein targets to biological systems and assay metrics for hair growth and anti-hair loss formulations.",
+  "description": "Maps protein targets to biological systems and assay metrics.",
   "pricing": {
     "credits": 800,
     "executionTime": 1
   },
-  "outputMockLabel": "4 targets",
+  "outputMockLabel": "5 targets",
   "defaultInputs": [
     {
       "id": "target-input",
@@ -51,10 +51,10 @@
       "tooltip": "Measurement unit for the assay result (e.g. \"EC50\", \"IC50\")."
     },
     {
-      "id": "rationale_for_deterrence",
-      "name": "Rationale for Deterrence",
+      "id": "rationale_for_modulation",
+      "name": "Rationale for Modulation",
       "type": "string",
-      "tooltip": "Biological rationale explaining why this target is relevant to hair growth/deterrence."
+      "tooltip": "Biological rationale explaining why this target modulation is relevant."
     },
     {
       "id": "crystalized_structure",

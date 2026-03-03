@@ -1,7 +1,9 @@
-compound,srd5a2_ic50,smo_ec50
-Minoxidil,8819.2,> 10000.0
-Citral,2501.6,> 10000.0
-Eugenol,5132.1,44.2
-Anethole,811.7,340.0
-Finasteride,158.0,510.0
-Licochalcone A,>10000.0,1072.0
+compound,cnr1_ec50
+NYB01,106.3
+NYB03,>10000
+NYB05,65.5
+NYB07,794.33
+NYB09,396.1
+NYB10,>10000
+NYB11,>10000
+NYB12,>10000

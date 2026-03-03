@@ -9,7 +9,7 @@
     "credits": 800,
     "executionTime": 1
   },
-  "outputMockLabel": "36 compounds",
+  "outputMockLabel": "100000 compounds",
   "defaultInputs": [
     {
       "id": "input-mol-data",
@@ -29,50 +29,50 @@
     {
       "id": "MW",
       "name": "Molecular Weight",
-      "type": "number",
-      "tooltip": "Molecular Weight (g/mol)."
+      "type": "string",
+      "tooltip": "Molecular Weight (approx)."
     },
     {
       "id": "logP",
       "name": "logP",
       "type": "number",
-      "tooltip": "Partition coefficient (octanol/water)."
+      "tooltip": "Partition coefficient (octanol/water est.)."
     },
     {
       "id": "TPSA",
       "name": "TPSA",
-      "type": "number",
-      "tooltip": "Topological Polar Surface Area (Å²)."
-    },
-    {
-      "id": "logKp",
-      "name": "logKp",
-      "type": "number",
-      "tooltip": "Skin permeability coefficient."
-    },
-    {
-      "id": "skin_retention",
-      "name": "Skin Retention",
       "type": "string",
-      "tooltip": "Predicted skin retention level."
+      "tooltip": "Topological Polar Surface Area (Å² est.)."
     },
     {
-      "id": "follicular_delivery",
-      "name": "Follicular Delivery",
+      "id": "pred_hia",
+      "name": "Pred. HIA",
       "type": "string",
-      "tooltip": "Predicted delivery to hair follicles."
+      "tooltip": "Predicted Human Intestinal Absorption."
+    },
+    {
+      "id": "clogs_trend",
+      "name": "cLogS (trend)",
+      "type": "string",
+      "tooltip": "Aqueous solubility trend."
+    },
+    {
+      "id": "cyp_risk",
+      "name": "CYP risk",
+      "type": "string",
+      "tooltip": "Cytochrome P450 inhibition/induction risk."
     },
     {
       "id": "systemic_risk",
-      "name": "Systemic Risk",
+      "name": "Systemic risk",
       "type": "string",
-      "tooltip": "Risk of systemic absorption and effects."
+      "tooltip": "Risk of systemic toxicity/accumulation."
     },
     {
-      "id": "topical_suitability",
-      "name": "Topical Suitability",
+      "id": "oral_suitability",
+      "name": "Oral suitability",
       "type": "string",
-      "tooltip": "Overall suitability for topical application."
+      "tooltip": "Overall evaluation for oral administration."
     }
   ],
   "configSchema": [
@@ -108,7 +108,7 @@
       "key": "mw_range",
       "type": "range",
       "label": "Molecular Weight Range",
-      "defaultValue": [0, 1000],
+      "defaultValue": [0, 500],
       "tooltip": "Molecular Weight range (min - max g/mol)."
     },
     {
@@ -119,176 +119,126 @@
       "tooltip": "Partition coefficient range (min - max)."
     },
     {
-      "key": "tpsa_range",
-      "type": "range",
-      "label": "TPSA Range (Å²)",
-      "defaultValue": [0, 300],
-      "tooltip": "Topological Polar Surface Area range (min - max Å²)."
-    },
-    {
-      "key": "logkp_range",
-      "type": "range",
-      "label": "logKp Range",
-      "defaultValue": [-15.0, 5.0],
-      "tooltip": "Skin permeability coefficient range (min - max)."
-    },
-    {
-      "key": "skin_retention",
+      "key": "pred_hia",
       "type": "multiselect",
-      "label": "Skin Retention",
-      "options": [
-        {
-          "value": "Very High",
-          "label": "Very High"
-        },
-        {
-          "value": "High",
-          "label": "High"
-        },
-        {
-          "value": "Medium–High",
-          "label": "Medium–High"
-        },
-        {
-          "value": "Medium",
-          "label": "Medium"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
-        }
-      ],
-      "tooltip": "Filter by skin retention level.",
-      "defaultValue": ["Very High", "High", "Medium–High", "Medium", "Low"]
-    },
-    {
-      "key": "follicular_delivery",
-      "type": "multiselect",
-      "label": "Follicular Delivery",
+      "label": "Pred. HIA",
       "options": [
         {
           "value": "High",
           "label": "High"
-        },
-        {
-          "value": "Medium",
-          "label": "Medium"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
-        }
-      ],
-      "tooltip": "Filter by follicular delivery potential.",
-      "defaultValue": ["High", "Medium", "Low"]
-    },
-    {
-      "key": "systemic_risk",
-      "type": "multiselect",
-      "label": "Systemic Risk",
-      "options": [
-        {
-          "value": "Medium",
-          "label": "Medium"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
-        },
-        {
-          "value": "Very Low",
-          "label": "Very Low"
-        }
-      ],
-      "tooltip": "Filter by systemic risk level.",
-      "defaultValue": ["Medium", "Low", "Very Low"]
-    },
-    {
-      "key": "topical_suitability",
-      "type": "multiselect",
-      "label": "Topical Suitability",
-      "options": [
-        {
-          "value": "Excellent (benchmark)",
-          "label": "Excellent (benchmark)"
-        },
-        {
-          "value": "Excellent",
-          "label": "Excellent"
-        },
-        {
-          "value": "Excellent enhancer",
-          "label": "Excellent enhancer"
-        },
-        {
-          "value": "Very good",
-          "label": "Very good"
-        },
-        {
-          "value": "Good",
-          "label": "Good"
-        },
-        {
-          "value": "Good (barrier-friendly)",
-          "label": "Good (barrier-friendly)"
-        },
-        {
-          "value": "Good (irritation risk)",
-          "label": "Good (irritation risk)"
         },
         {
           "value": "Moderate",
           "label": "Moderate"
         },
         {
-          "value": "Poor",
-          "label": "Poor"
+          "value": "Low–Moderate",
+          "label": "Low–Moderate"
         },
         {
-          "value": "Poor (too polar/bulky)",
-          "label": "Poor (too polar/bulky)"
-        },
-        {
-          "value": "Poor alone (needs formulation)",
-          "label": "Poor alone (needs formulation)"
+          "value": "Low",
+          "label": "Low"
         }
       ],
-      "tooltip": "Filter by topical suitability.",
-      "defaultValue": [
-        "Excellent (benchmark)",
-        "Excellent",
-        "Excellent enhancer",
-        "Very good",
-        "Good",
-        "Good (barrier-friendly)",
-        "Good (irritation risk)",
-        "Moderate",
-        "Poor",
-        "Poor (too polar/bulky)",
-        "Poor alone (needs formulation)"
-      ]
+      "tooltip": "Filter by Predicted Human Intestinal Absorption.",
+      "defaultValue": ["High", "Moderate", "Low–Moderate", "Low"]
+    },
+    {
+      "key": "clogs_trend",
+      "type": "multiselect",
+      "label": "cLogS (trend)",
+      "options": [
+        {
+          "value": "Very high",
+          "label": "Very high"
+        },
+        {
+          "value": "High",
+          "label": "High"
+        },
+        {
+          "value": "Good",
+          "label": "Good"
+        },
+        {
+          "value": "Moderate",
+          "label": "Moderate"
+        },
+        {
+          "value": "Very low",
+          "label": "Very low"
+        }
+      ],
+      "tooltip": "Filter by aqueous solubility trend.",
+      "defaultValue": ["Very high", "High", "Good", "Moderate", "Very low"]
+    },
+    {
+      "key": "cyp_risk",
+      "type": "multiselect",
+      "label": "CYP risk",
+      "options": [
+        {
+          "value": "High",
+          "label": "High"
+        },
+        {
+          "value": "Moderate",
+          "label": "Moderate"
+        },
+        {
+          "value": "Low",
+          "label": "Low"
+        }
+      ],
+      "tooltip": "Filter by Cytochrome P450 risk.",
+      "defaultValue": ["High", "Moderate", "Low"]
+    },
+    {
+      "key": "systemic_risk",
+      "type": "multiselect",
+      "label": "Systemic risk",
+      "options": [
+        {
+          "value": "High",
+          "label": "High"
+        },
+        {
+          "value": "Medium",
+          "label": "Medium"
+        },
+        {
+          "value": "Low",
+          "label": "Low"
+        }
+      ],
+      "tooltip": "Filter by systemic risk level.",
+      "defaultValue": ["High", "Medium", "Low"]
+    },
+    {
+      "key": "oral_suitability",
+      "type": "multiselect",
+      "label": "Oral suitability",
+      "options": [
+        {
+          "value": "PASS",
+          "label": "PASS"
+        },
+        {
+          "value": "FAIL",
+          "label": "FAIL"
+        }
+      ],
+      "tooltip": "Filter by oral suitability.",
+      "defaultValue": ["PASS", "FAIL"]
     }
   ],
   "defaultConfig": {
-    "mw_range": [0, 1000],
+    "mw_range": [0, 500],
     "logp_range": [-5.0, 10.0],
-    "tpsa_range": [0, 300],
-    "logkp_range": [-15.0, 5.0],
-    "skin_retention": ["Very High", "High", "Medium–High", "Medium", "Low"],
-    "follicular_delivery": ["High", "Medium", "Low"],
-    "systemic_risk": ["Medium", "Low", "Very Low"],
-    "topical_suitability": [
-      "Excellent (benchmark)",
-      "Excellent",
-      "Excellent enhancer",
-      "Very good",
-      "Good",
-      "Good (barrier-friendly)",
-      "Good (irritation risk)",
-      "Moderate",
-      "Poor",
-      "Poor (too polar/bulky)",
-      "Poor alone (needs formulation)"
-    ]
+    "pred_hia": ["High", "Moderate", "Low–Moderate", "Low"],
+    "clogs_trend": ["Very high", "High", "Good", "Moderate", "Very low"],
+    "cyp_risk": ["High", "Moderate", "Low"],
+    "systemic_risk": ["High", "Medium", "Low"],
+    "oral_suitability": ["PASS", "FAIL"]
   }
 }

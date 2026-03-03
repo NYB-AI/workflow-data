@@ -1,12 +1,7 @@
 Pair,Predicted Interaction Signal,Risk Type (Dominant),Confidence,Flag
-Minoxidil – Citral,Additive vasodilation and local penetration enhancement,Local irritation / erythema,Medium,MODERATE_RISK
-Minoxidil – Eugenol,Enhanced skin penetration and sensitization potential,Contact dermatitis,Medium,MODERATE_RISK
-Minoxidil – Anethole,Weak PK interaction via skin absorption modulation,Mild local irritation,Low,SAFE
-Minoxidil – Finasteride,Complementary pharmacodynamic effect (vascular + anti-androgen),Additive efficacy (non-adverse),High,SAFE
-Minoxidil – Citral – Eugenol (triad),Synergistic penetration enhancement,Cumulative irritation risk,Medium,MODERATE_RISK
-Finasteride – Eugenol,Potential CYP3A4 modulation (weak inhibitor),Altered finasteride clearance (theoretical),Low,LOW_RISK
-Finasteride – Anethole,No significant shared metabolic pathway,No dominant risk identified,Low,SAFE
-Finasteride – Citral,Weak enzyme modulation signal,Negligible systemic interaction,Low,SAFE
-Citral – Eugenol,Additive sensitization liability,Skin sensitization,Medium–High,MODERATE_RISK
-Citral – Anethole,Overlapping fragrance allergen profiles,Irritation (dose-dependent),Medium,MODERATE_RISK
-Eugenol – Anethole,Shared phenylpropanoid class → additive dermal effects,Sensitization,Medium,MODERATE_RISK
+NYB01 + NYB05,Moderate CYP competitive metabolism signal,PK – Hepatic metabolism overlap,0.74,Monitor
+NYB01 + NYB07,Weak additive receptor interaction,PD – Mild functional overlap,0.60,Low
+NYB01 + NYB09,Increased systemic exposure of NYB09 predicted,PK – Absorption / metabolism interaction,0.69,Review
+NYB05 + NYB07,Redox pathway convergence,PD – Oxidative stress modulation,0.81,Review
+NYB05 + NYB09,Elevated hepatocellular stress signal (dose-dependent),PK – Hepatic burden amplification,0.77,Caution
+NYB07 + NYB09,Moderate CNS additive modulation signal,PD – Neuroactive pathway overlap,0.72,Monitor

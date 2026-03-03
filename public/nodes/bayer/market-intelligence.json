@@ -12,19 +12,19 @@
       "id": "Segment",
       "name": "Segment",
       "type": "string",
-      "tooltip": "Product segment or category identified from the market analysis (e.g. \"Stress-Reducing Room & Body Sprays\", \"Sleep & Pillow Mists\")."
+      "tooltip": "Product segment or category identified from the market analysis (e.g. \"Fiber-Based Satiety Products\", \"Metabolic Flexibility\")."
     },
     {
-      "id": "Product growth (Supply)",
+      "id": "Product Growth (Supply)",
       "name": "Product Growth (Supply)",
       "type": "string",
       "tooltip": "Year-over-year growth rate in product launches/supply for this segment. Positive values indicate growth, negative values indicate decline (e.g. \"(+) 11%\", \"(-) 4%\")."
     },
     {
-      "id": "Review growth (Demand)",
+      "id": "Review Growth (Demand)",
       "name": "Review Growth (Demand)",
       "type": "string",
-      "tooltip": "Year-over-year growth rate in consumer reviews/demand signals for this segment. Indicates market interest and consumer engagement (e.g. \"(+) 38%\", \"(+) 62%\")."
+      "tooltip": "Year-over-year growth rate in consumer reviews/demand signals for this segment. Indicates market interest and consumer engagement (e.g. \"(+) 15%\", \"(+) 18%\")."
     },
     {
       "id": "Recommended Category",
@@ -36,7 +36,7 @@
       "id": "Key Competing Brands",
       "name": "Key Competing Brands",
       "type": "string",
-      "tooltip": "List of main competing brands in this segment, useful for competitive benchmarking (e.g. \"Aesop, Neom Organics, The Nue Co., Saje Wellness\")."
+      "tooltip": "List of main competing brands in this segment, useful for competitive benchmarking (e.g. \"HUM Nutrition, Ritual, Thorne, Life Extension\")."
     },
     {
       "id": "Main Price Range (USD)",
@@ -65,4 +65,3 @@
     "query": ""
   }
 }
-

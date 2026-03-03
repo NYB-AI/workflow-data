@@ -9,15 +9,9 @@
     "credits": 500,
     "executionTime": 1
   },
-  "outputMockLabel": "7 items",
+  "outputMockLabel": "6 items",
   "defaultInputs": [],
   "defaultOutputs": [
-    {
-      "id": "ID",
-      "name": "ID",
-      "type": "string",
-      "tooltip": "Unique product identifier."
-    },
     {
       "id": "brand",
       "name": "Brand",
@@ -55,10 +49,10 @@
       "tooltip": "Product price in US dollars."
     },
     {
-      "id": "size_ml",
-      "name": "Size (ml)",
-      "type": "number",
-      "tooltip": "Product size/volume in milliliters."
+      "id": "size",
+      "name": "Size",
+      "type": "string",
+      "tooltip": "Product size or volume."
     },
     {
       "id": "format",

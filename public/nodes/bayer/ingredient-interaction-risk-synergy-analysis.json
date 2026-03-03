@@ -5,7 +5,7 @@
   "icon": "alert-triangle",
   "color": "red",
   "description": "Analyze synergistic effects and safety risks of ingredient pairs by combining compound-SMILES pairs",
-  "outputMockLabel": "11 pairs",
+  "outputMockLabel": "6 pairs",
   "pricing": {
     "credits": 0,
     "executionTime": 1
@@ -28,16 +28,16 @@
       "tooltip": "The pair of compounds being analyzed (e.g., 'Compound A + Compound B')."
     },
     {
-      "id": "Predicted_Interaction_Signal",
+      "id": "Predicted Interaction Signal",
       "name": "Predicted Interaction Signal",
       "type": "string",
       "tooltip": "The predicted interaction signal indicating the type of synergistic effect or interaction between the compound pair."
     },
     {
-      "id": "Risk_Type_(Dominant)",
+      "id": "Risk Type (Dominant)",
       "name": "Risk Type (Dominant)",
       "type": "string",
-      "tooltip": "The dominant risk type associated with the compound pair interaction (e.g., 'Toxicity', 'Allergenicity', 'Irritation')."
+      "tooltip": "The dominant risk type associated with the compound pair interaction."
     },
     {
       "id": "Confidence",
