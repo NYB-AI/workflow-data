@@ -24,7 +24,7 @@
     {
       "id": "Protein",
       "name": "Protein",
-      "type": "text",
+      "type": "string",
       "tooltip": "Protein identifier."
     },
     {
