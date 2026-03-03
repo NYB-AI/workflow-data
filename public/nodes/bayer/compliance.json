@@ -1,10 +1,10 @@
 {
   "type": "compliance",
-  "label": "Compliance Check (Ingredient)",
+  "label": "Compliance Check",
   "category": "analysis",
   "icon": "shield-check",
   "color": "blue",
-  "description": "Check ingredient compliance against global market regulations (Ferrero specific)",
+  "description": "Check ingredient compliance against global market regulations",
   "outputMockLabel": "9 items",
   "pricing": {
     "credits": 0,
