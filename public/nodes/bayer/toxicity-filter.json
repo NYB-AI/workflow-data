@@ -85,6 +85,34 @@
       "accept": ".csv,.txt,.smi"
     },
     {
+      "key": "route",
+      "type": "select",
+      "label": "Route",
+      "options": [
+        {
+          "value": "oral",
+          "label": "Oral"
+        },
+        {
+          "value": "iv",
+          "label": "IV"
+        },
+        {
+          "value": "parenteral",
+          "label": "Parenteral"
+        },
+        {
+          "value": "topical",
+          "label": "Topical"
+        },
+        {
+          "value": "inhalation",
+          "label": "Inhalation"
+        }
+      ],
+      "defaultValue": "oral"
+    },
+    {
       "key": "model",
       "type": "select",
       "label": "Model",
@@ -102,149 +130,17 @@
           "label": "preADMET"
         }
       ],
-      "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows"
-    },
-    {
-      "key": "mw_range",
-      "type": "range",
-      "label": "Molecular Weight Range",
-      "defaultValue": [0, 500],
-      "min": 0,
-      "max": 1000,
-      "step": 1,
-      "tooltip": "Molecular Weight range (min - max g/mol)."
-    },
-    {
-      "key": "logp_range",
-      "type": "range",
-      "label": "logP Range",
-      "defaultValue": [-5.0, 10.0],
-      "min": -5.0,
-      "max": 10.0,
-      "step": 0.1,
-      "tooltip": "Partition coefficient range (min - max)."
-    },
-    {
-      "key": "pred_hia",
-      "type": "multiselect",
-      "label": "Pred. HIA",
-      "options": [
+      "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows",
+      "defaultValue": "swiss_adme",
+      "showWhen": [
         {
-          "value": "High",
-          "label": "High"
-        },
-        {
-          "value": "Moderate",
-          "label": "Moderate"
-        },
-        {
-          "value": "Low–Moderate",
-          "label": "Low–Moderate"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
+          "field": "route",
+          "in": ["oral", "iv", "parenteral", "topical", "inhalation"]
         }
-      ],
-      "tooltip": "Filter by Predicted Human Intestinal Absorption.",
-      "defaultValue": ["High", "Moderate", "Low–Moderate", "Low"]
-    },
-    {
-      "key": "clogs_trend",
-      "type": "multiselect",
-      "label": "cLogS (trend)",
-      "options": [
-        {
-          "value": "Very high",
-          "label": "Very high"
-        },
-        {
-          "value": "High",
-          "label": "High"
-        },
-        {
-          "value": "Good",
-          "label": "Good"
-        },
-        {
-          "value": "Moderate",
-          "label": "Moderate"
-        },
-        {
-          "value": "Very low",
-          "label": "Very low"
-        }
-      ],
-      "tooltip": "Filter by aqueous solubility trend.",
-      "defaultValue": ["Very high", "High", "Good", "Moderate", "Very low"]
-    },
-    {
-      "key": "cyp_risk",
-      "type": "multiselect",
-      "label": "CYP risk",
-      "options": [
-        {
-          "value": "High",
-          "label": "High"
-        },
-        {
-          "value": "Moderate",
-          "label": "Moderate"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
-        }
-      ],
-      "tooltip": "Filter by Cytochrome P450 risk.",
-      "defaultValue": ["High", "Moderate", "Low"]
-    },
-    {
-      "key": "systemic_risk",
-      "type": "multiselect",
-      "label": "Systemic risk",
-      "options": [
-        {
-          "value": "High",
-          "label": "High"
-        },
-        {
-          "value": "Medium",
-          "label": "Medium"
-        },
-        {
-          "value": "Low",
-          "label": "Low"
-        }
-      ],
-      "tooltip": "Filter by systemic risk level.",
-      "defaultValue": ["High", "Medium", "Low"]
-    },
-    {
-      "key": "oral_suitability",
-      "type": "multiselect",
-      "label": "Oral suitability",
-      "options": [
-        {
-          "value": "PASS",
-          "label": "PASS"
-        },
-        {
-          "value": "FAIL",
-          "label": "FAIL"
-        }
-      ],
-      "tooltip": "Filter by oral suitability.",
-      "defaultValue": ["PASS", "FAIL"]
+      ]
     }
   ],
   "defaultConfig": {
-    "mw_range": [0, 500],
-    "logp_range": [-5.0, 10.0],
-    "pred_hia": ["High", "Moderate", "Low–Moderate", "Low"],
-    "clogs_trend": ["Very high", "High", "Good", "Moderate", "Very low"],
-    "cyp_risk": ["High", "Moderate", "Low"],
-    "systemic_risk": ["High", "Medium", "Low"],
-    "oral_suitability": ["PASS", "FAIL"]
+    "model": "swiss_adme"
   }
 }
