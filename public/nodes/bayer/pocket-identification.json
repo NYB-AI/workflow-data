@@ -124,7 +124,7 @@
       "defaultValue": 3,
       "min": 0,
       "max": 4,
-      "step": 0.1,
+      "step": 1,
       "advanced": true,
       "showWhen": [
         {
@@ -165,5 +165,14 @@
         }
       ]
     }
-  ]
+  ],
+  "defaultConfig": {
+    "model_selection": "fpocket",
+    "min_alpha_sphere_radius": 3.0,
+    "max_alpha_sphere_radius": 6.0,
+    "min_alpha_spheres_per_pocket": 35,
+    "apolar_threshold": 3,
+    "clustering_distance": 1.73,
+    "max_pockets": 0
+  }
 }
