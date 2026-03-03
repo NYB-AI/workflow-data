@@ -1,11 +1,11 @@
 {
-  "type": "compliance",
+  "type": "compliance-formulation",
   "label": "Compliance Check (Ingredient)",
   "category": "analysis",
   "icon": "shield-check",
   "color": "blue",
-  "description": "Check ingredient compliance against global market regulations",
-  "outputMockLabel": "9 items",
+  "description": "Check ingredient compliance against global market regulations (Ferrero specific)",
+  "outputMockLabel": "18 compounds",
   "pricing": {
     "credits": 0,
     "executionTime": 1
@@ -22,76 +22,34 @@
   ],
   "defaultOutputs": [
     {
-      "id": "Ingredient Name",
-      "name": "Ingredient Name",
-      "type": "string",
-      "tooltip": "The name of the evaluated ingredient."
-    },
-    {
-      "id": "INCI Name",
-      "name": "INCI Name",
-      "type": "string",
-      "tooltip": "INCI name of the ingredient."
-    },
-    {
-      "id": "CAS",
-      "name": "CAS",
-      "type": "string",
-      "tooltip": "CAS registry number."
-    },
-    {
-      "id": "Formula %",
-      "name": "Formula %",
-      "type": "string",
-      "tooltip": "Percentage by weight in the formulation."
-    },
-    {
       "id": "Market",
       "name": "Market",
       "type": "string",
-      "tooltip": "Target market/region for validation (e.g. \"EU\", \"US\")."
+      "tooltip": "The target market or region."
     },
     {
-      "id": "Regulatory Status",
-      "name": "Regulatory Status",
+      "id": "Compliance Status",
+      "name": "Compliance Status",
       "type": "string",
-      "tooltip": "Overall validation result (e.g., \"Permitted\")."
+      "tooltip": "The overall compliance status of the formulation in the given market."
     },
     {
-      "id": "Restriction Basis",
-      "name": "Restriction Basis",
+      "id": "Basis",
+      "name": "Basis",
       "type": "string",
-      "tooltip": "The regulatory framework or rule that determines the status."
+      "tooltip": "The regulatory basis or framework."
     },
     {
-      "id": "Regulatory Maximum",
-      "name": "Regulatory Maximum",
+      "id": "Outstanding Obligations",
+      "name": "Outstanding Obligations",
       "type": "string",
-      "tooltip": "Maximum permitted usage level."
-    },
-    {
-      "id": "Regulatory Rationale",
-      "name": "Regulatory Rationale",
-      "type": "string",
-      "tooltip": "Brief rationale for why the ingredient is permitted/restricted."
+      "tooltip": "Further actions or obligations required for compliance."
     },
     {
       "id": "Legal Source",
       "name": "Legal Source",
       "type": "string",
-      "tooltip": "Agency or legal body guiding the restriction (e.g., FDA, EFSA)."
-    },
-    {
-      "id": "Last Update",
-      "name": "Last Update",
-      "type": "string",
-      "tooltip": "Date the regulation was last updated."
-    },
-    {
-      "id": "Reference",
-      "name": "Reference",
-      "type": "string",
-      "tooltip": "Specific regulatory code or text reference."
+      "tooltip": "The relevant legal acts or sources."
     }
   ],
   "configSchema": [
@@ -100,14 +58,14 @@
       "type": "text",
       "label": "Ingredient Name",
       "placeholder": "Enter a ingredient name...",
-      "suggestedField": ["Component"],
+      "suggestedField": ["inci"],
       "tooltip": "Enter a ingredient name."
     },
     {
       "key": "concentration",
       "type": "text",
       "label": "Concentration",
-      "suggestedField": ["percent_w_w"],
+      "suggestedField": ["estimatedPercent"],
       "placeholder": "Enter a concentration...",
       "tooltip": "Enter a concentration."
     },
@@ -115,7 +73,6 @@
       "key": "function",
       "type": "text",
       "label": "Function",
-      "suggestedField": ["Functional_role"],
       "placeholder": "Enter a function...",
       "tooltip": "Enter a function."
     },

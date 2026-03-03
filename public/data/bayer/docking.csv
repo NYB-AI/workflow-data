@@ -1,6 +1,6 @@
 docked_structure,compound,target,delta_g
-https://workflow-data-2sa8.vercel.app/data/docking/NYB1.pdb,NYB01,CNR1,-6.096
-https://workflow-data-2sa8.vercel.app/data/docking/NYB2.pdb,NYB02,CNR1,-4.791
-https://workflow-data-2sa8.vercel.app/data/docking/NYB3.pdb,NYB03,CNR1,-5.048
-https://workflow-data-2sa8.vercel.app/data/docking/NYB5.pdb,NYB05,CNR1,-6.142
-https://workflow-data-2sa8.vercel.app/data/docking/NYB6.pdb,NYB06,CNR1,-4.217
+https://workflow-data-2sa8.vercel.app/data/docking/NYB1.pdb,Naringenin,CNR1,-6.096
+https://workflow-data-2sa8.vercel.app/data/docking/NYB2.pdb,Apigenin,CNR1,-4.791
+https://workflow-data-2sa8.vercel.app/data/docking/NYB3.pdb,Genistein,CNR1,-5.048
+https://workflow-data-2sa8.vercel.app/data/docking/NYB5.pdb,Baicalein,CNR1,-6.142
+https://workflow-data-2sa8.vercel.app/data/docking/NYB6.pdb,Caffein,CNR1,-4.217
