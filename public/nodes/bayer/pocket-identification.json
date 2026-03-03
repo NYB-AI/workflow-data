@@ -1,0 +1,169 @@
+{
+  "type": "pocket-identification",
+  "label": "Pocket Identification",
+  "category": "analysis",
+  "icon": "dna",
+  "color": "purple",
+  "description": "Identify and analyze binding pockets on protein structures.",
+  "pricing": {
+    "credits": 1200,
+    "executionTime": 1
+  },
+  "outputMockLabel": "10 pockets",
+  "outputPageSize": 5,
+  "defaultInputs": [
+    {
+      "id": "targetList",
+      "name": "Protein Target List",
+      "type": "array",
+      "required": true,
+      "tooltip": "Protein targets with prepared structures for pocket analysis."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "Pocket",
+      "name": "Pocket",
+      "type": "number",
+      "tooltip": "Pocket number identifier."
+    },
+    {
+      "id": "Score",
+      "name": "Score",
+      "type": "number",
+      "tooltip": "Druggability or binding score of the pocket."
+    },
+    {
+      "id": "Volumn",
+      "name": "Volumn",
+      "type": "number",
+      "tooltip": "Volume of the pocket."
+    },
+    {
+      "id": "pocket_pdb",
+      "name": "Pocket PDB",
+      "type": "structure",
+      "tooltip": "PDB file of the pocket."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "protein_column",
+      "type": ["text", "file"],
+      "label": "Protein 3D structure",
+      "tooltip": "3D structure of the proteins for pocket identification",
+      "suggestedField": ["structure_3d"],
+      "accept": ".csv,.pdb"
+    },
+    {
+      "key": "model_selection",
+      "type": "select",
+      "label": "Model Selection",
+      "options": [
+        {
+          "value": "fpocket",
+          "label": "FPocket"
+        },
+        {
+          "value": "castp",
+          "label": "CASTp"
+        }
+      ],
+      "defaultValue": "fpocket",
+      "tooltip": "Select a pocket identification backend:\n- **FPocket** – geometry-based alpha-shapes.\n- **CASTp** – analytical surface topography."
+    },
+    {
+      "key": "min_alpha_sphere_radius",
+      "type": "range",
+      "label": "Min Alpha Sphere Radius",
+      "defaultValue": 3.0,
+      "min": 1.0,
+      "max": 5.0,
+      "step": 0.1,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    },
+    {
+      "key": "max_alpha_sphere_radius",
+      "type": "range",
+      "label": "Max Alpha Sphere Radius",
+      "defaultValue": 6.0,
+      "min": 2.0,
+      "max": 10.0,
+      "step": 0.1,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    },
+    {
+      "key": "min_alpha_spheres_per_pocket",
+      "type": "range",
+      "label": "Min Alpha Spheres / Pocket",
+      "defaultValue": 35,
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    },
+    {
+      "key": "apolar_threshold",
+      "type": "range",
+      "label": "Apolar Threshold (0-4)",
+      "defaultValue": 3,
+      "min": 0,
+      "max": 4,
+      "step": 0.1,
+      "advanced": true,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    },
+    {
+      "key": "clustering_distance",
+      "type": "range",
+      "label": "Clustering Distance",
+      "defaultValue": 1.73,
+      "min": 0.5,
+      "max": 5.0,
+      "step": 0.01,
+      "advanced": true,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    },
+    {
+      "key": "max_pockets",
+      "type": "range",
+      "label": "Max Pockets to Return",
+      "defaultValue": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "advanced": true,
+      "showWhen": [
+        {
+          "field": "model_selection",
+          "in": ["fpocket"]
+        }
+      ]
+    }
+  ]
+}
