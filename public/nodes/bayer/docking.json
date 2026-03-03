@@ -55,28 +55,6 @@
   ],
   "configSchema": [
     {
-      "key": "smiles_column",
-      "type": ["text", "file"],
-      "label": "SMILES",
-      "tooltip": "Smiles strings of the compounds to be docked",
-      "suggestedField": [
-        "smiles",
-        "name",
-        "ingredient_name",
-        "inci_name",
-        "Compound"
-      ],
-      "accept": ".csv,.txt,.smi"
-    },
-    {
-      "key": "protein_column",
-      "type": ["text", "file"],
-      "label": "Protein 3D structure",
-      "tooltip": "3D structure of the proteins to be docked",
-      "suggestedField": ["target", "protein_name"],
-      "accept": ".csv,.pdb"
-    },
-    {
       "key": "engine",
       "type": "select",
       "label": "Docking Engine",
@@ -92,10 +70,69 @@
         {
           "value": "swissdock",
           "label": "SwissDock"
+        },
+        {
+          "value": "haddock",
+          "label": "HADDOCK"
         }
       ],
       "defaultValue": "vina",
       "tooltip": "Select a docking backend:\n- **AutoDock Vina** – accurate classical docking.\n- **DiffDock** – fast ML‑based pose prediction.\n- **SwissDock** – convenient web‑style presets for quick exploration."
+    },
+    {
+      "key": "smiles_column",
+      "type": ["text", "file"],
+      "label": "Ligand",
+      "tooltip": "Ligand structure",
+      "suggestedField": ["smiles", "name", "ingredient_name", "inci_name"],
+      "accept": ".pdb"
+    },
+    {
+      "key": "protein_column",
+      "type": ["text", "file"],
+      "label": "Protein 3D structure",
+      "tooltip": "3D structure of the proteins to be docked",
+      "suggestedField": ["target", "protein_name"],
+      "accept": ".csv,.pdb"
+    },
+    {
+      "key": "choose_pocket",
+      "type": "select",
+      "label": "Choose Pocket",
+      "tooltip": "Select pocket for docking.",
+      "options": [
+        {
+          "value": "1",
+          "label": "Pocket 1"
+        },
+        {
+          "value": "2",
+          "label": "Pocket 2"
+        },
+        {
+          "value": "3",
+          "label": "Pocket 3"
+        },
+        {
+          "value": "4",
+          "label": "Pocket 4"
+        },
+        {
+          "value": "5",
+          "label": "Pocket 5"
+        },
+        {
+          "value": "6",
+          "label": "Pocket 6"
+        }
+      ],
+      "defaultValue": "1",
+      "showWhen": [
+        {
+          "field": "protein_column",
+          "in": ["*"]
+        }
+      ]
     },
     {
       "key": "vina_exhaustiveness",
@@ -125,20 +162,6 @@
       ],
       "advanced": true,
       "tooltip": "Advanced: number of binding poses Vina should generate per ligand."
-    },
-    {
-      "key": "gridBox",
-      "type": "json",
-      "label": "Grid Box Definition (Advanced)",
-      "placeholder": "{ \"center_x\":0, \"center_y\":0, \"center_z\":0, \"size_x\":20, \"size_y\":20, \"size_z\":20 }",
-      "showWhen": [
-        {
-          "field": "engine",
-          "in": ["vina", "swissdock"]
-        }
-      ],
-      "advanced": true,
-      "tooltip": "Advanced: JSON definition of the docking search box centre and dimensions (Å)."
     },
     {
       "key": "diffdock_samples",
@@ -219,6 +242,93 @@
       ],
       "advanced": true,
       "tooltip": "Advanced: switch between standard and fine‑grid scoring for SwissDock."
+    },
+    {
+      "key": "haddock_chain",
+      "type": "select",
+      "label": "Which chain of the structure must be used? *",
+      "options": [
+        {
+          "value": "All",
+          "label": "All"
+        }
+      ],
+      "defaultValue": "All",
+      "showWhen": [
+        {
+          "field": "engine",
+          "in": ["haddock"]
+        }
+      ]
+    },
+    {
+      "key": "haddock_pdb_structure",
+      "type": "file",
+      "label": "PDB structure to submit *",
+      "accept": ".pdb",
+      "showWhen": [
+        {
+          "field": "engine",
+          "in": ["haddock"]
+        }
+      ]
+    },
+    {
+      "key": "haddock_molecule_type",
+      "type": "select",
+      "label": "What kind of molecule are you docking? *",
+      "options": [
+        {
+          "value": "Protein or Protein-Ligand",
+          "label": "Protein or Protein-Ligand"
+        }
+      ],
+      "defaultValue": "Protein or Protein-Ligand",
+      "showWhen": [
+        {
+          "field": "engine",
+          "in": ["haddock"]
+        }
+      ]
+    },
+    {
+      "key": "haddock_coarse_grain",
+      "type": "boolean",
+      "label": "Do you want to coarse-grain your molecule?",
+      "defaultValue": false,
+      "showWhen": [
+        {
+          "field": "engine",
+          "in": ["haddock"]
+        }
+      ]
+    },
+    {
+      "key": "haddock_cyclic_peptide",
+      "type": "boolean",
+      "label": "Is it a cyclic peptide?",
+      "defaultValue": false,
+      "showWhen": [
+        {
+          "field": "engine",
+          "in": ["haddock"]
+        }
+      ]
+    },
+    {
+      "key": "grid_box",
+      "type": "structure_viewer",
+      "label": "Grid Box",
+      "structureUrl": "https://workflow-data-2sa8.vercel.app/data/docking/CNR1.pdb",
+      "showBox": true,
+      "boxCenter": [20, -2, -11],
+      "boxSize": [20, 23, 27],
+      "showWhen": [
+        {
+          "field": "protein_column",
+          "in": ["*"]
+        }
+      ]
     }
   ]
 }
