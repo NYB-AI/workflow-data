@@ -129,44 +129,6 @@
       "label": "Include Confidence Scores",
       "defaultValue": true,
       "tooltip": "Include pTM and other confidence metrics in the output."
-    },
-    {
-      "key": "findPocketRegion",
-      "type": "boolean",
-      "label": "Finding the pocket region?",
-      "defaultValue": true,
-      "tooltip": "Whether to detect and analyze binding pocket regions in the predicted structure."
-    },
-    {
-      "key": "pocketModel",
-      "type": "select",
-      "label": "Choose model to predict pocket",
-      "options": [
-        {
-          "value": "fpocket",
-          "label": "fpocket"
-        },
-        {
-          "value": "sitemap",
-          "label": "SiteMap"
-        },
-        {
-          "value": "deepsite",
-          "label": "DeepSite"
-        },
-        {
-          "value": "p2rank",
-          "label": "P2Rank"
-        }
-      ],
-      "defaultValue": "fpocket",
-      "tooltip": "Select the pocket prediction model. fpocket is fast and open-source, SiteMap provides detailed druggability analysis.",
-      "showWhen": [
-        {
-          "field": "findPocketRegion",
-          "in": ["true"]
-        }
-      ]
     }
   ],
   "defaultConfig": {
