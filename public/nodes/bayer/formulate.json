@@ -37,13 +37,7 @@
       "type": ["text", "file"],
       "label": "Active Ingredients",
       "placeholder": "Select or upload a list of ingredients...",
-      "suggestedField": [
-        "smiles",
-        "name",
-        "ingredient_name",
-        "inci_name",
-        "Pair"
-      ],
+      "suggestedField": ["Pair"],
       "tooltip": "Select or upload a list of active ingredients.\nSupported formats: **TXT**, **CSV**, **SMILES**.",
       "accept": ".txt,.csv,.smi"
     },
@@ -51,7 +45,7 @@
       "key": "referenceProduct",
       "type": "text",
       "label": "Similar Product (optional)",
-      "suggestedField": ["product", "name"],
+      "suggestedField": ["product", "Product"],
       "placeholder": "Paste product link or name here..."
     },
     {
