@@ -84,7 +84,13 @@
       "type": ["text", "file"],
       "label": "Ligand",
       "tooltip": "Ligand structure",
-      "suggestedField": ["smiles", "name", "ingredient_name", "inci_name"],
+      "suggestedField": [
+        "smiles",
+        "name",
+        "ingredient_name",
+        "inci_name",
+        "Compound"
+      ],
       "accept": ".pdb"
     },
     {
@@ -92,7 +98,7 @@
       "type": ["text", "file"],
       "label": "Protein 3D structure",
       "tooltip": "3D structure of the proteins to be docked",
-      "suggestedField": ["target", "protein_name"],
+      "suggestedField": ["Pocket", "target", "protein_name"],
       "accept": ".csv,.pdb"
     },
     {
