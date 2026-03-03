@@ -91,6 +91,10 @@
         {
           "value": "clinical",
           "label": "Clinical"
+        },
+        {
+          "value": "nutraceutical",
+          "label": "Nutraceutical"
         }
       ],
       "tooltip": "Select the product category."
