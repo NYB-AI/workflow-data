@@ -1,14 +1,11 @@
 {
-  "type": "toxicity-filter",
+  "type": "toxicity",
+  "module": "toxicity-filter",
   "label": "Toxicity Filter",
   "category": "analysis",
   "icon": "filtericon",
   "color": "red",
-  "description": "Filter compounds based on SMILES data and physicochemical thresholds.",
-  "pricing": {
-    "credits": 800,
-    "executionTime": 1
-  },
+  "description": "ADMET-AI hard-gate toxicity filter — rejects compounds that exceed route-specific toxicity thresholds (hERG, AMES, DILI, ClinTox, etc.).",
   "outputMockLabel": "13 compounds",
   "defaultInputs": [
     {
@@ -21,171 +18,94 @@
   ],
   "defaultOutputs": [
     {
-      "id": "compound",
-      "name": "Compound",
-      "type": "string",
-      "tooltip": "Compound name or identifier."
+      "id": "compoundList",
+      "name": "Passed Compounds",
+      "type": "array",
+      "tooltip": "Compounds that passed all hard-gate toxicity filters (name + smiles), pipe-able to downstream modules."
     },
     {
-      "id": "smiles",
-      "name": "SMILES",
-      "type": "string",
-      "tooltip": "SMILES string representing the compound's chemical structure."
+      "id": "results",
+      "name": "Full Results",
+      "type": "array",
+      "tooltip": "Per-compound detail: status, scores, reject reasons, and alerts."
     },
     {
-      "id": "skin_irritation",
-      "name": "Skin Irritation",
-      "type": "string",
-      "tooltip": "Predicted level of skin irritation (e.g. Very low, Low, Moderate, High)."
-    },
-    {
-      "id": "sensitization",
-      "name": "Sensitization",
-      "type": "string",
-      "tooltip": "Predicted potential to cause skin sensitization or allergy."
-    },
-    {
-      "id": "ames_mutagenicity",
-      "name": "Ames Mutagenicity",
-      "type": "string",
-      "tooltip": "Predicted Ames test outcome (e.g. Negative or Positive mutagenicity)."
-    },
-    {
-      "id": "dermal_absorption",
-      "name": "Dermal Absorption",
-      "type": "string",
-      "tooltip": "Predicted extent of dermal absorption (e.g. Low, Moderate, High)."
-    },
-    {
-      "id": "status",
-      "name": "Status",
-      "type": "string",
-      "tooltip": "Overall toxicity decision for the compound (Pass, Conditional, or Fail)."
+      "id": "summary",
+      "name": "Summary",
+      "type": "object",
+      "tooltip": "Aggregate counts: total, passed, rejected, route, mode."
     }
   ],
   "configSchema": [
     {
       "key": "ingredientListText",
-      "type": [
-        "text",
-        "file"
-      ],
+      "type": ["text", "file"],
       "label": "Compound List",
-      "tooltip": "Compounds for ADMET prediction",
-      "suggestedField": [
-        "smiles",
-        "name",
-        "ingredient_name",
-        "inci_name"
-      ],
+      "tooltip": "Compounds for ADMET prediction. Provide SMILES strings or connect from an upstream node.",
+      "suggestedField": ["smiles", "name", "ingredient_name", "inci_name"],
       "accept": ".csv,.txt,.smi"
     },
     {
-      "key": "model",
+      "key": "admet_models",
       "type": "select",
-      "label": "Model",
+      "label": "ADMET Prediction Model",
+      "defaultValue": "admet-ai",
       "options": [
-        {
-          "value": "swiss_adme",
-          "label": "SwissADME"
-        },
-        {
-          "value": "admet_ai",
-          "label": "ADMET-AI"
-        },
-        {
-          "value": "preadmet",
-          "label": "preADMET"
-        }
+        { "value": "admet-ai", "label": "ADMET-AI (available)" }
       ],
-      "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows"
+      "tooltip": "ADMET engine used for toxicity scoring. Only ADMET-AI is currently available."
     },
     {
-      "key": "mw_range",
-      "type": "range",
-      "label": "MW Range",
-      "defaultValue": [
-        0,
-        500
+      "key": "route",
+      "type": "select",
+      "label": "Administration Route",
+      "defaultValue": "oral",
+      "options": [
+        { "value": "oral", "label": "Oral" },
+        { "value": "iv", "label": "Intravenous (IV)" },
+        { "value": "inhalation", "label": "Inhalation" },
+        { "value": "dermal", "label": "Dermal" },
+        { "value": "parenteral", "label": "Parenteral" }
       ],
-      "tooltip": "Molecular weight (Da) range (min - max)."
+      "tooltip": "Administration route determines which hard-gate thresholds are applied (e.g., DILI for oral, Skin_Reaction for dermal)."
     },
     {
-      "key": "logp_range",
-      "type": "range",
-      "label": "logP Range",
-      "defaultValue": [
-        -2,
-        5.0
+      "key": "mode",
+      "type": "select",
+      "label": "Threshold Mode",
+      "defaultValue": "basic",
+      "options": [
+        { "value": "basic", "label": "Basic — use default route thresholds" },
+        { "value": "advanced", "label": "Advanced — override with custom thresholds" }
       ],
-      "tooltip": "Calculated logP (lipophilicity) range (min - max)."
+      "tooltip": "Basic uses built-in route thresholds. Advanced lets you override individual hard-gate values."
     },
     {
-      "key": "tpsa_range",
-      "type": "range",
-      "label": "TPSA Range",
-      "defaultValue": [
-        0,
-        140
-      ],
-      "tooltip": "Topological polar surface area (Å²) range (min - max)."
+      "key": "drug_likeness",
+      "type": "boolean",
+      "label": "Evaluate Drug-Likeness",
+      "defaultValue": false,
+      "tooltip": "Run Lipinski / Veber / Egan / Muegge rule checks (oral route only). Requires the RDKit descriptor service.",
+      "showWhen": [
+        { "field": "route", "in": ["oral"] }
+      ]
     },
     {
-      "key": "hbd_range",
-      "type": "range",
-      "label": "HBD Range",
-      "defaultValue": [
-        0,
-        5
+      "key": "thresholds",
+      "type": "json",
+      "label": "Custom Thresholds",
+      "placeholder": "{\"hERG\": [\">=\", 0.7], \"AMES\": [\">=\", 0.5]}",
+      "tooltip": "Override individual ADMET-AI hard-gate thresholds. Each entry maps a field name to an [operator, value] pair.",
+      "showWhen": [
+        { "field": "mode", "in": ["advanced"] }
       ],
-      "tooltip": "Number of hydrogen bond donors range (min - max)."
-    },
-    {
-      "key": "hba_range",
-      "type": "range",
-      "label": "HBA Range",
-      "defaultValue": [
-        0,
-        10
-      ],
-      "tooltip": "Number of hydrogen bond acceptors range (min - max)."
-    },
-    {
-      "key": "rotb_range",
-      "type": "range",
-      "label": "RotB Range",
-      "defaultValue": [
-        0,
-        10
-      ],
-      "tooltip": "Number of rotatable bonds range (min - max)."
+      "advanced": true
     }
   ],
   "defaultConfig": {
-    "smiles_column": "smiles",
-    "mw_range": [
-      0,
-      500
-    ],
-    "logp_range": [
-      -2,
-      5.0
-    ],
-    "tpsa_range": [
-      0,
-      140
-    ],
-    "hbd_range": [
-      0,
-      5
-    ],
-    "hba_range": [
-      0,
-      10
-    ],
-    "rotb_range": [
-      0,
-      10
-    ]
+    "admet_models": "admet-ai",
+    "route": "oral",
+    "mode": "basic",
+    "drug_likeness": false
   }
 }

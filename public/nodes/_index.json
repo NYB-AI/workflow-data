@@ -12,7 +12,7 @@
     "candidate-library",
     "singular-compound",
     "document-processor",
-    "toxicity-filter",
+    "toxicity",
     "report-generator",
     "target-mapping",
     "docking",

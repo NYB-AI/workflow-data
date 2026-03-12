@@ -143,6 +143,14 @@
       ]
     },
     {
+      "key": "limit",
+      "type": "number",
+      "label": "Compound Limit",
+      "placeholder": "10000",
+      "defaultValue": 10000,
+      "tooltip": "Maximum number of compounds to return from the selected library sources."
+    },
+    {
       "key": "ingredientListFile",
       "type": "file",
       "label": "Or upload Compound List",
