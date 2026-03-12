@@ -11,12 +11,14 @@
   },
   "outputMockLabel": "5 compounds",
   "outputPageSize": 4,
+  "outputStandardTypes": ["compound_list"],
   "defaultInputs": [
     {
       "id": "compoundList",
       "name": "Compound List",
       "type": "array",
       "required": true,
+      "expectedStandardType": "compound_list",
       "tooltip": "Ligand list including identifiers and file paths for each compound."
     },
     {
@@ -24,6 +26,7 @@
       "name": "Protein Target List",
       "type": "array",
       "required": true,
+      "expectedStandardType": "target_list",
       "tooltip": "Protein targets with prepared structures and optional grid definitions."
     }
   ],
