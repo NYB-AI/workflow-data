@@ -7,12 +7,14 @@
   "color": "red",
   "description": "ADMET-AI hard-gate toxicity filter — rejects compounds that exceed route-specific toxicity thresholds (hERG, AMES, DILI, ClinTox, etc.).",
   "outputMockLabel": "13 compounds",
+  "outputStandardTypes": ["compound_list"],
   "defaultInputs": [
     {
       "id": "input-mol-data",
       "name": "Input Compounds",
       "type": "array",
       "required": true,
+      "expectedStandardType": "compound_list",
       "tooltip": "Table of compounds including at least a SMILES column and basic properties."
     }
   ],
@@ -43,6 +45,7 @@
       "label": "Compound List",
       "tooltip": "Compounds for ADMET prediction. Provide SMILES strings or connect from an upstream node.",
       "suggestedField": ["smiles", "name", "ingredient_name", "inci_name"],
+      "expectedStandardType": "compound_list",
       "accept": ".csv,.txt,.smi"
     },
     {
