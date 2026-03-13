@@ -136,6 +136,154 @@
         {
           "value": "cas",
           "label": "CAS"
+        },
+        {
+          "value": "coconut",
+          "label": "COCONUT"
+        },
+        {
+          "value": "npass",
+          "label": "NPASS"
+        },
+        {
+          "value": "lotus",
+          "label": "LOTUS"
+        },
+        {
+          "value": "cmaup",
+          "label": "CMAUP"
+        },
+        {
+          "value": "plantae_db",
+          "label": "PlantaeDB"
+        },
+        {
+          "value": "npbs",
+          "label": "NPBS"
+        },
+        {
+          "value": "knapsack",
+          "label": "KNApSAcK"
+        },
+        {
+          "value": "phyto4health",
+          "label": "Phyto4Health"
+        },
+        {
+          "value": "chebi",
+          "label": "CHEBI"
+        },
+        {
+          "value": "anp",
+          "label": "ANP"
+        },
+        {
+          "value": "tcmbank",
+          "label": "TCMBank"
+        },
+        {
+          "value": "npatlas",
+          "label": "NPAtlas"
+        },
+        {
+          "value": "tcmsp",
+          "label": "TCMSP"
+        },
+        {
+          "value": "cmnpd",
+          "label": "CMNPD"
+        },
+        {
+          "value": "duke",
+          "label": "DUKE"
+        },
+        {
+          "value": "batman",
+          "label": "BATMAN"
+        },
+        {
+          "value": "anpdb",
+          "label": "ANPDB"
+        },
+        {
+          "value": "imppat",
+          "label": "IMPPAT"
+        },
+        {
+          "value": "streptomedb",
+          "label": "StreptomeDB"
+        },
+        {
+          "value": "hit",
+          "label": "HIT"
+        },
+        {
+          "value": "sistematx",
+          "label": "SISTEMATX"
+        },
+        {
+          "value": "vietherb",
+          "label": "VietHerb"
+        },
+        {
+          "value": "emnpd",
+          "label": "EMNPD"
+        },
+        {
+          "value": "tpcn",
+          "label": "TPCN"
+        },
+        {
+          "value": "tppt",
+          "label": "TPPT"
+        },
+        {
+          "value": "lanapdb",
+          "label": "LANaPDB"
+        },
+        {
+          "value": "watermelon",
+          "label": "Watermelon"
+        },
+        {
+          "value": "inflamnat",
+          "label": "InflamNat"
+        },
+        {
+          "value": "swmd",
+          "label": "SWMD"
+        },
+        {
+          "value": "pmhub",
+          "label": "PMhub"
+        },
+        {
+          "value": "sancdb",
+          "label": "SANCDB"
+        },
+        {
+          "value": "biofacquim",
+          "label": "BIOFACQUIM"
+        },
+        {
+          "value": "perunpdb",
+          "label": "PeruNPDB"
+        },
+        {
+          "value": "npdbejecol",
+          "label": "NPDBEjeCol"
+        },
+        {
+          "value": "nat_uv_db",
+          "label": "NAT-UV DB"
+        },
+        {
+          "value": "npedia",
+          "label": "NPEdia"
+        },
+        {
+          "value": "carotenoids_db",
+          "label": "Carotenoids DB"
         }
       ],
       "tooltip": "Choose one or more databases to pull candidate structures from.",
