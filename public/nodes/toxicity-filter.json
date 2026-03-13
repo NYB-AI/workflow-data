@@ -1,5 +1,5 @@
 {
-  "type": "toxicity",
+  "type": "toxicity-filter",
   "module": "toxicity-filter",
   "label": "Toxicity Filter",
   "category": "analysis",
