@@ -39,6 +39,7 @@
     "post-ingestion-biotransformation",
     "bioactivity-profiler",
     "functional-synergistics",
-    "functional-gap-analysis"
+    "functional-gap-analysis",
+    "bioactivity-prediction"
   ]
 }
