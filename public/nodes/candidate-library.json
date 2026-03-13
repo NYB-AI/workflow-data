@@ -138,151 +138,151 @@
           "label": "CAS"
         },
         {
-          "value": "coconut",
+          "value": "COCONUT",
           "label": "COCONUT"
         },
         {
-          "value": "npass",
+          "value": "NPASS",
           "label": "NPASS"
         },
         {
-          "value": "lotus",
+          "value": "LOTUS",
           "label": "LOTUS"
         },
         {
-          "value": "cmaup",
+          "value": "CMAUP",
           "label": "CMAUP"
         },
         {
-          "value": "plantae_db",
+          "value": "PlantaeDB",
           "label": "PlantaeDB"
         },
         {
-          "value": "npbs",
+          "value": "NPBS",
           "label": "NPBS"
         },
         {
-          "value": "knapsack",
+          "value": "KNApSAcK",
           "label": "KNApSAcK"
         },
         {
-          "value": "phyto4health",
+          "value": "Phyto4Health",
           "label": "Phyto4Health"
         },
         {
-          "value": "chebi",
+          "value": "CHEBI",
           "label": "CHEBI"
         },
         {
-          "value": "anp",
+          "value": "ANP",
           "label": "ANP"
         },
         {
-          "value": "tcmbank",
+          "value": "TCMBank",
           "label": "TCMBank"
         },
         {
-          "value": "npatlas",
+          "value": "NPAtlas",
           "label": "NPAtlas"
         },
         {
-          "value": "tcmsp",
+          "value": "TCMSP",
           "label": "TCMSP"
         },
         {
-          "value": "cmnpd",
+          "value": "CMNPD",
           "label": "CMNPD"
         },
         {
-          "value": "duke",
+          "value": "DUKE",
           "label": "DUKE"
         },
         {
-          "value": "batman",
+          "value": "BATMAN",
           "label": "BATMAN"
         },
         {
-          "value": "anpdb",
+          "value": "ANPDB",
           "label": "ANPDB"
         },
         {
-          "value": "imppat",
+          "value": "IMPPAT",
           "label": "IMPPAT"
         },
         {
-          "value": "streptomedb",
+          "value": "StreptomeDB",
           "label": "StreptomeDB"
         },
         {
-          "value": "hit",
+          "value": "HIT",
           "label": "HIT"
         },
         {
-          "value": "sistematx",
+          "value": "SISTEMATX",
           "label": "SISTEMATX"
         },
         {
-          "value": "vietherb",
+          "value": "VietHerb",
           "label": "VietHerb"
         },
         {
-          "value": "emnpd",
+          "value": "EMNPD",
           "label": "EMNPD"
         },
         {
-          "value": "tpcn",
+          "value": "TPCN",
           "label": "TPCN"
         },
         {
-          "value": "tppt",
+          "value": "TPPT",
           "label": "TPPT"
         },
         {
-          "value": "lanapdb",
+          "value": "LANaPDB",
           "label": "LANaPDB"
         },
         {
-          "value": "watermelon",
+          "value": "Watermelon",
           "label": "Watermelon"
         },
         {
-          "value": "inflamnat",
+          "value": "InflamNat",
           "label": "InflamNat"
         },
         {
-          "value": "swmd",
+          "value": "SWMD",
           "label": "SWMD"
         },
         {
-          "value": "pmhub",
+          "value": "PMhub",
           "label": "PMhub"
         },
         {
-          "value": "sancdb",
+          "value": "SANCDB",
           "label": "SANCDB"
         },
         {
-          "value": "biofacquim",
+          "value": "BIOFACQUIM",
           "label": "BIOFACQUIM"
         },
         {
-          "value": "perunpdb",
+          "value": "PeruNPDB",
           "label": "PeruNPDB"
         },
         {
-          "value": "npdbejecol",
+          "value": "NPDBEjeCol",
           "label": "NPDBEjeCol"
         },
         {
-          "value": "nat_uv_db",
+          "value": "NAT_UV_DB",
           "label": "NAT-UV DB"
         },
         {
-          "value": "npedia",
+          "value": "NPEdia",
           "label": "NPEdia"
         },
         {
-          "value": "carotenoids_db",
+          "value": "Carotenoids_DB",
           "label": "Carotenoids DB"
         }
       ],
