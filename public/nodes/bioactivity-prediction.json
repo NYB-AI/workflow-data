@@ -72,9 +72,13 @@
         {
           "value": "dtign",
           "label": "DTIGN"
+        },
+        {
+          "value": "ligospace",
+          "label": "LigoSpace"
         }
       ],
-      "defaultValue": "dtign"
+      "defaultValue": "ligospace"
     },
     {
       "key": "compoundfiles",
