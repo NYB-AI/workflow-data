@@ -69,8 +69,8 @@
 			"tooltip": "Select proteins for prediction.",
 			"options": [
 				{
-					"value": "VEGF-A",
-					"label": "VEGF-A"
+					"value": "VEGF-R",
+					"label": "VEGF-R"
 				},
 				{
 					"value": "TGF-β1",
@@ -172,4 +172,3 @@
 		"pocketModel": "fpocket"
 	}
 }
-
