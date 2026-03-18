@@ -1,0 +1,12 @@
+Pair,Predicted Interaction Signal,Risk Type (Dominant),Confidence,Flag
+Minoxidil – Eugenol,Enhanced skin penetration (eugenol as permeation enhancer) + vasodilatory overlap,Contact dermatitis / irritation,Medium,MODERATE_RISK
+Minoxidil – Anethole,Mild enhancement of dermal absorption; weak PD interaction,Mild local irritation,Low,SAFE
+Minoxidil – Licochalcone A,Anti-inflammatory modulation reduces minoxidil-induced irritation,Reduced irritation (protective effect),Medium,SAFE
+Eugenol – Anethole,Shared phenylpropanoid structure → additive sensitization potential,Skin sensitization,Medium,MODERATE_RISK
+Eugenol – Licochalcone A,Counteracting effects (pro-sensitizing vs anti-inflammatory),Net irritation depends on ratio,Medium,MODERATE_RISK
+Anethole – Licochalcone A,Anti-inflammatory buffering of mild irritant effect,Minimal irritation risk,Low,SAFE
+Minoxidil – Eugenol – Anethole (triad),Synergistic penetration enhancement + cumulative irritant load,Irritation / erythema,Medium–High,MODERATE_RISK
+Minoxidil – Eugenol – Licochalcone A (triad),Penetration enhancement balanced by anti-inflammatory action,Controlled irritation risk,Medium,MODERATE_RISK
+Minoxidil – Anethole – Licochalcone A (triad),Mild absorption boost with anti-inflammatory stabilization,Low irritation risk,Low–Medium,SAFE
+Eugenol – Anethole – Licochalcone A (triad),Sensitization partially mitigated by anti-inflammatory signaling,Residual sensitization risk,Medium,MODERATE_RISK
+All four combined,Enhanced delivery + competing inflammatory vs anti-inflammatory signals,Dose-dependent irritation risk,Medium,MODERATE_RISK
