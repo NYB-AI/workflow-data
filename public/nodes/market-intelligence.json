@@ -8,10 +8,10 @@
   "defaultInputs": [],
   "defaultOutputs": [
     {
-      "id": "pdf_result",
-      "name": "PDF Result",
+      "id": "pdf_url",
+      "name": "PDF URL",
       "type": "string",
-      "description": "Base64-encoded PDF of the combined report (same content as result)"
+      "description": "s3 URI of the PDF report"
     }
   ],
   "configSchema": [
