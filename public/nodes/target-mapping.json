@@ -53,11 +53,18 @@
   ],
   "configSchema": [
     {
-      "key": "manualFreetext",
+      "key": "query",
       "type": "textarea",
       "label": "Target Input",
       "placeholder": "Enter target name or biological effect (e.g., GSK3B, hair growth trigger...)",
       "tooltip": "Use this when you want to type a target or biological effect manually instead of wiring it from another node."
+    },
+    {
+      "key": "max_results",
+      "type": "number",
+      "label": "Max results",
+      "placeholder": "10 (default)",
+      "tooltip": "Maximum number of results to return."
     }
   ],
   "defaultConfig": {
