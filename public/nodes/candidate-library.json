@@ -69,6 +69,23 @@
   ],
   "configSchema": [
     {
+      "key": "mode",
+      "type": "select",
+      "label": "Select datasource",
+      "tooltip": "Select the datasource to use for the candidate library.",
+      "options": [
+        {
+          "value": "vecurate",
+          "label": "Vecurate"
+        },
+        {
+          "value": "upload",
+          "label": "Upload"
+        }
+      ],
+      "defaultValue": "vecurate"
+    },
+    {
       "key": "library_sources",
       "type": "multiselect",
       "label": "Primary Sources",
@@ -288,7 +305,13 @@
       ],
       "tooltip": "Choose one or more databases to pull candidate structures from.",
       "defaultValue": [
-        "vecurate"
+        "BATMAN"
+      ],
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["vecurate"]
+        }
       ]
     },
     {
@@ -297,14 +320,26 @@
       "label": "Compound Limit",
       "placeholder": "10000",
       "defaultValue": 10000,
-      "tooltip": "Maximum number of compounds to return from the selected library sources."
+      "tooltip": "Maximum number of compounds to return from the selected library sources.",
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["vecurate"]
+        }
+      ]
     },
     {
       "key": "ingredientListFile",
       "type": "file",
       "label": "Or upload Compound List",
       "accept": ".pdf,.doc,.docx,.txt,.csv",
-      "tooltip": "Upload your own compound list; parsed names/SMILES will be merged into the library."
+      "tooltip": "Upload your own compound list; parsed names/SMILES will be merged into the library.",
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["upload"]
+        }
+      ]
     }
   ]
 }
