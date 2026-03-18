@@ -66,7 +66,7 @@
 			"suggestedField": ["claim", "proposed_claim"],
 			"tooltip": "Enter the marketing or scientific claim text directly (e.g. \"Promotes hair growth by strengthening scalp barrier\") or upload a file containing multiple claims.",
 			"accept": ".txt,.csv",
-			"defaultValue": "“Clinically proven hair growth” “Prevents hair loss” “Strengthens hair roots” “Improves the appearance of hair density” “Supports scalp health”“Cooling and refreshing scalp feel” “Helps maintain healthy-looking hair” “Activates Wnt/β-catenin signaling” “Dermatologically tested”"
+			"defaultValue": "\"Clinically proven hair growth\" \"Prevents hair loss\" \"Strengthens hair roots\" \"Improves the appearance of hair density\" \"Supports scalp health\"\"Cooling and refreshing scalp feel\" \"Helps maintain healthy-looking hair\" \"Activates Wnt/β-catenin signaling\" \"Dermatologically tested\""
 		},
 		{
 			"key": "product_category",
