@@ -65,7 +65,7 @@
   ],
   "configSchema": [
     {
-      "key": "modelType",
+      "key": "model",
       "type": "select",
       "label": "Available Tools",
       "options": [
