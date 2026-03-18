@@ -1,0 +1,5 @@
+docked_structure,compound,target,delta_g
+https://workflow-data-2sa8.vercel.app/data/docking/Minoxidil.pdb,Minoxidil,VEGF-R,-5.590
+https://workflow-data-2sa8.vercel.app/data/docking/Eugenol.pdb,Eugenol,VEGF-R,-5.188
+https://workflow-data-2sa8.vercel.app/data/docking/Anethole.pdb,Anethole,VEGF-R,-5.468
+https://workflow-data-2sa8.vercel.app/data/docking/LicochalconeA.pdb,Licochalcone A,VEGF-R,-5.288
