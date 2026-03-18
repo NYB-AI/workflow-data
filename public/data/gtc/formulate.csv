@@ -1,9 +1,9 @@
-Component,% w/w,Functional role
-Purified Water,q.s. to 100,Primary solvent, formulation base
-Minoxidil,2.0–5.0,Primary hair-growth active; vasodilation, anagen induction
-Niacinamide (Vitamin B3),3.0,Barrier support, scalp conditioning, irritation mitigation
+Component,percent_w_w,Functional_role
+Purified Water,q.s. to 100,"Primary solvent, formulation base"
+Minoxidil,2.0–5.0,"Primary hair-growth active; vasodilation, anagen induction"
+Niacinamide (Vitamin B3),3.0,"Barrier support, scalp conditioning, irritation mitigation"
 Resveratrol,0.3,Antioxidant; supports Wnt/β-catenin signaling
-Licochalcone A,0.1,Anti-inflammatory; reduces scalp inflammation, supports follicular signaling
+Licochalcone A,0.1,"Anti-inflammatory; reduces scalp inflammation, supports follicular signaling"
 Ferulic Acid,0.2,Antioxidant stabilizer; protects polyphenols from oxidation
 Melatonin,5,Hair-cycle modulation; antioxidant; anagen support
 Menthol,0.2,Sensory cooling; mild follicular penetration support
