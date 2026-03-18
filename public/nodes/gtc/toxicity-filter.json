@@ -9,7 +9,7 @@
 		"credits": 800,
 		"executionTime": 1
 	},
-	"outputMockLabel": "36 compounds",
+	"outputMockLabel": " ",
 	"defaultInputs": [
 		{
 			"id": "input-mol-data",
@@ -368,4 +368,3 @@
 		]
 	}
 }
-
