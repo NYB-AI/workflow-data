@@ -1,4 +1,4 @@
-{
+  {
   "type": "market-intelligence",
   "label": "Market Intelligence",
   "category": "analysis",
@@ -39,9 +39,12 @@
     {
       "key": "product_formulation",
       "type": "text",
-      "label": "Product Formulation",
+      "label": "Product Formulation (optional)",
       "placeholder": "e.g. oil, serum, tablet",
-      "description": "Product formulation type (e.g. oil, serum, tablet)"
+      "description": "Product formulation type (e.g. oil, serum, tablet)",
+      "showWhen": [
+        { "field": "is_drug", "in": ["false"] }
+      ]
     }
   ],
   "defaultConfig": {
