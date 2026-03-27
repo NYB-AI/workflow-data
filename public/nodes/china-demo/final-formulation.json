@@ -1,0 +1,113 @@
+{
+  "type": "final-formulation",
+  "label": "Final Formulation",
+  "category": "analysis",
+  "icon": "flask-conical",
+  "color": "green",
+  "description": "Generates the final ingredient formulation with recommended dosages. Cross-references TCM toxicity and dosage databases to produce a safe, evidence-backed formulation table.",
+  "pricing": {
+    "credits": 300,
+    "executionTime": 1
+  },
+  "outputMockLabel": "Formulation ready",
+  "defaultInputs": [
+    {
+      "id": "rankedCandidates",
+      "name": "Ranked Candidates",
+      "type": "array",
+      "required": true,
+      "tooltip": "Connect output from the Ranking by Count node."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "index",
+      "name": "#",
+      "type": "string",
+      "tooltip": "Row index."
+    },
+    {
+      "id": "SKU",
+      "name": "SKU",
+      "type": "string",
+      "tooltip": "Stock-keeping unit / product name for this formulation slot."
+    },
+    {
+      "id": "ingredient",
+      "name": "成分 (Ingredient)",
+      "type": "string",
+      "tooltip": "Chinese and Latin name of the ingredient."
+    },
+    {
+      "id": "role",
+      "name": "Role",
+      "type": "string",
+      "tooltip": "Functional role in the formulation (e.g. Direct, Supportive, Adjuvant)."
+    },
+    {
+      "id": "daily_dose",
+      "name": "日剂量（建议）",
+      "type": "string",
+      "tooltip": "Recommended human daily dose."
+    },
+    {
+      "id": "animal_dosage",
+      "name": "Animal Dosage",
+      "type": "string",
+      "tooltip": "Dose used in animal studies (mg/kg or g/kg)."
+    },
+    {
+      "id": "animal_type",
+      "name": "Animal Type",
+      "type": "string",
+      "tooltip": "Animal model used (e.g. mouse, rat)."
+    },
+    {
+      "id": "hed",
+      "name": "HED (human equivalent dosage)",
+      "type": "string",
+      "tooltip": "Human equivalent dose converted from animal data (mg/kg)."
+    },
+    {
+      "id": "extract_type",
+      "name": "Extract Type",
+      "type": "string",
+      "tooltip": "Extraction method or form of the ingredient."
+    },
+    {
+      "id": "reference_dosage",
+      "name": "Reference (dosage)",
+      "type": "string",
+      "tooltip": "Dosage reference notes from pharmacopoeia or clinical guidelines."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "reference_sources",
+      "type": "multiselect",
+      "label": "Reference databases",
+      "tooltip": "Select TCM pharmacopoeia databases to cross-check ingredient toxicity and dosage recommendations.\n\n> **大医 (dayi.org.cn)** — Traditional Chinese Medicine clinical practice reference\n> **中华人民共和国药典 (chp.org.cn)** — Official Pharmacopoeia of the People's Republic of China",
+      "options": [
+        {
+          "value": "dayi",
+          "label": "大医 – dayi.org.cn (TCM toxicity & dosage)"
+        },
+        {
+          "value": "chp",
+          "label": "中华人民共和国药典 – ydz.chp.org.cn (Official Chinese Pharmacopoeia)"
+        }
+      ],
+      "defaultValue": [
+        "dayi",
+        "chp"
+      ]
+    },
+    {
+      "key": "reference_note",
+      "type": "markdown",
+      "label": "",
+      "color": "info",
+      "defaultValue": "**TCM Dosage & Toxicity References**\n\nThe selected databases are used to verify safe dosage ranges and flag potential toxicity concerns for each ingredient:\n- [dayi.org.cn](https://www.dayi.org.cn/) — clinical TCM dosage reference\n- [ydz.chp.org.cn](https://ydz.chp.org.cn/#/main) — Pharmacopoeia of the People's Republic of China\n\nAlways consult a qualified TCM practitioner before finalising formulations."
+    }
+  ]
+}

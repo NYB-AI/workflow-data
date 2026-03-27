@@ -1,0 +1,85 @@
+{
+  "type": "literature-review",
+  "label": "Literature Review",
+  "category": "analysis",
+  "icon": "book-open-text",
+  "color": "teal",
+  "description": "Search and screen publications for herbs, ingredients, and target proteins; returns abstracts with matched compounds and targets.",
+  "pricing": {
+    "credits": 400,
+    "executionTime": 1
+  },
+  "outputMockLabel": "357603 articles",
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "source_id",
+      "name": "Source ID",
+      "type": "string",
+      "tooltip": "Stable identifier from the selected source (e.g. PMID, PMC ID, DOI, or PubChem reference id)."
+    },
+    {
+      "id": "abstract",
+      "name": "Abstract",
+      "type": "string",
+      "tooltip": "Publication abstract text when available; otherwise title or summary snippet."
+    },
+    {
+      "id": "included_plant_compound",
+      "name": "Included plant / compound",
+      "type": "string",
+      "tooltip": "Herb or ingredient name from your CSV that was matched in this record (one row per hit if multiple match)."
+    },
+    {
+      "id": "included_target",
+      "name": "Included target",
+      "type": "string",
+      "tooltip": "Target protein (or gene) name from your CSV that was matched in this record."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "herbIngredientCsv",
+      "type": "file",
+      "label": "Herb & ingredient list (CSV)",
+      "accept": ".csv,text/csv",
+      "tooltip": "Upload a CSV listing herb and ingredient names (e.g. one column `name` or a single column of terms)."
+    },
+    {
+      "key": "targetProteinCsv",
+      "type": "file",
+      "label": "Target protein list (CSV)",
+      "accept": ".csv,text/csv",
+      "tooltip": "Upload a CSV listing target proteins or genes to match in literature (e.g. column `target` or gene symbols)."
+    },
+    {
+      "key": "literatureSources",
+      "type": "multiselect",
+      "label": "Sources to query",
+      "options": [
+        {
+          "value": "pubmed",
+          "label": "PubMed (NCBI)"
+        },
+        {
+          "value": "europepmc",
+          "label": "Europe PMC"
+        },
+        {
+          "value": "semantic_scholar",
+          "label": "Semantic Scholar"
+        },
+        {
+          "value": "crossref",
+          "label": "Crossref"
+        },
+        {
+          "value": "pubchem",
+          "label": "PubChem (literature & bioactivity references)"
+        }
+      ],
+      "defaultValue": ["pubmed"],
+      "tooltip": "Select one or more literature or bibliographic sources to crawl for matching abstracts and citations."
+    }
+  ]
+}

@@ -286,6 +286,11 @@
           "type": "string",
           "description": "For markdown fields: color theme for the card container (e.g., 'info', 'success', 'warning', 'error', 'default')"
         },
+        "rows": {
+          "type": "integer",
+          "description": "For textarea fields: number of visible rows (default: 4)",
+          "minimum": 1
+        },
         "min": {
           "type": "number",
           "description": "For range fields: minimum value allowed"

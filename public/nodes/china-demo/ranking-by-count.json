@@ -1,0 +1,166 @@
+{
+  "type": "ranking-by-count",
+  "label": "Ranking by Count",
+  "category": "analysis",
+  "icon": "bar-chart-2",
+  "color": "amber",
+  "description": "Ranks plants, compounds, or other entities by hit count across formulation categories, aggregating pathway, biology, and evidence metadata.",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "outputMockLabel": "Ranked candidates",
+  "defaultInputs": [
+    {
+      "id": "formulationData",
+      "name": "Formulation Data",
+      "type": "array",
+      "required": true,
+      "tooltip": "Connect output from the Final Formulation by Category node."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "Category",
+      "name": "Category",
+      "type": "string",
+      "tooltip": "Therapeutic or thematic category."
+    },
+    {
+      "id": "Canonical_ID",
+      "name": "Canonical ID",
+      "type": "string",
+      "tooltip": "Normalised identifier for the entity (e.g. curcuma_longa)."
+    },
+    {
+      "id": "Canonical_Type",
+      "name": "Canonical Type",
+      "type": "string",
+      "tooltip": "Entity type (e.g. spices, new_food, herb)."
+    },
+    {
+      "id": "Hits_in_Screening",
+      "name": "Hits in Screening",
+      "type": "string",
+      "tooltip": "Number of literature hits for this entity."
+    },
+    {
+      "id": "Aliases (same name)",
+      "name": "Aliases",
+      "type": "string",
+      "tooltip": "Alternative names / synonyms, semicolon-separated."
+    },
+    {
+      "id": "CVD_risk",
+      "name": "CVD risk",
+      "type": "string",
+      "tooltip": "CVD risk flag or score."
+    },
+    {
+      "id": "Obesity_risk",
+      "name": "Obesity risk",
+      "type": "string",
+      "tooltip": "Obesity risk flag or score."
+    },
+    {
+      "id": "Core",
+      "name": "Core",
+      "type": "string",
+      "tooltip": "Core biology terms."
+    },
+    {
+      "id": "Pathway",
+      "name": "Pathway",
+      "type": "string",
+      "tooltip": "Pathway names, semicolon-separated."
+    },
+    {
+      "id": "Key Molecular Nodes",
+      "name": "Key Molecular Nodes",
+      "type": "string",
+      "tooltip": "Key molecular nodes / regulators."
+    },
+    {
+      "id": "extract_type",
+      "name": "Extract type",
+      "type": "string",
+      "tooltip": "Extract or solvent type(s)."
+    },
+    {
+      "id": "cell_lines",
+      "name": "Cell lines",
+      "type": "string",
+      "tooltip": "Cell lines or models."
+    },
+    {
+      "id": "parameter",
+      "name": "Parameter",
+      "type": "string",
+      "tooltip": "Dose / concentration data."
+    },
+    {
+      "id": "effect_on_target",
+      "name": "Effect on target",
+      "type": "string",
+      "tooltip": "Effect on the relevant target."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "count_field",
+      "type": "select",
+      "label": "Field to count / rank by",
+      "tooltip": "Choose which column from upstream formulation data to aggregate and rank.",
+      "options": [
+        {
+          "value": "Plant",
+          "label": "Plant"
+        },
+        {
+          "value": "Canonical_ID",
+          "label": "Canonical ID"
+        },
+        {
+          "value": "Category",
+          "label": "Category"
+        },
+        {
+          "value": "Pathway name (standardized)",
+          "label": "Pathway name"
+        },
+        {
+          "value": "Core Biology",
+          "label": "Core biology"
+        },
+        {
+          "value": "target_included",
+          "label": "Target included"
+        },
+        {
+          "value": "extract_type",
+          "label": "Extract type"
+        }
+      ],
+      "defaultValue": "Plant",
+      "suggestedField": [
+        "Plant",
+        "Canonical_ID",
+        "Category"
+      ]
+    },
+    {
+      "key": "min_hits",
+      "type": "number",
+      "label": "Minimum hits threshold",
+      "tooltip": "Exclude entities with fewer hits than this value (0 = include all).",
+      "defaultValue": 0
+    },
+    {
+      "key": "top_n",
+      "type": "number",
+      "label": "Top N results",
+      "tooltip": "Return only the top N ranked entities (0 = return all).",
+      "defaultValue": 0
+    }
+  ]
+}

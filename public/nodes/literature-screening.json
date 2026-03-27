@@ -1,0 +1,128 @@
+{
+  "type": "literature-screening",
+  "label": "Literature Screening",
+  "category": "analysis",
+  "icon": "search",
+  "color": "teal",
+  "description": "Screen literature rows using a structured LLM prompt: extract extract type, cell lines, dose parameters, target effects, pathways, and categories from abstracts.",
+  "pricing": {
+    "credits": 500,
+    "executionTime": 1
+  },
+  "outputMockLabel": "Screened rows",
+  "defaultInputs": [],
+  "defaultOutputs": [
+    {
+      "id": "source_id",
+      "name": "Source ID",
+      "type": "string",
+      "tooltip": "Identifier carried from upstream (e.g. PMID, DOI)."
+    },
+    {
+      "id": "abstract",
+      "name": "Abstract",
+      "type": "string",
+      "tooltip": "Abstract text used for extraction."
+    },
+    {
+      "id": "included_plant_compound",
+      "name": "Included plant / compound",
+      "type": "string",
+      "tooltip": "Plant or ingredient focus for screening."
+    },
+    {
+      "id": "included_target",
+      "name": "Included target",
+      "type": "string",
+      "tooltip": "Target protein or gene focus for screening."
+    },
+    {
+      "id": "extract_type",
+      "name": "Extract type",
+      "type": "string",
+      "tooltip": "Solvent or extract type (e.g. ethanol, aqueous, EGb 761)."
+    },
+    {
+      "id": "cell_lines",
+      "name": "Cell lines",
+      "type": "string",
+      "tooltip": "Cell lines, animals, or tissues (JSON array string or pipe-separated in mock data)."
+    },
+    {
+      "id": "parameter",
+      "name": "Parameter",
+      "type": "string",
+      "tooltip": "Dose, IC50/EC50, or concentration with units."
+    },
+    {
+      "id": "effect_on_target",
+      "name": "Effect on target",
+      "type": "string",
+      "tooltip": "Specific effect on the target with magnitude if available."
+    },
+    {
+      "id": "pathway_name",
+      "name": "Pathway name",
+      "type": "string",
+      "tooltip": "Biological pathway(s) associated with the finding."
+    },
+    {
+      "id": "core_biology",
+      "name": "Core biology",
+      "type": "string",
+      "tooltip": "Core biological processes (e.g. redox, apoptosis)."
+    },
+    {
+      "id": "categories",
+      "name": "Categories",
+      "type": "string",
+      "tooltip": "High-level thematic categories."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "abstract_column",
+      "type": "text",
+      "label": "Abstract",
+      "tooltip": "Map the abstract text column from upstream literature output.",
+      "suggestedField": [
+        "abstract"
+      ]
+    },
+    {
+      "key": "plant_compound_column",
+      "type": "text",
+      "label": "Plant / ingredient",
+      "tooltip": "Map the plant or ingredient name column (e.g. included_plant_compound).",
+      "suggestedField": [
+        "included_plant_compound"
+      ]
+    },
+    {
+      "key": "matched_name_column",
+      "type": "text",
+      "label": "Matched name (optional)",
+      "tooltip": "Map matched scientific name if available (e.g. matched_name); substitutes {matched_name} in the prompt.",
+      "suggestedField": [
+        "matched_name"
+      ]
+    },
+    {
+      "key": "target_column",
+      "type": "text",
+      "label": "Target",
+      "tooltip": "Map the target column from upstream (e.g. included_target).",
+      "suggestedField": [
+        "included_target"
+      ]
+    },
+    {
+      "key": "extraction_prompt",
+      "type": "textarea",
+      "label": "Extraction prompt",
+      "defaultValue": "You are an expert drug discovery scientist and biochemist specializing in natural product research.\n\n**CONTEXT - This abstract discusses:**\n- Plant/Compound: {plant_compound} ({matched_name})\n- Target of Interest: {target}\n\nExtract the following information from the scientific abstract and return it as a JSON object.\nRead carefully and focus on information related to {plant_compound} ({matched_name}) and its effects on {target}.\n\n**IMPORTANT EXTRACTION GUIDELINES:**\n\n1. **Extract Type**: Look for solvent or extraction method from {plant_compound} used in the study:\n   - Common types: ethanol, methanol, aqueous, water, petroleum ether, ethyl acetate, chloroform, hexane, butanol\n   - Also look for: hydroalcoholic, hydro-ethanolic, crude extract, essential oil, extract, meat, seed, pulp, leaf, bark, root, fruit, flower\n   - List also plant extract or any other names of plan extract if it's mentioned, for example: gingko biloba extract, Tanakan, EGB, GBE...\n   - Do not make up any information, be very comprehensive, if not mentioned, return null\n\n2. **Cell Lines**: Extract the names of cell lines/animal types/organ/tissues used to test the extract:\n   - Format as a list: [\"HT-29\", \"MCF-7\", \"A549\"]\n   - Include cancer cell lines, normal cell lines, etc.\n   - Look for patterns like: HT-29, MCF-7, A549, HeLa, RAW 264.7, etc.\n   - Look for animals like: rat, mice, rabbit, monkey, human, neurons, hepatocytes, etc.\n   - Do not make up any information, if not mentioned, return null\n\n3. **Parameter**: Extract the MOST SPECIFIC dose/concentration data related to {plant_compound} ONLY activity on the cell line or animal with exact values:\n   - Prioritize IC50, EC50, GI50, ED50, LD50, mg/mL, μg/mL, mg/kg, μM, μg/μL, mg/kg/day, g/kg, g/kg/day, g/kg/week, mg/d, g/mL, g/day, microgram, gram values with units\n   - Include the exact numerical values and units\n   - Format: \"IC50 = 25.4 ± 2.1 μg/mL\" or \"GI50 = 7-8 μM\" or \"3,750-15,000 U/kg\"\n   - If multiple values, include the most relevant ones related to {plant_compound} activity only\n   - Do not make up any information, if not mentioned, return null\n\n4. **Effect on Target**: Extract the SPECIFIC effect of {plant_compound} on {target}:\n   - Include quantitative effects if available (e.g., \"reduced by 50%\", \"increased 2-fold\")\n   - Inhibition terms: inhibit, suppress, repress, attenuate, antagonize, downregulate, inactivate, restrain, impede, diminish, constrain, reduce, decrease, block, scavenge\n   - Activation terms: activate, induce, stimulate, enhance, potentiate, upregulate, initiate, promote, facilitate, augment, trigger, amplify, increase\n   - Include the magnitude of effect if mentioned (e.g., \"reduced ROS formation by 60%\", \"increased from 112 to 85 microns\")\n   - Focus ONLY on effects related to the target: {target}\n   - Do not make up any information, if not mentioned, return null\n\n5. **Pathway name**: Infer or extract named biological pathways implicated for {plant_compound} and {target} when stated or strongly implied; otherwise null.\n\n6. **Core biology**: Short phrases for core biological processes (e.g. redox, apoptosis); otherwise null.\n\n7. **Categories**: High-level thematic categories (e.g. therapeutic area tags); otherwise null.\n\n**Required fields:**\n- \"extract_type\": Type of extract/solvent used (string or null)\n- \"cell_lines\": List of cell lines/animals used (array or null)\n- \"parameter\": Most specific dose/concentration with exact values and units (string or null)\n- \"effect_on_target\": Specific effect on {target} with magnitude if available (string or null)\n- \"pathway_name\": Pathway names, semicolon-separated if multiple (string or null)\n- \"core_biology\": Core biology phrases, semicolon-separated if multiple (string or null)\n- \"categories\": Categories, semicolon-separated if multiple (string or null)\n\n**Example output:**\n```json\n{\n  \"extract_type\": \"ethanol\",\n  \"cell_lines\": [\"HT-29\", \"MCF-7\", \"A549\"],\n  \"parameter\": \"IC50 = 25.4 ± 2.1 μg/mL (HT-29), 30.2 ± 1.8 μg/mL (MCF-7)\",\n  \"effect_on_target\": \"inhibited TNF-α production by 65% at 50 μg/mL\",\n  \"pathway_name\": \"NRF2 antioxidant response pathway\",\n  \"core_biology\": \"Redox defense\",\n  \"categories\": \"Longevity & Cellular Resilience\"\n}\n```\n\nReturn only the JSON object, no additional text. Do not make up any information. Focus on the target: {target}.",
+      "tooltip": "Prompt template for the model. Placeholders: {plant_compound}, {matched_name}, {target}.",
+      "rows": 20
+    }
+  ]
+}

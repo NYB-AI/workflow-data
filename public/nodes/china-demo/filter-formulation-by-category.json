@@ -1,0 +1,136 @@
+{
+  "type": "filter-formulation-by-category",
+  "label": "Filter Formulation by Category",
+  "category": "analysis",
+  "icon": "layers",
+  "color": "purple",
+  "description": "Filters and groups literature-screening results by a chosen category field and consolidates plant, target, pathway, and evidence columns per category.",
+  "pricing": {
+    "credits": 200,
+    "executionTime": 1
+  },
+  "outputMockLabel": "Formulations by category",
+  "defaultInputs": [
+    {
+      "id": "screeningResults",
+      "name": "Screening Results",
+      "type": "array",
+      "required": true,
+      "tooltip": "Connect output from the Literature Screening node."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "Category",
+      "name": "Category",
+      "type": "string",
+      "tooltip": "Grouping category (e.g. therapeutic area)."
+    },
+    {
+      "id": "Core Biology",
+      "name": "Core Biology",
+      "type": "string",
+      "tooltip": "Consolidated core biology terms for the category."
+    },
+    {
+      "id": "Pathway name (standardized)",
+      "name": "Pathway name (standardized)",
+      "type": "string",
+      "tooltip": "Standardised pathway names, semicolon-separated."
+    },
+    {
+      "id": "Key molecular nodes",
+      "name": "Key molecular nodes",
+      "type": "string",
+      "tooltip": "Key nodes / regulators."
+    },
+    {
+      "id": "Plant",
+      "name": "Plant",
+      "type": "string",
+      "tooltip": "Plant or ingredient name."
+    },
+    {
+      "id": "target_included",
+      "name": "Target included",
+      "type": "string",
+      "tooltip": "Target(s) matched in this record."
+    },
+    {
+      "id": "extract_type",
+      "name": "Extract type",
+      "type": "string",
+      "tooltip": "Extract or solvent type."
+    },
+    {
+      "id": "cell_lines",
+      "name": "Cell lines",
+      "type": "string",
+      "tooltip": "Cell lines, animals, or tissues."
+    },
+    {
+      "id": "parameter",
+      "name": "Parameter",
+      "type": "string",
+      "tooltip": "Dose / IC50 / concentration with units."
+    },
+    {
+      "id": "effect_on_target",
+      "name": "Effect on target",
+      "type": "string",
+      "tooltip": "Specific effect on the target."
+    },
+    {
+      "id": "source_id",
+      "name": "Source ID",
+      "type": "string",
+      "tooltip": "PMID or other identifier."
+    },
+    {
+      "id": "abstract",
+      "name": "Abstract",
+      "type": "string",
+      "tooltip": "Abstract text."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "group_by_field",
+      "type": "select",
+      "label": "Field to group by",
+      "tooltip": "Choose which column from the upstream screening results to use as the grouping key.",
+      "options": [
+        {
+          "value": "categories",
+          "label": "Categories"
+        },
+        {
+          "value": "pathway_name",
+          "label": "Pathway name"
+        },
+        {
+          "value": "core_biology",
+          "label": "Core biology"
+        },
+        {
+          "value": "included_plant_compound",
+          "label": "Plant / compound"
+        },
+        {
+          "value": "included_target",
+          "label": "Target"
+        },
+        {
+          "value": "extract_type",
+          "label": "Extract type"
+        }
+      ],
+      "defaultValue": "categories",
+      "suggestedField": [
+        "categories",
+        "pathway_name",
+        "core_biology"
+      ]
+    }
+  ]
+}
