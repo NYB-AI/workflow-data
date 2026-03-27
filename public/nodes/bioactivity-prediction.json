@@ -31,20 +31,54 @@
       "name": "Bioactivity Prediction Results",
       "type": "array",
       "description": "Predicted bioactivity values (pEC50 / pIC50) per compound per target"
+    },
+    {
+      "id": "compound_id",
+      "name": "Compound ID",
+      "type": "string"
+    },
+    {
+      "id": "smiles",
+      "name": "SMILES",
+      "type": "string"
+    },
+    {
+      "id": "target",
+      "name": "Target",
+      "type": "string"
+    },
+    {
+      "id": "assay_type",
+      "name": "Metric",
+      "type": "string"
+    },
+    {
+      "id": "assay_value",
+      "name": "Predicted pIC50",
+      "type": "number"
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "type": "string"
     }
   ],
   "configSchema": [
     {
-      "key": "modelType",
+      "key": "model",
       "type": "select",
       "label": "Available Tools",
       "options": [
         {
           "value": "dtign",
           "label": "DTIGN"
+        },
+        {
+          "value": "ligospace",
+          "label": "LigoSpace"
         }
       ],
-      "defaultValue": "dtign"
+      "defaultValue": "ligospace"
     },
     {
       "key": "compoundfiles",

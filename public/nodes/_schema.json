@@ -70,6 +70,13 @@
         "$ref": "#/definitions/ConfigField"
       }
     },
+    "outputStandardTypes": {
+      "type": "array",
+      "description": "List of backend standard_type values this node produces (e.g. ['compound_list', 'target_list']). Used to filter compatible nodes in the Input Source selector UI.",
+      "items": {
+        "type": "string"
+      }
+    },
     "defaultConfig": {
       "type": "object",
       "description": "Optional: Default configuration values. Prefer using 'defaultValue' in configSchema fields instead."
@@ -134,6 +141,14 @@
         "mappedFrom": {
           "type": "string",
           "description": "Reference to source node output (e.g., 'node1.output.data')"
+        },
+        "expectedStandardType": {
+          "type": "string",
+          "description": "Backend standard_type this input port expects (e.g. 'compound_list', 'target_list'). Used to filter compatible upstream nodes in the source selector UI."
+        },
+        "providedStandardType": {
+          "type": "string",
+          "description": "Backend standard_type this output port belongs to (e.g. 'compound_list'). Used to identify compatible source nodes."
         }
       }
     },

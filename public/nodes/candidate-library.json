@@ -10,6 +10,7 @@
     "executionTime": 1
   },
   "outputMockLabel": "25 compounds",
+  "outputStandardTypes": ["compound_list"],
   "defaultInputs": [
     {
       "id": "search_keyword",
@@ -67,6 +68,23 @@
     }
   ],
   "configSchema": [
+    {
+      "key": "mode",
+      "type": "select",
+      "label": "Select datasource",
+      "tooltip": "Select the datasource to use for the candidate library.",
+      "options": [
+        {
+          "value": "vecurate",
+          "label": "Vecurate"
+        },
+        {
+          "value": "upload",
+          "label": "Upload"
+        }
+      ],
+      "defaultValue": "vecurate"
+    },
     {
       "key": "library_sources",
       "type": "multiselect",
@@ -135,11 +153,179 @@
         {
           "value": "cas",
           "label": "CAS"
+        },
+        {
+          "value": "COCONUT",
+          "label": "COCONUT"
+        },
+        {
+          "value": "NPASS",
+          "label": "NPASS"
+        },
+        {
+          "value": "LOTUS",
+          "label": "LOTUS"
+        },
+        {
+          "value": "CMAUP",
+          "label": "CMAUP"
+        },
+        {
+          "value": "PlantaeDB",
+          "label": "PlantaeDB"
+        },
+        {
+          "value": "NPBS",
+          "label": "NPBS"
+        },
+        {
+          "value": "KNApSAcK",
+          "label": "KNApSAcK"
+        },
+        {
+          "value": "Phyto4Health",
+          "label": "Phyto4Health"
+        },
+        {
+          "value": "CHEBI",
+          "label": "CHEBI"
+        },
+        {
+          "value": "ANP",
+          "label": "ANP"
+        },
+        {
+          "value": "TCMBank",
+          "label": "TCMBank"
+        },
+        {
+          "value": "NPAtlas",
+          "label": "NPAtlas"
+        },
+        {
+          "value": "TCMSP",
+          "label": "TCMSP"
+        },
+        {
+          "value": "CMNPD",
+          "label": "CMNPD"
+        },
+        {
+          "value": "DUKE",
+          "label": "DUKE"
+        },
+        {
+          "value": "BATMAN",
+          "label": "BATMAN"
+        },
+        {
+          "value": "ANPDB",
+          "label": "ANPDB"
+        },
+        {
+          "value": "IMPPAT",
+          "label": "IMPPAT"
+        },
+        {
+          "value": "StreptomeDB",
+          "label": "StreptomeDB"
+        },
+        {
+          "value": "HIT",
+          "label": "HIT"
+        },
+        {
+          "value": "SISTEMATX",
+          "label": "SISTEMATX"
+        },
+        {
+          "value": "VietHerb",
+          "label": "VietHerb"
+        },
+        {
+          "value": "EMNPD",
+          "label": "EMNPD"
+        },
+        {
+          "value": "TPCN",
+          "label": "TPCN"
+        },
+        {
+          "value": "TPPT",
+          "label": "TPPT"
+        },
+        {
+          "value": "LANaPDB",
+          "label": "LANaPDB"
+        },
+        {
+          "value": "Watermelon",
+          "label": "Watermelon"
+        },
+        {
+          "value": "InflamNat",
+          "label": "InflamNat"
+        },
+        {
+          "value": "SWMD",
+          "label": "SWMD"
+        },
+        {
+          "value": "PMhub",
+          "label": "PMhub"
+        },
+        {
+          "value": "SANCDB",
+          "label": "SANCDB"
+        },
+        {
+          "value": "BIOFACQUIM",
+          "label": "BIOFACQUIM"
+        },
+        {
+          "value": "PeruNPDB",
+          "label": "PeruNPDB"
+        },
+        {
+          "value": "NPDBEjeCol",
+          "label": "NPDBEjeCol"
+        },
+        {
+          "value": "NAT_UV_DB",
+          "label": "NAT-UV DB"
+        },
+        {
+          "value": "NPEdia",
+          "label": "NPEdia"
+        },
+        {
+          "value": "Carotenoids_DB",
+          "label": "Carotenoids DB"
         }
       ],
       "tooltip": "Choose one or more databases to pull candidate structures from.",
       "defaultValue": [
-        "vecurate"
+        "BATMAN"
+      ],
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["vecurate"]
+        }
+      ]
+    },
+    {
+      "key": "limit",
+      "type": "number",
+      "label": "Compound Limit",
+      "placeholder": "10000",
+      "defaultValue": 10000,
+      "tooltip": "Maximum number of compounds to return from the selected library sources.",
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["vecurate"]
+        }
       ]
     },
     {
@@ -147,7 +333,13 @@
       "type": "file",
       "label": "Or upload Compound List",
       "accept": ".pdf,.doc,.docx,.txt,.csv",
-      "tooltip": "Upload your own compound list; parsed names/SMILES will be merged into the library."
+      "tooltip": "Upload your own compound list; parsed names/SMILES will be merged into the library.",
+      "showWhen": [
+        {
+          "field": "mode",
+          "in": ["upload"]
+        }
+      ]
     }
   ]
 }

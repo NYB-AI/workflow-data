@@ -1,6 +1,6 @@
 {
   "type": "compliance",
-  "label": "Compliance Check (Ingredient)",
+  "label": "Compliance Check",
   "category": "analysis",
   "icon": "shield-check",
   "color": "blue",

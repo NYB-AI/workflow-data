@@ -10,12 +10,14 @@
     "executionTime": 1
   },
   "outputMockLabel": "5 compounds",
+  "outputStandardTypes": ["compound_list"],
   "defaultInputs": [
     {
       "id": "compoundList",
       "name": "Compound List",
       "type": "array",
       "required": true,
+      "expectedStandardType": "compound_list",
       "tooltip": "Input table of compounds (IDs and SMILES) to score."
     },
     {
@@ -23,6 +25,7 @@
       "name": "Target List",
       "type": "array",
       "required": true,
+      "expectedStandardType": "target_list",
       "tooltip": "Targets or assays (EC50 / IC50) that bioactivity should be predicted against."
     }
   ],

@@ -1,0 +1,146 @@
+{
+  "type": "toxicity-filter",
+  "label": "Toxicity Filter",
+  "category": "analysis",
+  "icon": "filtericon",
+  "color": "red",
+  "description": "Filter compounds based on physicochemical properties and custom rules.",
+  "pricing": {
+    "credits": 800,
+    "executionTime": 1
+  },
+  "outputMockLabel": "100000 compounds",
+  "defaultInputs": [
+    {
+      "id": "input-mol-data",
+      "name": "Input Compounds",
+      "type": "array",
+      "required": true,
+      "tooltip": "Table of compounds."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "Compound",
+      "name": "Compound",
+      "type": "string",
+      "tooltip": "Name of the compound."
+    },
+    {
+      "id": "MW",
+      "name": "Molecular Weight",
+      "type": "string",
+      "tooltip": "Molecular Weight (approx)."
+    },
+    {
+      "id": "logP",
+      "name": "logP",
+      "type": "number",
+      "tooltip": "Partition coefficient (octanol/water est.)."
+    },
+    {
+      "id": "TPSA",
+      "name": "TPSA",
+      "type": "string",
+      "tooltip": "Topological Polar Surface Area (Å² est.)."
+    },
+    {
+      "id": "pred_hia",
+      "name": "Pred. HIA",
+      "type": "string",
+      "tooltip": "Predicted Human Intestinal Absorption."
+    },
+    {
+      "id": "clogs_trend",
+      "name": "cLogS (trend)",
+      "type": "string",
+      "tooltip": "Aqueous solubility trend."
+    },
+    {
+      "id": "cyp_risk",
+      "name": "CYP risk",
+      "type": "string",
+      "tooltip": "Cytochrome P450 inhibition/induction risk."
+    },
+    {
+      "id": "systemic_risk",
+      "name": "Systemic risk",
+      "type": "string",
+      "tooltip": "Risk of systemic toxicity/accumulation."
+    },
+    {
+      "id": "oral_suitability",
+      "name": "Oral suitability",
+      "type": "string",
+      "tooltip": "Overall evaluation for oral administration."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredientListText",
+      "type": ["text", "file"],
+      "label": "Compound List",
+      "tooltip": "Compounds for analysis",
+      "suggestedField": ["smiles", "name", "Compound"],
+      "accept": ".csv,.txt,.smi"
+    },
+    {
+      "key": "route",
+      "type": "select",
+      "label": "Route",
+      "options": [
+        {
+          "value": "oral",
+          "label": "Oral"
+        },
+        {
+          "value": "iv",
+          "label": "IV"
+        },
+        {
+          "value": "parenteral",
+          "label": "Parenteral"
+        },
+        {
+          "value": "topical",
+          "label": "Topical"
+        },
+        {
+          "value": "inhalation",
+          "label": "Inhalation"
+        }
+      ],
+      "defaultValue": "oral"
+    },
+    {
+      "key": "model",
+      "type": "select",
+      "label": "Model",
+      "options": [
+        {
+          "value": "swiss_adme",
+          "label": "SwissADME"
+        },
+        {
+          "value": "admet_ai",
+          "label": "ADMET-AI"
+        },
+        {
+          "value": "preadmet",
+          "label": "preADMET"
+        }
+      ],
+      "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows",
+      "defaultValue": "swiss_adme",
+      "showWhen": [
+        {
+          "field": "route",
+          "in": ["oral", "iv", "parenteral", "topical", "inhalation"]
+        }
+      ]
+    }
+  ],
+  "defaultConfig": {
+    "model": "swiss_adme"
+  }
+}

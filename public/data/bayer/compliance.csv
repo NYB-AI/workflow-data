@@ -1,0 +1,12 @@
+ingredient_name,inci_name,cas_number,concentration,market,regulatory_status,restriction_type,max_allowed_concentration,reason,regulation_source,last_regulation_update,reference
+Naringenin,Naringenin,480-41-1,40.0%,US,Dietary Ingredient (NDI review required if no pre-1994 use),DSHEA,Case-by-case,Requires safety substantiation; NDI notification if new,FDA,2024-1,21 U.S.C. §321(ff)
+Apigenin,Apigenin,520-36-5,20.0%,US,Dietary Ingredient (NDI review required if no pre-1994 use),DSHEA,Case-by-case,Botanical flavonoid; safety documentation required,FDA,2024-1,21 U.S.C. §350b
+Microcrystalline Cellulose,Microcrystalline Cellulose,9004-34-6,20.0%,US,Permitted Food Additive,GRAS (affirmed),GMP / Quantum satis,"Recognized as safe as anticaking agent, stabilizer",FDA,2023-11,21 CFR 182.1745
+Microcrystalline Cellulose,Microcrystalline Cellulose,9004-34-6,20.0%,EU,Permitted (E460(i)),Regulation (EC) 1333/2008,Quantum satis,Approved food additive,EFSA,2023-10,Regulation (EC) 1333/2008
+Dicalcium Phosphate,Dicalcium Phosphate,7757-93-9,10.0%,US,Permitted Food Additive,GRAS,GMP-based,Used as nutrient supplement and excipient,FDA,2023-9,21 CFR 182.1217
+Dicalcium Phosphate,Dicalcium Phosphate,7757-93-9,10.0%,EU,Permitted (E341(ii)),Regulation (EC) 1333/2008,Quantum satis,Approved food additive,EFSA,2023-10,Regulation (EC) 1333/2008
+Croscarmellose Sodium,Croscarmellose Sodium,74811-65-7,4.0%,US,Permitted Excipient (Dietary Supplement),21 CFR Part 111 (GMP),GMP-based,Disintegrant allowed in dietary supplements,FDA,2023-12,21 CFR Part 111
+Povidone (PVP K30),PVP,9003-39-8,3.0%,US,Permitted Excipient,21 CFR Part 173.55,GMP-based,Binder permitted for food use,FDA,2023-11,21 CFR 173.55
+Magnesium Stearate,Magnesium Stearate,557-04-0,1.0%,US,GRAS,21 CFR 184.1440,GMP-based,Lubricant permitted in food and supplements,FDA,2023-11,21 CFR 184.1440
+Silicon Dioxide,Silicon Dioxide,7631-86-9,0.5%,US,Permitted Food Additive,21 CFR 172.480,≤2% by weight,Anti-caking agent limitation,FDA,2023-10,21 CFR 172.480
+Hydroxypropyl Methylcellulose,Hypromellose,9004-65-3,1.5%,US,GRAS,21 CFR 172.874,GMP-based,Coating agent permitted in food,FDA,2023-10,21 CFR 172.874

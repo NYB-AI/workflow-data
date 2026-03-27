@@ -1,0 +1,7 @@
+Pair,Predicted Interaction Signal,Risk Type (Dominant),Confidence,Flag
+Naringenin + Baicalein,Moderate CYP competitive metabolism signal,PK – Hepatic metabolism overlap,0.74,Monitor
+Naringenin + Apigenin,Weak additive receptor interaction,PD – Mild functional overlap,0.60,Low
+Naringenin + Resveratrol,Increased systemic exposure of Resveratrol predicted,PK – Absorption / metabolism interaction,0.69,Review
+Baicalein + Apigenin,Redox pathway convergence,PD – Oxidative stress modulation,0.81,Review
+Baicalein + Resveratrol,Elevated hepatocellular stress signal (dose-dependent),PK – Hepatic burden amplification,0.77,Caution
+Apigenin + Resveratrol,Moderate CNS additive modulation signal,PD – Neuroactive pathway overlap,0.72,Monitor

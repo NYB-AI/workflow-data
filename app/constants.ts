@@ -1,5 +1,9 @@
 export const CLIENTS = [
   {
+    name: "GTC",
+    value: "gtc",
+  },
+  {
     name: "DSM-F",
     value: "dsm-f",
   },
@@ -41,6 +45,7 @@ export const CLIENTS = [
   }
 ] as const;
 
-export const VALID_CLIENTS = CLIENTS.map((c) => c.value) as string[];
+export const VALID_CLIENTS = CLIENTS.map((c) => c.value) as string[]
 
-export type ClientId = (typeof CLIENTS)[number]["value"];
+export type ClientId = (typeof CLIENTS)[number]["value"]
+
