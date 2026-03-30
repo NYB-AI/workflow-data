@@ -1,5 +1,26 @@
-compound,vegf_r_kd
-Minoxidil,8819.2
-Eugenol,2501.6
-Anethole,5132.1
-Licochalcone A,811.7
+smiles,Predicted pIC50 for RPS6KB1 - CHEMBL3705357 
+Br/C(I)=C\C(Br)Br,7.103971
+BrC(Br)=CC(Br)Br,7.468954
+BrC(Br)Br,7.223856
+BrC(I)=CC(Br)Br,7.092992
+BrCC(Br)CBr,7.470979
+BrCC(Br)CCC(Br)CBr,7.054384
+Brc1c(Br)c(Br)c(Br)c(Br)c1Br,10.734280
+BrCCC(CBr)C1CCCCC1,7.624585
+BrCCCCCCCCCCBr,7.621534
+BrCCCCCCCCCCCCCCCCCCCCCCBr,7.089667
+BrCCCCCCCCCCCI,7.622139
+BrCCCCCCCOC1CCCCO1,7.382018
+BrCCCCCOC1CCCCC1,7.149664
+BrCc1cc(Br)c2cc(NBr)c(Br)c(Br)c2c1,8.013640
+BrCc1cc(Br)c2cc(NBr)c(Br)cc2c1Br,7.746657
+Brc1[nH]c(Br)c(Br)c1Br,7.319286
+Brc1c(Br)c(-c2ccc(Br)n2Br)n(Br)c1Br,8.848955
+Brc1c2c(c(Br)c3[nH]ccc13)OCO2,7.288012
+Brc1cc(Br)c(Oc2c(Br)cc(Br)c(Br)c2Br)cc1Br,8.246264
+Brc1cc(Br)c(Oc2c(Br)cc(Br)cc2Br)c(Br)c1,9.554056
+Brc1cc(Br)c(Oc2cc(Br)c(Br)cc2Br)c(Br)c1,7.616318
+Brc1cc(Br)c(Oc2ccccc2Br)c(Br)c1,7.215444
+Brc1cc(Br)c2c(Br)c[nH]c2c1,7.129106
+Brc1cc(Br)c2oc3c(Br)c(Br)[nH]c3c2c1,7.079620
+Brc1cc(Br)cc(-c2cc(-c3cc(Br)cc(Br)c3)cc(-c3cc(Br)cc(Br)c3)c2)c1,8.843622

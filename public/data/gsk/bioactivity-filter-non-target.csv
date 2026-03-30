@@ -1,5 +1,8 @@
-compound,ic50_non_target_nm,selectivity_ratio,selectivity_verdict
-Minoxidil,9820.4,1.11,Fail
-Eugenol,12340.1,4.93,Review
-Anethole,8910.7,1.74,Fail
-Licochalcone A,10248.3,12.63,Pass
+smiles,Predicted pIC50 for RPS6KB2 - CHEMBL2424239
+Brc1c(Br)c(Br)c(Br)c(Br)c1Br,6.48
+Br/C(I)=C\C(Br)Br,7.62
+BrC(Br)=CC(Br)Br,7.55
+BrC(Br)Br,7.08
+BrC(I)=CC(Br)Br,7.44
+BrCC(Br)CBr,7.71
+BrCC(Br)CCC(Br)CBr,7.31
