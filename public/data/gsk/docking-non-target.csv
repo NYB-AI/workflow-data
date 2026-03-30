@@ -1,3 +1,11 @@
-docked_structure,compound,target,delta_g
-https://workflow-data-2sa8.vercel.app/data/docking/Minoxidil.pdb,Minoxidil,RPS6KB2,-3.21
+docked_structure,compound,target
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000425BOLTZ-non-target.pdb,NYB0000425BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000525BOLTZ-non-target.pdb,NYB0000525BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000528BOLTZ-non-target.pdb,NYB0000528BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000540BOLTZ-non-target.pdb,NYB0000540BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000565BOLTZ-non-target.pdb,NYB0000565BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0000566BOLTZ-non-target.pdb,NYB0000566BOLTZ-non-target,RPS6KB2
+https://workflow-data-2sa8.vercel.app/data/docking/NYB0542804BOLTZ-non-target.pdb,NYB0542804BOLTZ-non-target,RPS6KB2
+
+
 

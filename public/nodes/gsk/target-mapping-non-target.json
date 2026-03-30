@@ -4,42 +4,64 @@
   "category": "analysis",
   "icon": "target-icon",
   "color": "gray",
-  "description": "Maps a non-target protein (e.g. RPS6KB2) to confirm compound selectivity — verifying the lead candidate does not significantly bind off-target kinases.",
+  "description": "Maps the non-target protein (RPS6KB2) to verify selectivity — confirming the lead candidate does not significantly bind off-target paralogs.",
   "pricing": { "credits": 400, "executionTime": 1 },
   "outputMockLabel": "1 non-target",
-  "defaultInputs": [
-    {
-      "id": "lead-compound",
-      "name": "Lead Compound",
-      "type": "string",
-      "required": true,
-      "tooltip": "Lead compound identified from the primary bioactivity filter."
-    }
-  ],
+  "defaultInputs": [],
   "defaultOutputs": [
     {
       "id": "protein_target",
-      "name": "Protein Target",
+      "name": "Protein target (complex)",
       "type": "string",
       "tooltip": "Non-target protein name (e.g. RPS6KB2)."
     },
     {
-      "id": "sequence_similarity",
-      "name": "Sequence Similarity",
+      "id": "biological_system",
+      "name": "Biological system",
       "type": "string",
-      "tooltip": "% sequence identity to the primary target RPS6KB1."
+      "tooltip": "Pathway or biological system for the non-target."
     },
     {
-      "id": "pdb_id",
-      "name": "PDB ID",
+      "id": "desired_modulation",
+      "name": "Desired modulation",
       "type": "string",
-      "tooltip": "PDB structure identifier for the non-target protein."
+      "tooltip": "Desired modulation for selectivity context."
     },
     {
-      "id": "protein_structure",
-      "name": "Protein Structure",
-      "type": "structure",
-      "tooltip": "3D structure URL of the non-target protein."
+      "id": "corresponding_assay",
+      "name": "Corresponding representative assay",
+      "type": "string",
+      "tooltip": "Representative assay for the non-target."
+    },
+    {
+      "id": "metric_used",
+      "name": "Metric used",
+      "type": "string",
+      "tooltip": "Measurement metric used."
+    },
+    {
+      "id": "rationale",
+      "name": "Rationale",
+      "type": "string",
+      "tooltip": "Reason this non-target is relevant for selectivity profiling."
+    },
+    {
+      "id": "crystallized_structure",
+      "name": "Crystallized structure",
+      "type": "string",
+      "tooltip": "Available crystallographic PDB entries for the non-target."
+    },
+    {
+      "id": "chembl_id",
+      "name": "ChEMBL ID",
+      "type": "string",
+      "tooltip": "ChEMBL database identifier for the non-target."
+    },
+    {
+      "id": "fasta",
+      "name": "FASTA",
+      "type": "string",
+      "tooltip": "Full amino acid FASTA sequence of the non-target protein."
     }
   ],
   "configSchema": [
@@ -48,7 +70,7 @@
       "type": "textarea",
       "label": "Non-Target Protein",
       "placeholder": "Enter non-target protein name (e.g. RPS6KB2)",
-      "tooltip": "Specify the off-target protein to test selectivity against."
+      "tooltip": "Specify the off-target protein to assess selectivity against."
     }
   ],
   "defaultConfig": { "manualFreetext": "RPS6KB2" }

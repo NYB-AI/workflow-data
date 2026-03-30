@@ -5,7 +5,10 @@
   "icon": "activity",
   "color": "gray",
   "description": "Predicts IC50 values of lead compounds against the non-target protein (RPS6KB2). High IC50 values relative to RPS6KB1 confirm selectivity.",
-  "pricing": { "credits": 800, "executionTime": 1 },
+  "pricing": {
+    "credits": 800,
+    "executionTime": 1
+  },
   "outputMockLabel": "4 compounds",
   "defaultInputs": [
     {
@@ -18,28 +21,16 @@
   ],
   "defaultOutputs": [
     {
-      "id": "compound",
-      "name": "Compound",
+      "id": "smiles",
+      "name": "smiles",
       "type": "string",
-      "tooltip": "Compound identifier."
+      "tooltip": "SMILES string of the compound."
     },
     {
-      "id": "ic50_non_target_nm",
-      "name": "IC50 (Non-Target, nM)",
+      "id": "predicted_pic50_nt",
+      "name": "Predicted pIC50 for RPS6KB2 - CHEMBL2424239",
       "type": "number",
-      "tooltip": "Predicted IC50 against the non-target RPS6KB2. Higher values indicate better selectivity."
-    },
-    {
-      "id": "selectivity_ratio",
-      "name": "Selectivity Ratio",
-      "type": "number",
-      "tooltip": "Ratio of non-target IC50 to primary-target IC50. Values >10 indicate good selectivity."
-    },
-    {
-      "id": "selectivity_verdict",
-      "name": "Selectivity Verdict",
-      "type": "string",
-      "tooltip": "Pass/Fail/Review verdict based on selectivity ratio thresholds."
+      "tooltip": "Predicted pIC50 against RPS6KB2 \u2014 lower values vs RPS6KB1 confirm selectivity."
     }
   ],
   "configSchema": [
@@ -48,19 +39,29 @@
       "type": "text",
       "label": "Non-Target Docking List",
       "tooltip": "Compound-target docking data from the non-target docking step.",
-      "suggestedField": ["docked_structure"]
+      "suggestedField": [
+        "docked_structure"
+      ]
     },
     {
       "key": "modelType",
       "type": "select",
       "label": "Prediction Model",
       "options": [
-        { "value": "dtign", "label": "DTIGN - Fast predictions" },
-        { "value": "ligospace", "label": "Ligospace - High accuracy" }
+        {
+          "value": "dtign",
+          "label": "DTIGN - Fast predictions"
+        },
+        {
+          "value": "ligospace",
+          "label": "Ligospace - High accuracy"
+        }
       ],
       "defaultValue": "dtign",
       "tooltip": "Bioactivity prediction model for the non-target selectivity assessment."
     }
   ],
-  "defaultConfig": { "modelType": "dtign" }
+  "defaultConfig": {
+    "modelType": "dtign"
+  }
 }

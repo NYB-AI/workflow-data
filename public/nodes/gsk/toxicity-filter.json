@@ -1,370 +1,477 @@
 {
-	"type": "toxicity-filter",
-	"label": "Toxicity Filter",
-	"category": "analysis",
-	"icon": "filtericon",
-	"color": "red",
-	"description": "Filter compounds based on physicochemical properties and custom rules.",
-	"pricing": {
-		"credits": 800,
-		"executionTime": 1
-	},
-	"outputMockLabel": "25 compounds",
-	"defaultInputs": [
-		{
-			"id": "input-mol-data",
-			"name": "Input Compounds",
-			"type": "array",
-			"required": true,
-			"tooltip": "Table of compounds."
-		}
-	],
-	"defaultOutputs": [
-		{
-			"id": "Compound",
-			"name": "Compound",
-			"type": "string",
-			"tooltip": "Name of the compound."
-		},
-		{
-			"id": "MW",
-			"name": "Molecular Weight",
-			"type": "number",
-			"tooltip": "Molecular Weight (g/mol)."
-		},
-		{
-			"id": "logP",
-			"name": "logP",
-			"type": "number",
-			"tooltip": "Partition coefficient (octanol/water)."
-		},
-		{
-			"id": "TPSA",
-			"name": "TPSA",
-			"type": "number",
-			"tooltip": "Topological Polar Surface Area (Å²)."
-		},
-		{
-			"id": "logKp",
-			"name": "logKp",
-			"type": "number",
-			"tooltip": "Skin permeability coefficient."
-		},
-		{
-			"id": "Skin retention",
-			"name": "Skin Retention",
-			"type": "string",
-			"tooltip": "Predicted skin retention level."
-		},
-		{
-			"id": "Follicular delivery",
-			"name": "Follicular Delivery",
-			"type": "string",
-			"tooltip": "Predicted delivery to hair follicles."
-		},
-		{
-			"id": "Systemic risk",
-			"name": "Systemic Risk",
-			"type": "string",
-			"tooltip": "Risk of systemic absorption and effects."
-		}
-	],
-	"configSchema": [
-		{
-			"key": "ingredientListText",
-			"type": ["text", "file"],
-			"label": "Compound List",
-			"tooltip": "Compounds for analysis",
-			"suggestedField": ["smiles", "name", "Compound"],
-			"accept": ".csv,.txt,.smi"
-		},
-		{
-			"key": "model",
-			"type": "select",
-			"label": "Model",
-			"options": [
-				{
-					"value": "swiss_adme",
-					"label": "SwissADME"
-				},
-				{
-					"value": "admet_ai",
-					"label": "ADMET-AI"
-				},
-				{
-					"value": "preadmet",
-					"label": "preADMET"
-				}
-			],
-			"tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows"
-		},
-		{
-			"key": "administration",
-			"type": "select",
-			"label": "Administrator routes",
-			"options": [
-				{
-					"value": "oral",
-					"label": "Oral"
-				},
-				{
-					"value": "dermal",
-					"label": "Dermal"
-				},
-				{
-					"value": "iv",
-					"label": "IV"
-				},
-				{
-					"value": "parenteral",
-					"label": "Parenteral"
-				},
-				{
-					"value": "inhalation",
-					"label": "Inhalation"
-				}
-			],
-			"tooltip": "Select the route of administration (ROA) for the compound. This choice determines the predefined toxicity filtering thresholds and parameterization applied in downstream evaluation."
-		},
-		{
-			"key": "mw_range",
-			"type": "range",
-			"label": "Molecular Weight Range",
-			"defaultValue": [0, 1000],
-			"tooltip": "Molecular Weight range (min - max g/mol).",
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "logp_range",
-			"type": "range",
-			"label": "logP Range",
-			"defaultValue": [-5.0, 10.0],
-			"tooltip": "Partition coefficient range (min - max).",
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "tpsa_range",
-			"type": "range",
-			"label": "TPSA Range (Å²)",
-			"defaultValue": [0, 300],
-			"tooltip": "Topological Polar Surface Area range (min - max Å²).",
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "logkp_range",
-			"type": "range",
-			"label": "logKp Range",
-			"defaultValue": [-15.0, 5.0],
-			"tooltip": "Skin permeability coefficient range (min - max).",
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "skin_retention",
-			"type": "multiselect",
-			"label": "Skin Retention",
-			"options": [
-				{
-					"value": "Very High",
-					"label": "Very High"
-				},
-				{
-					"value": "High",
-					"label": "High"
-				},
-				{
-					"value": "Medium–High",
-					"label": "Medium–High"
-				},
-				{
-					"value": "Medium",
-					"label": "Medium"
-				},
-				{
-					"value": "Low",
-					"label": "Low"
-				}
-			],
-			"tooltip": "Filter by skin retention level.",
-			"defaultValue": [
-				"Very High",
-				"High",
-				"Medium–High",
-				"Medium",
-				"Low"
-			],
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "follicular_delivery",
-			"type": "multiselect",
-			"label": "Follicular Delivery",
-			"options": [
-				{
-					"value": "High",
-					"label": "High"
-				},
-				{
-					"value": "Medium",
-					"label": "Medium"
-				},
-				{
-					"value": "Low",
-					"label": "Low"
-				}
-			],
-			"tooltip": "Filter by follicular delivery potential.",
-			"defaultValue": ["High", "Medium", "Low"],
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "systemic_risk",
-			"type": "multiselect",
-			"label": "Systemic Risk",
-			"options": [
-				{
-					"value": "Medium",
-					"label": "Medium"
-				},
-				{
-					"value": "Low",
-					"label": "Low"
-				},
-				{
-					"value": "Very Low",
-					"label": "Very Low"
-				}
-			],
-			"tooltip": "Filter by systemic risk level.",
-			"defaultValue": ["Medium", "Low", "Very Low"],
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		},
-		{
-			"key": "topical_suitability",
-			"type": "multiselect",
-			"label": "Topical Suitability",
-			"options": [
-				{
-					"value": "Excellent (benchmark)",
-					"label": "Excellent (benchmark)"
-				},
-				{
-					"value": "Excellent",
-					"label": "Excellent"
-				},
-				{
-					"value": "Excellent enhancer",
-					"label": "Excellent enhancer"
-				},
-				{
-					"value": "Very good",
-					"label": "Very good"
-				},
-				{
-					"value": "Good",
-					"label": "Good"
-				},
-				{
-					"value": "Good (barrier-friendly)",
-					"label": "Good (barrier-friendly)"
-				},
-				{
-					"value": "Good (irritation risk)",
-					"label": "Good (irritation risk)"
-				},
-				{
-					"value": "Moderate",
-					"label": "Moderate"
-				},
-				{
-					"value": "Poor",
-					"label": "Poor"
-				},
-				{
-					"value": "Poor (too polar/bulky)",
-					"label": "Poor (too polar/bulky)"
-				},
-				{
-					"value": "Poor alone (needs formulation)",
-					"label": "Poor alone (needs formulation)"
-				}
-			],
-			"tooltip": "Filter by topical suitability.",
-			"defaultValue": [
-				"Excellent (benchmark)",
-				"Excellent",
-				"Excellent enhancer",
-				"Very good",
-				"Good",
-				"Good (barrier-friendly)",
-				"Good (irritation risk)",
-				"Moderate",
-				"Poor",
-				"Poor (too polar/bulky)",
-				"Poor alone (needs formulation)"
-			],
-			"showWhen": [
-				{
-					"field": "administration",
-					"in": ["oral", "dermal", "iv", "parenteral", "inhalation"]
-				}
-			]
-		}
-	],
-	"defaultConfig": {
-		"mw_range": [0, 1000],
-		"logp_range": [-5.0, 10.0],
-		"tpsa_range": [0, 300],
-		"logkp_range": [-15.0, 5.0],
-		"skin_retention": ["Very High", "High", "Medium–High", "Medium", "Low"],
-		"follicular_delivery": ["High", "Medium", "Low"],
-		"systemic_risk": ["Medium", "Low", "Very Low"],
-		"topical_suitability": [
-			"Excellent (benchmark)",
-			"Excellent",
-			"Excellent enhancer",
-			"Very good",
-			"Good",
-			"Good (barrier-friendly)",
-			"Good (irritation risk)",
-			"Moderate",
-			"Poor",
-			"Poor (too polar/bulky)",
-			"Poor alone (needs formulation)"
-		]
-	}
+  "type": "toxicity-filter",
+  "label": "Toxicity Filter",
+  "category": "analysis",
+  "icon": "filtericon",
+  "color": "red",
+  "description": "Filters candidate compounds using ADMET-AI physicochemical and drug-likeness properties (MW, logP, TPSA, GI absorption, Lipinski violations, bioavailability score).",
+  "pricing": {
+    "credits": 800,
+    "executionTime": 1
+  },
+  "outputMockLabel": "25 compounds",
+  "defaultInputs": [
+    {
+      "id": "input-mol-data",
+      "name": "Input Compounds",
+      "type": "array",
+      "required": true,
+      "tooltip": "Table of compounds."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "smiles",
+      "name": "smiles",
+      "type": "string",
+      "tooltip": "SMILES string of the compound."
+    },
+    {
+      "id": "mw",
+      "name": "MW",
+      "type": "number",
+      "tooltip": "Molecular weight (g/mol)."
+    },
+    {
+      "id": "tpsa",
+      "name": "TPSA",
+      "type": "number",
+      "tooltip": "Topological Polar Surface Area (\u00c5\u00b2)."
+    },
+    {
+      "id": "consensus_logp",
+      "name": "Consensus Log P",
+      "type": "number",
+      "tooltip": "Consensus lipophilicity estimate."
+    },
+    {
+      "id": "gi_absorption",
+      "name": "GI absorption",
+      "type": "string",
+      "tooltip": "Predicted GI absorption (High/Low)."
+    },
+    {
+      "id": "bbb_permeant",
+      "name": "BBB permeant",
+      "type": "string",
+      "tooltip": "Blood-brain barrier permeability."
+    },
+    {
+      "id": "lipinski_violations",
+      "name": "Lipinski #violations",
+      "type": "number",
+      "tooltip": "Number of Lipinski rule-of-five violations."
+    },
+    {
+      "id": "bioavailability_score",
+      "name": "Bioavailability Score",
+      "type": "number",
+      "tooltip": "Predicted oral bioavailability score (0\u20131)."
+    },
+    {
+      "id": "synthetic_accessibility",
+      "name": "Synthetic Accessibility",
+      "type": "number",
+      "tooltip": "Synthetic accessibility score (1=easy, 10=hard)."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "ingredientListText",
+      "type": [
+        "text",
+        "file"
+      ],
+      "label": "Compound List",
+      "tooltip": "Compounds for analysis",
+      "suggestedField": [
+        "smiles",
+        "name",
+        "Compound"
+      ],
+      "accept": ".csv,.txt,.smi"
+    },
+    {
+      "key": "model",
+      "type": "select",
+      "label": "Model",
+      "options": [
+        {
+          "value": "swiss_adme",
+          "label": "SwissADME"
+        },
+        {
+          "value": "admet_ai",
+          "label": "ADMET-AI"
+        },
+        {
+          "value": "preadmet",
+          "label": "preADMET"
+        }
+      ],
+      "tooltip": "Choose which ADMET prediction model to use:\n\n- **SwissADME**: Best for concept-stage screening, medicinal chemistry intuition, fast triage\n- **ADMET-AI**: Best for predictive modeling, prioritization, portfolio ranking, data science pipelines\n- **preADMET**: Best for cross-checking, academic comparability, legacy workflows"
+    },
+    {
+      "key": "administration",
+      "type": "select",
+      "label": "Administrator routes",
+      "options": [
+        {
+          "value": "oral",
+          "label": "Oral"
+        },
+        {
+          "value": "dermal",
+          "label": "Dermal"
+        },
+        {
+          "value": "iv",
+          "label": "IV"
+        },
+        {
+          "value": "parenteral",
+          "label": "Parenteral"
+        },
+        {
+          "value": "inhalation",
+          "label": "Inhalation"
+        }
+      ],
+      "tooltip": "Select the route of administration (ROA) for the compound. This choice determines the predefined toxicity filtering thresholds and parameterization applied in downstream evaluation."
+    },
+    {
+      "key": "mw_range",
+      "type": "range",
+      "label": "Molecular Weight Range",
+      "defaultValue": [
+        0,
+        1000
+      ],
+      "tooltip": "Molecular Weight range (min - max g/mol).",
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "logp_range",
+      "type": "range",
+      "label": "logP Range",
+      "defaultValue": [
+        -5.0,
+        10.0
+      ],
+      "tooltip": "Partition coefficient range (min - max).",
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "tpsa_range",
+      "type": "range",
+      "label": "TPSA Range (\u00c5\u00b2)",
+      "defaultValue": [
+        0,
+        300
+      ],
+      "tooltip": "Topological Polar Surface Area range (min - max \u00c5\u00b2).",
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "logkp_range",
+      "type": "range",
+      "label": "logKp Range",
+      "defaultValue": [
+        -15.0,
+        5.0
+      ],
+      "tooltip": "Skin permeability coefficient range (min - max).",
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "skin_retention",
+      "type": "multiselect",
+      "label": "Skin Retention",
+      "options": [
+        {
+          "value": "Very High",
+          "label": "Very High"
+        },
+        {
+          "value": "High",
+          "label": "High"
+        },
+        {
+          "value": "Medium\u2013High",
+          "label": "Medium\u2013High"
+        },
+        {
+          "value": "Medium",
+          "label": "Medium"
+        },
+        {
+          "value": "Low",
+          "label": "Low"
+        }
+      ],
+      "tooltip": "Filter by skin retention level.",
+      "defaultValue": [
+        "Very High",
+        "High",
+        "Medium\u2013High",
+        "Medium",
+        "Low"
+      ],
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "follicular_delivery",
+      "type": "multiselect",
+      "label": "Follicular Delivery",
+      "options": [
+        {
+          "value": "High",
+          "label": "High"
+        },
+        {
+          "value": "Medium",
+          "label": "Medium"
+        },
+        {
+          "value": "Low",
+          "label": "Low"
+        }
+      ],
+      "tooltip": "Filter by follicular delivery potential.",
+      "defaultValue": [
+        "High",
+        "Medium",
+        "Low"
+      ],
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "systemic_risk",
+      "type": "multiselect",
+      "label": "Systemic Risk",
+      "options": [
+        {
+          "value": "Medium",
+          "label": "Medium"
+        },
+        {
+          "value": "Low",
+          "label": "Low"
+        },
+        {
+          "value": "Very Low",
+          "label": "Very Low"
+        }
+      ],
+      "tooltip": "Filter by systemic risk level.",
+      "defaultValue": [
+        "Medium",
+        "Low",
+        "Very Low"
+      ],
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "topical_suitability",
+      "type": "multiselect",
+      "label": "Topical Suitability",
+      "options": [
+        {
+          "value": "Excellent (benchmark)",
+          "label": "Excellent (benchmark)"
+        },
+        {
+          "value": "Excellent",
+          "label": "Excellent"
+        },
+        {
+          "value": "Excellent enhancer",
+          "label": "Excellent enhancer"
+        },
+        {
+          "value": "Very good",
+          "label": "Very good"
+        },
+        {
+          "value": "Good",
+          "label": "Good"
+        },
+        {
+          "value": "Good (barrier-friendly)",
+          "label": "Good (barrier-friendly)"
+        },
+        {
+          "value": "Good (irritation risk)",
+          "label": "Good (irritation risk)"
+        },
+        {
+          "value": "Moderate",
+          "label": "Moderate"
+        },
+        {
+          "value": "Poor",
+          "label": "Poor"
+        },
+        {
+          "value": "Poor (too polar/bulky)",
+          "label": "Poor (too polar/bulky)"
+        },
+        {
+          "value": "Poor alone (needs formulation)",
+          "label": "Poor alone (needs formulation)"
+        }
+      ],
+      "tooltip": "Filter by topical suitability.",
+      "defaultValue": [
+        "Excellent (benchmark)",
+        "Excellent",
+        "Excellent enhancer",
+        "Very good",
+        "Good",
+        "Good (barrier-friendly)",
+        "Good (irritation risk)",
+        "Moderate",
+        "Poor",
+        "Poor (too polar/bulky)",
+        "Poor alone (needs formulation)"
+      ],
+      "showWhen": [
+        {
+          "field": "administration",
+          "in": [
+            "oral",
+            "dermal",
+            "iv",
+            "parenteral",
+            "inhalation"
+          ]
+        }
+      ]
+    }
+  ],
+  "defaultConfig": {
+    "mw_range": [
+      0,
+      1000
+    ],
+    "logp_range": [
+      -5.0,
+      10.0
+    ],
+    "tpsa_range": [
+      0,
+      300
+    ],
+    "logkp_range": [
+      -15.0,
+      5.0
+    ],
+    "skin_retention": [
+      "Very High",
+      "High",
+      "Medium\u2013High",
+      "Medium",
+      "Low"
+    ],
+    "follicular_delivery": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "systemic_risk": [
+      "Medium",
+      "Low",
+      "Very Low"
+    ],
+    "topical_suitability": [
+      "Excellent (benchmark)",
+      "Excellent",
+      "Excellent enhancer",
+      "Very good",
+      "Good",
+      "Good (barrier-friendly)",
+      "Good (irritation risk)",
+      "Moderate",
+      "Poor",
+      "Poor (too polar/bulky)",
+      "Poor alone (needs formulation)"
+    ]
+  }
 }

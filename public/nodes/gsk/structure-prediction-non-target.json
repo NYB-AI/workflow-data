@@ -1,0 +1,72 @@
+{
+  "type": "structure-prediction-non-target",
+  "label": "Structure Prediction (Non-Target)",
+  "category": "analysis",
+  "icon": "dna",
+  "color": "gray",
+  "description": "Predicts the 3D structure of the non-target protein (RPS6KB2) using AlphaFold, providing the structural input needed for non-target docking and selectivity assessment.",
+  "pricing": { "credits": 800, "executionTime": 1 },
+  "outputMockLabel": "1 predicted structure",
+  "defaultInputs": [
+    {
+      "id": "protein_list",
+      "name": "Protein List",
+      "type": "array",
+      "required": true,
+      "tooltip": "FASTA sequence(s) of the non-target protein(s) for structure prediction."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "protein_name",
+      "name": "protein_name",
+      "type": "string",
+      "tooltip": "Non-target protein name or identifier."
+    },
+    {
+      "id": "fasta",
+      "name": "fasta",
+      "type": "string",
+      "tooltip": "Full FASTA amino acid sequence of the non-target protein."
+    },
+    {
+      "id": "structure_3d",
+      "name": "structure_3d",
+      "type": "structure",
+      "tooltip": "URL to the predicted 3D structure PDB file for the non-target protein."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "proteinListText",
+      "type": "text",
+      "label": "Protein List (Paste)",
+      "placeholder": ">RPS6KB2\nMAAVFDLDLET...",
+      "tooltip": "Paste protein FASTA sequence for structure prediction.",
+      "suggestedField": ["fasta", "FASTA", "protein_target", "Protein target (complex)"]
+    },
+    {
+      "key": "predictionMethod",
+      "type": "select",
+      "label": "Prediction Method",
+      "options": [
+        { "value": "alphafold", "label": "AlphaFold" },
+        { "value": "esmfold", "label": "ESMFold" },
+        { "value": "rosettafold", "label": "RoseTTAFold" }
+      ],
+      "defaultValue": "alphafold",
+      "tooltip": "Select the protein structure prediction method."
+    },
+    {
+      "key": "includeConfidence",
+      "type": "boolean",
+      "label": "Include Confidence Scores",
+      "defaultValue": true,
+      "tooltip": "Include pLDDT and other confidence metrics in the output."
+    }
+  ],
+  "defaultConfig": {
+    "predictionMethod": "alphafold",
+    "includeConfidence": true
+  }
+}
