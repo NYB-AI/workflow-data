@@ -1,0 +1,5 @@
+compound,ic50_non_target_nm,selectivity_ratio,selectivity_verdict
+Minoxidil,9820.4,1.11,Fail
+Eugenol,12340.1,4.93,Review
+Anethole,8910.7,1.74,Fail
+Licochalcone A,10248.3,12.63,Pass

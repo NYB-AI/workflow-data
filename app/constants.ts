@@ -42,6 +42,10 @@ export const CLIENTS = [
   {
     name: "China Demo",
     value: "china-demo",
+  },
+  {
+    name: "GSK",
+    value: "gsk",
   }
 ] as const;
 

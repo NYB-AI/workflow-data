@@ -1,0 +1,83 @@
+{
+  "type": "docking-non-target",
+  "label": "Docking (Non-Target)",
+  "category": "analysis",
+  "icon": "dna",
+  "color": "gray",
+  "description": "Docks lead compounds against the non-target protein structure to assess selectivity. Lower |ΔG| values compared to the primary target confirm on-target selectivity.",
+  "pricing": { "credits": 1200, "executionTime": 1 },
+  "outputMockLabel": "4 compounds",
+  "outputPageSize": 4,
+  "defaultInputs": [
+    {
+      "id": "compoundList",
+      "name": "Compound List",
+      "type": "array",
+      "required": true,
+      "tooltip": "Lead compounds from the primary bioactivity filter."
+    },
+    {
+      "id": "targetList",
+      "name": "Non-Target Protein Structure",
+      "type": "array",
+      "required": true,
+      "tooltip": "3D structure of the non-target protein for docking."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "docked_structure",
+      "name": "Docked Structure",
+      "type": "structure",
+      "tooltip": "3D docked complex (PDB) with the non-target protein."
+    },
+    {
+      "id": "compound",
+      "name": "Compound",
+      "type": "string",
+      "tooltip": "Compound name."
+    },
+    {
+      "id": "target",
+      "name": "Non-Target",
+      "type": "string",
+      "tooltip": "Non-target protein name."
+    },
+    {
+      "id": "delta_g",
+      "name": "ΔG (kcal/mol)",
+      "type": "string",
+      "tooltip": "Predicted binding free energy against the non-target. Values closer to 0 indicate low off-target affinity."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "smiles_column",
+      "type": ["text", "file"],
+      "label": "SMILES",
+      "tooltip": "Compound SMILES strings for docking.",
+      "suggestedField": ["compound", "smiles"],
+      "accept": ".csv,.txt,.smi"
+    },
+    {
+      "key": "protein_column",
+      "type": ["text", "file"],
+      "label": "Non-Target Protein Structure",
+      "tooltip": "3D structure of the non-target protein.",
+      "suggestedField": ["protein_structure"],
+      "accept": ".csv,.pdb"
+    },
+    {
+      "key": "engine",
+      "type": "select",
+      "label": "Docking Engine",
+      "options": [
+        { "value": "vina", "label": "AutoDock Vina" },
+        { "value": "boltz_2", "label": "Boltz-2 (Experimental)" }
+      ],
+      "defaultValue": "boltz_2",
+      "tooltip": "Docking engine to use for non-target selectivity assessment."
+    }
+  ],
+  "defaultConfig": { "engine": "boltz_2" }
+}

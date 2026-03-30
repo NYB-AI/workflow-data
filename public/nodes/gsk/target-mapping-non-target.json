@@ -1,0 +1,55 @@
+{
+  "type": "target-mapping-non-target",
+  "label": "Target Mapping (Non-Target)",
+  "category": "analysis",
+  "icon": "target-icon",
+  "color": "gray",
+  "description": "Maps a non-target protein (e.g. RPS6KB2) to confirm compound selectivity — verifying the lead candidate does not significantly bind off-target kinases.",
+  "pricing": { "credits": 400, "executionTime": 1 },
+  "outputMockLabel": "1 non-target",
+  "defaultInputs": [
+    {
+      "id": "lead-compound",
+      "name": "Lead Compound",
+      "type": "string",
+      "required": true,
+      "tooltip": "Lead compound identified from the primary bioactivity filter."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "protein_target",
+      "name": "Protein Target",
+      "type": "string",
+      "tooltip": "Non-target protein name (e.g. RPS6KB2)."
+    },
+    {
+      "id": "sequence_similarity",
+      "name": "Sequence Similarity",
+      "type": "string",
+      "tooltip": "% sequence identity to the primary target RPS6KB1."
+    },
+    {
+      "id": "pdb_id",
+      "name": "PDB ID",
+      "type": "string",
+      "tooltip": "PDB structure identifier for the non-target protein."
+    },
+    {
+      "id": "protein_structure",
+      "name": "Protein Structure",
+      "type": "structure",
+      "tooltip": "3D structure URL of the non-target protein."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "manualFreetext",
+      "type": "textarea",
+      "label": "Non-Target Protein",
+      "placeholder": "Enter non-target protein name (e.g. RPS6KB2)",
+      "tooltip": "Specify the off-target protein to test selectivity against."
+    }
+  ],
+  "defaultConfig": { "manualFreetext": "RPS6KB2" }
+}

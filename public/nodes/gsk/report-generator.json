@@ -1,0 +1,79 @@
+{
+  "type": "report-generator",
+  "label": "Report Generator",
+  "category": "Output",
+  "icon": "icon-report",
+  "color": "blue",
+  "description": "Generates a structured drug discovery report for RPS6KB1 candidates, summarizing target mapping, docking scores, ADMET profiles, and recommended compounds for further validation.",
+  "pricing": {
+    "credits": 100,
+    "executionTime": 1
+  },
+  "outputMockLabel": "1 report",
+  "defaultInputs": [
+    {
+      "id": "bioactivity-results",
+      "name": "Bioactivity Results",
+      "type": "array",
+      "required": true,
+      "tooltip": "Output from the Bioactivity Filter step — ranked compound list with IC50 and binding scores."
+    },
+    {
+      "id": "docking-results",
+      "name": "Docking Results",
+      "type": "array",
+      "required": false,
+      "tooltip": "Optional raw docking data including ΔG values and docked structures."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "report-url",
+      "name": "Report URL",
+      "type": "string",
+      "description": "Download link to the generated PDF/CSV report."
+    },
+    {
+      "id": "summary",
+      "name": "Executive Summary",
+      "type": "string",
+      "description": "AI-generated narrative summary of the drug discovery findings."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "reportFormat",
+      "type": "select",
+      "label": "Export Format",
+      "options": [
+        { "value": "pdf", "label": "PDF Document" },
+        { "value": "csv", "label": "CSV Spreadsheet" },
+        { "value": "html", "label": "HTML Webpage" }
+      ],
+      "defaultValue": "pdf"
+    },
+    {
+      "key": "templateId",
+      "type": "select",
+      "label": "Report Template",
+      "options": [
+        { "value": "drug-discovery-summary", "label": "Drug Discovery Summary" },
+        { "value": "kinase-inhibitor-profile", "label": "Kinase Inhibitor Profile" },
+        { "value": "admet-overview", "label": "ADMET Overview" }
+      ],
+      "defaultValue": "drug-discovery-summary"
+    },
+    {
+      "key": "includeStructures",
+      "type": "boolean",
+      "label": "Include 3D Structures",
+      "defaultValue": true,
+      "description": "Embed docked 3D structure images in the report."
+    }
+  ],
+  "defaultConfig": {
+    "reportFormat": "pdf",
+    "templateId": "drug-discovery-summary",
+    "includeStructures": true
+  }
+}

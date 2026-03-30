@@ -1,0 +1,112 @@
+{
+  "type": "molecular-generation",
+  "label": "Molecular Generation",
+  "category": "generation",
+  "icon": "sparkles",
+  "color": "violet",
+  "description": "Generates and optimizes novel drug-like molecules based on the lead compound using generative AI (ReinventMol / Graph Transformer). Outputs improved analogs with better binding affinity, selectivity, and drug-likeness scores.",
+  "pricing": { "credits": 1500, "executionTime": 2 },
+  "outputMockLabel": "10 molecules",
+  "defaultInputs": [
+    {
+      "id": "leadCompound",
+      "name": "Lead Compound",
+      "type": "string",
+      "required": true,
+      "tooltip": "Best-ranking compound from the primary bioactivity filter to use as the scaffold."
+    },
+    {
+      "id": "selectivityData",
+      "name": "Selectivity Data",
+      "type": "array",
+      "required": false,
+      "tooltip": "Optional non-target bioactivity data to guide selectivity optimization."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "generated_compound",
+      "name": "Generated Compound",
+      "type": "string",
+      "tooltip": "Name of the generated/optimized molecule."
+    },
+    {
+      "id": "smiles",
+      "name": "SMILES",
+      "type": "string",
+      "tooltip": "SMILES string of the generated molecule."
+    },
+    {
+      "id": "predicted_delta_g",
+      "name": "Predicted ΔG (kcal/mol)",
+      "type": "number",
+      "tooltip": "Predicted binding free energy for RPS6KB1."
+    },
+    {
+      "id": "qed_score",
+      "name": "QED Score",
+      "type": "number",
+      "tooltip": "Quantitative Estimate of Drug-likeness (0–1, higher is better)."
+    },
+    {
+      "id": "selectivity_ratio",
+      "name": "Selectivity Ratio",
+      "type": "number",
+      "tooltip": "Predicted IC50(RPS6KB2) / IC50(RPS6KB1) — higher values indicate better selectivity."
+    },
+    {
+      "id": "improvement",
+      "name": "Improvement",
+      "type": "string",
+      "tooltip": "Summary of how this molecule improves on the lead compound."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "inputCompound",
+      "type": "text",
+      "label": "Lead Compound (SMILES or Name)",
+      "placeholder": "e.g. Licochalcone A",
+      "tooltip": "Input lead compound to use as scaffold for generative optimization.",
+      "suggestedField": ["compound", "smiles"]
+    },
+    {
+      "key": "generationModel",
+      "type": "select",
+      "label": "Generation Model",
+      "options": [
+        { "value": "reinventmol", "label": "ReinventMol (Reinforcement Learning)" },
+        { "value": "graph_transformer", "label": "Graph Transformer (Structure-Aware)" },
+        { "value": "diffsbdd", "label": "DiffSBDD (Diffusion-Based)" }
+      ],
+      "defaultValue": "reinventmol",
+      "tooltip": "Generative model to use for molecule optimization."
+    },
+    {
+      "key": "numMolecules",
+      "type": "number",
+      "label": "Number of Molecules",
+      "placeholder": "e.g. 10",
+      "defaultValue": 10,
+      "tooltip": "Number of novel molecules to generate."
+    },
+    {
+      "key": "optimizeFor",
+      "type": "multiselect",
+      "label": "Optimization Goals",
+      "options": [
+        { "value": "binding_affinity", "label": "Binding Affinity (RPS6KB1)" },
+        { "value": "selectivity", "label": "Selectivity vs RPS6KB2" },
+        { "value": "qed", "label": "Drug-Likeness (QED)" },
+        { "value": "admet", "label": "ADMET Profile" }
+      ],
+      "defaultValue": ["binding_affinity", "selectivity"],
+      "tooltip": "Properties to optimize during molecular generation."
+    }
+  ],
+  "defaultConfig": {
+    "generationModel": "reinventmol",
+    "numMolecules": 10,
+    "optimizeFor": ["binding_affinity", "selectivity"]
+  }
+}

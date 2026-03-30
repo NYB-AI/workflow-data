@@ -1,0 +1,14 @@
+Protein target (complex),Biological system,Desired modulation,Corresponding representative assay,Metric used,Rationale,Crystallized structure,ChEMBL ID,FASTA
+RPS6KB1,mTORC1 downstream translation control,Inhibition (ATP-competitive kinase inhibition),Peptide phosphorylation enzymatic assay,IC₅₀ / pIC₅₀,Amplified or hyperactivated downstream of PI3K–AKT–mTOR signaling in breast tumors; regulates translation of growth-promoting proteins,"- 3A62 (Crystal structure of catalytic kinase domain phosphorylated p70S6K1 - suitable for docking)
+- 3A60 (Crystal structure of unphosphorylated p70S6K1 (Form I))
+- 3A61 Crystal structure of unphosphorylated p70S6K1 (Form II))
+...",CHEMBL4501,">sp|P23443|KS6B1_HUMAN Ribosomal protein S6 kinase beta-1 OS=Homo sapiens OX=9606 GN=RPS6KB1 PE=1 SV=2
+MRRRRRRDGFYPAPDFRDREAEDMAGVFDIDLDQPEDAGSEDELEEGGQLNESMDHGGVG
+PYELGMEHCEKFEISETSVNRGPEKIRPECFELLRVLGKGGYGKVFQVRKVTGANTGKIF
+AMKVLKKAMIVRNAKDTAHTKAERNILEEVKHPFIVDLIYAFQTGGKLYLILEYLSGGEL
+FMQLEREGIFMEDTACFYLAEISMALGHLHQKGIIYRDLKPENIMLNHQGHVKLTDFGLC
+KESIHDGTVTHTFCGTIEYMAPEILMRSGHNRAVDWWSLGALMYDMLTGAPPFTGENRKK
+TIDKILKCKLNLPPYLTQEARDLLKKLLKRNAASRLGAGPGDAGEVQAHPFFRHINWEEL
+LARKVEPPFKPLLQSEEDVSQFDSKFTRQTPVDSPDDSTLSESANQVFLGFTYVAPSVLE
+SVKEKFSFEPKIRSPRRFIGSPRTPVSPVKFSPGDFWGRGASASTANPQTPVEYPMETSG
+IEQMDVTMSGEASAPLPIRQPNSGPYKKQAFPMISKRPEHLRMNL"
