@@ -1,0 +1,4 @@
+Pair,Predicted Interaction Signal,Risk Type (Dominant),Confidence,Flag
+"BrCC(Br)CCC(Br)CBr + BrC(I)=CC(Br)Br","Additive electrophilic load detected","Hepatic metabolism competition (CYP burden)",0.81,Moderate
+"BrCC(Br)CCC(Br)CBr + BrC(Br)=CC(Br)Br","Lipophilicity stacking signal","Membrane accumulation risk",0.74,Moderate
+"BrC(I)=CC(Br)Br + BrC(Br)=CC(Br)Br","Halogen-density interaction cluster overlap","Reactive metabolite formation potential",0.88,Elevated

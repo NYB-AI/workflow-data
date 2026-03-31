@@ -1,0 +1,7 @@
+docked_structure,compound,target,delta_g
+https://workflow-data-2sa8.vercel.app/data/docking/BrCICCBrBr.pdb,Br/C(I)=C\C(Br)Br,Dipeptidyl peptidase-4 (DPP-4),-3.291
+https://workflow-data-2sa8.vercel.app/data/docking/BrCBrCCBrBr.pdb,BrC(Br)=CC(Br)Br,Dipeptidyl peptidase-4 (DPP-4),-3.233
+https://workflow-data-2sa8.vercel.app/data/docking/BrCBrBr.pdb,BrC(Br)Br,Dipeptidyl peptidase-4 (DPP-4),-2.304
+https://workflow-data-2sa8.vercel.app/data/docking/BrCBrCCBrI.pdb,BrC(I)=CC(Br)Br,Dipeptidyl peptidase-4 (DPP-4),-3.29
+https://workflow-data-2sa8.vercel.app/data/docking/BrCCBrCBr.pdb,BrCC(Br)CBr,Dipeptidyl peptidase-4 (DPP-4),-2.947
+https://workflow-data-2sa8.vercel.app/data/docking/BrCCBrCCCBrCBr.pdb,BrCC(Br)CCC(Br)CBr,Dipeptidyl peptidase-4 (DPP-4),-3.682
