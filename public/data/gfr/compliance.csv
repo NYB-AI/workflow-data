@@ -1,0 +1,13 @@
+Ingredient Name,INCI Name,CAS,Formula %,Market,Regulatory Status,Restriction Basis,Regulatory Maximum,Regulatory Rationale,Legal Source,Last Update,Reference
+Skim milk base,Milk,8002-87-7,88.2,US / EU / VN,Approved (Food),None,GMP,Standard dairy ingredient,U.S. Food and Drug Administration GRAS,2024,21 CFR §131
+Milk protein isolate,Hydrolyzed Milk Protein,84082-51-9,4.5,US / EU / VN,Approved (Food),None,GMP,Protein enrichment allowed in functional foods,European Food Safety Authority,2023,EFSA Dairy Protein Guidance
+Resistant maltodextrin,Dextrin,9050-36-6,2.2,US / EU / VN,Approved (Fiber),None,GMP,Recognized dietary fiber,FDA,2022,GRAS Notice 000789
+Inulin,Inulin,9005-80-5,1.8,US / EU / VN,Approved (Fiber),None,GMP,Prebiotic fiber accepted for food use,EFSA,2023,EFSA NDA Panel
+Caprylic/Capric triglyceride,Caprylic/Capric Triglyceride,73398-61-5,1.5,US / EU / VN,Approved (Food lipid),None,GMP,Medium-chain triglyceride carrier lipid,FDA,2024,GRAS Notice 000127
+Isomaltulose,Isomaltulose,13718-94-0,1.2,US / EU / VN,Approved (Low-GI carbohydrate),None,GMP,Authorized slow-release carbohydrate,EFSA,2021,EFSA Journal 2011;9(6)
+Chromium picolinate,Chromium Picolinate,14639-25-9,0.005,US / EU,Conditional (Supplement),Intake limit,200 µg/day typical,Trace mineral exposure control,FDA,2023,21 CFR §101.9
+Magnesium citrate,Magnesium Citrate,7779-25-1,0.02,US / EU / VN,Approved (Mineral),UL applies,350 mg/day supplemental Mg,Prevent GI adverse effects,EFSA,2022,EFSA NDA Panel
+Vitamin premix,Multivitamin Blend,mixture,0.3,US / EU / VN,Approved (Fortification),UL applies,varies per vitamin,Prevent hypervitaminosis risk,FDA,2024,21 CFR §104
+Natural flavor system,Natural Flavor,mixture,0.215,US / EU / VN,Approved (Flavoring),FEMA GRAS,GMP,Flavoring permitted within safety limits,FDA,2024,FEMA GRAS List
+BrCC(Br)CCC(Br)CBr,—,Not registered (food use),0.025,US / EU / VN,Not approved,Novel synthetic halogenated compound,Not permitted,No toxicology dossier / not GRAS / not Novel Food authorized,FDA / EFSA,2025,Novel ingredient screening
+BrC(I)=CC(Br)Br,—,Not registered (food use),0.015,US / EU / VN,Not approved,Novel synthetic halogenated compound,Not permitted,Requires toxicology + exposure + metabolism package,FDA / EFSA,2025,Novel ingredient screening

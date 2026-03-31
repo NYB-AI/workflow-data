@@ -1,0 +1,26 @@
+Compound,nyb_id,MW,logP,TPSA,logKp,Skin retention,Follicular delivery,Systemic risk,Lipinski #violations,Bioavailability Score,PAINS #alerts,Synthetic Accessibility
+Br/C(I)=C\C(Br)Br,NYB0000565,404.66,3.32,0,-6.27,Medium,Low,Low,0,0.55,0,3.24
+BrC(Br)=CC(Br)Br,NYB0000528,357.66,3.27,0,-5.81,Medium,Low,Low,0,0.55,0,2.97
+BrC(Br)Br,NYB0000525,252.73,2.42,0,-5.87,Low,Medium,Low,0,0.55,0,3.56
+BrC(I)=CC(Br)Br,NYB0000566,404.66,3.32,0,-6.27,Medium,Low,Low,0,0.55,0,3.24
+BrCC(Br)CBr,NYB0542804,280.78,2.58,0,-6.19,Low,Low,Low,0,0.55,0,3.07
+BrCC(Br)CCC(Br)CBr,NYB0000540,401.76,3.92,0,-5.83,Medium,Low,Low,1,0.55,0,3.81
+Brc1c(Br)c(Br)c(Br)c(Br)c1Br,NYB0000425,551.49,5.57,0,-5.35,High,Low,Low,2,0.17,0,1.98
+BrCCC(CBr)C1CCCCC1,NYB0000546,298.06,4.26,0,-4.5,Medium,Low,Low,1,0.55,0,4.02
+BrCCCCCCCCCCBr,NYB0000550,300.07,4.79,0,-3.99,Medium,Low,Low,1,0.55,0,3.56
+BrCCCCCCCCCCCCCCCCCCCCCCBr,NYB0000552,468.39,9.1,0,-0.75,High,Low,Low,1,0.55,0,4.89
+BrCCCCCCCCCCCI,NYB0000557,361.1,5.43,0,-3.34,High,Low,Low,1,0.55,0,4
+BrCCCCCCCOC1CCCCO1,NYB0569348,279.21,3.61,18.46,-5.4,Medium,Medium,Low,0,0.55,0,4.05
+BrCCCCCOC1CCCCC1,NYB0000558,249.19,3.59,9.23,-5.18,Medium,Medium,Low,0,0.55,0,2.97
+BrCc1cc(Br)c2cc(NBr)c(Br)c(Br)c2c1,NYB0000532,551.69,5.51,12.03,-5.34,High,Low,Low,2,0.17,0,2.76
+BrCc1cc(Br)c2cc(NBr)c(Br)cc2c1Br,NYB0000533,551.69,5.5,12.03,-5.34,High,Low,Low,2,0.17,0,2.69
+Brc1[nH]c(Br)c(Br)c1Br,NYB0000521,382.67,3.59,15.79,-5.69,Medium,Low,Low,0,0.55,0,2.33
+Brc1c(Br)c(-c2ccc(Br)n2Br)n(Br)c1Br,NYB0000426,605.54,5.15,9.86,-5.18,High,Low,Low,2,0.17,0,3.14
+Brc1c2c(c(Br)c3[nH]ccc13)OCO2,NYB0000422,318.95,3.07,34.25,-5.95,Medium,Medium,Low,0,0.55,0,2.35
+Brc1cc(Br)c(Oc2c(Br)cc(Br)c(Br)c2Br)cc1Br,NYB0000444,722.48,7.33,9.23,-5.01,High,Low,Low,2,0.17,0,2.48
+Brc1cc(Br)c(Oc2c(Br)cc(Br)cc2Br)c(Br)c1,NYB0000445,643.58,6.79,9.23,-4.83,High,Low,Low,2,0.17,0,2.08
+Brc1cc(Br)c(Oc2cc(Br)c(Br)cc2Br)c(Br)c1,NYB0000446,643.58,6.77,9.23,-4.97,High,Low,Low,2,0.17,0,2.48
+Brc1cc(Br)c(Oc2ccccc2Br)c(Br)c1,NYB0000449,485.79,5.6,9.23,-4.85,High,Low,Low,1,0.55,0,2.08
+Brc1cc(Br)c2c(Br)c[nH]c2c1,NYB0000436,353.84,3.84,15.79,-5.53,Medium,Low,Low,0,0.55,0,1.65
+Brc1cc(Br)c2oc3c(Br)c(Br)[nH]c3c2c1,NYB0000440,472.75,4.92,28.93,-5.18,Medium,Low,Low,1,0.55,0,2.78
+Brc1cc(Br)cc(-c2cc(-c3cc(Br)cc(Br)c3)cc(-c3cc(Br)cc(Br)c3)c2)c1,NYB0544945,779.78,9.66,0,-3.28,High,Low,Low,2,0.17,0,2.7
