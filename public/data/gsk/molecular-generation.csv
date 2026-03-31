@@ -1,6 +1,21 @@
-generated_compound,smiles,predicted_delta_g,qed_score,selectivity_ratio,improvement
-LicA-Opt-1,COc1ccc(C=CC(=O)c2ccc(O)cc2O)cc1OC,-7.82,0.84,18.4,+22% binding vs lead; improved selectivity
-LicA-Opt-2,COc1ccc(/C=C/C(=O)c2ccc(O)cc2O)cc1,-7.65,0.81,15.7,+19% binding; better ADMET
-LicA-Opt-3,Oc1ccc(/C=C/C(=O)c2ccc(O)c(O)c2)cc1,-7.53,0.78,14.2,Improved solubility; moderate selectivity gain
-LicA-Opt-4,COc1ccc(/C=C/C(=O)c2ccc(O)cc2)cc1OC,-7.41,0.82,16.1,+16% binding; dual methoxy groups add kinase pocket contacts
-LicA-Opt-5,O=C(/C=C/c1ccc(O)cc1)c1ccc(O)cc1O,-7.28,0.76,13.5,Backbone scaffold retained; reduced MW
+Generated compound,Score
+Cn1ccc(C(=O)N2CC[C@H](NC(=O)c3ccc(Cl)cc3)C2)n1,0.9302
+OCC[C@@H]1CN(Cc2ccc(C(F)(F)F)cc2)CCO1,0.922900
+OCCn1cc(CN2CCC[C@H]2c2ccccc2)cn1,0.906300
+NC(=O)c1ccccc1CCC(=O)Nc1cccc(N2CCCCC2)c1,0.837900
+NC(=O)c1ccc(NC(=O)Nc2ccccc2SC(F)F)cc1,0.726700
+O=C(CCc1ccccc1)N[C@@H](CO)CNC(=O)c1ccccn1,0.672300
+O=C(CCC(=O)N1CCCC1)NCCNC(=O)c1ccccc1CC1CC1,0.650800
+NCCO[C@@]1(CCCCCCC2CC2)CCCSC1,0.616700
+OB(O)c1ccc(N2CCC(F)(F)CC2)cc1I,0.610500
+OCCCCC(=O)NC[C@@H]1C[C@H](O)CN1C(=O)[C@@H]1CCCOCC1,0.567700
+OCCn1cc(CN[C@H]2CCCN(c3ccc(Cl)cc3)C2)cn1,0.850800
+O=C(c1ccccc1)N1CC[C@]2(CCN(C(=O)[C@@]34CCC[C@@H...,0.831800
+BrCn1cc(C[C@H]2CC[C@@H]3COC[C@H]3O2)cn1,0.801000
+OCc1ccccc1CN1CC[S@@+]([O-])CC1,0.791600
+OCC[C@@H]1CCCC[C@@H]1NC[C@H](O)c1ccccc1Br,0.744900
+OCCCCCO[C@@H]1CCC[C@@H]2CNCC[C@H]21,0.698400
+NC(=O)[C@H]1CCCCC[C@H]1NC(=O)NCc1cccc(N2CCOCC2)c1,0.684300
+OCCCCCCNCc1ccccc1I,0.566300
+BrCCCCCCNCc1cccc(-c2cccnc2)c1,0.520900
+O=C(CCCNC(=O)C(=O)Nc1cccc(N2CCCC2)c1)Nc1ccccc1,0.497500

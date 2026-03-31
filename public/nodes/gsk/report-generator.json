@@ -62,13 +62,6 @@
         { "value": "admet-overview", "label": "ADMET Overview" }
       ],
       "defaultValue": "drug-discovery-summary"
-    },
-    {
-      "key": "includeStructures",
-      "type": "boolean",
-      "label": "Include 3D Structures",
-      "defaultValue": true,
-      "description": "Embed docked 3D structure images in the report."
     }
   ],
   "defaultConfig": {

@@ -4,109 +4,115 @@
   "category": "generation",
   "icon": "sparkles",
   "color": "violet",
-  "description": "Generates and optimizes novel drug-like molecules based on the lead compound using generative AI (ReinventMol / Graph Transformer). Outputs improved analogs with better binding affinity, selectivity, and drug-likeness scores.",
+  "description": "Generates optimized drug-like molecules from a seed compound using MolMim (CMA-ES guided latent-space optimization). Outputs novel analogs ranked by score.",
   "pricing": { "credits": 1500, "executionTime": 2 },
-  "outputMockLabel": "10 molecules",
+  "outputMockLabel": "20 molecules",
   "defaultInputs": [
     {
       "id": "leadCompound",
       "name": "Lead Compound",
       "type": "string",
-      "required": true,
-      "tooltip": "Best-ranking compound from the primary bioactivity filter to use as the scaffold."
-    },
-    {
-      "id": "selectivityData",
-      "name": "Selectivity Data",
-      "type": "array",
       "required": false,
-      "tooltip": "Optional non-target bioactivity data to guide selectivity optimization."
+      "tooltip": "Optional SMILES from an upstream bioactivity filter to use as seed molecule."
     }
   ],
   "defaultOutputs": [
     {
       "id": "generated_compound",
-      "name": "Generated Compound",
+      "name": "Generated compound",
       "type": "string",
-      "tooltip": "Name of the generated/optimized molecule."
+      "tooltip": "SMILES string of the generated/optimized molecule."
     },
     {
-      "id": "smiles",
-      "name": "SMILES",
-      "type": "string",
-      "tooltip": "SMILES string of the generated molecule."
-    },
-    {
-      "id": "predicted_delta_g",
-      "name": "Predicted ΔG (kcal/mol)",
+      "id": "score",
+      "name": "Score",
       "type": "number",
-      "tooltip": "Predicted binding free energy for RPS6KB1."
-    },
-    {
-      "id": "qed_score",
-      "name": "QED Score",
-      "type": "number",
-      "tooltip": "Quantitative Estimate of Drug-likeness (0–1, higher is better)."
-    },
-    {
-      "id": "selectivity_ratio",
-      "name": "Selectivity Ratio",
-      "type": "number",
-      "tooltip": "Predicted IC50(RPS6KB2) / IC50(RPS6KB1) — higher values indicate better selectivity."
-    },
-    {
-      "id": "improvement",
-      "name": "Improvement",
-      "type": "string",
-      "tooltip": "Summary of how this molecule improves on the lead compound."
+      "tooltip": "Optimization score (0–1, higher = better alignment with the target property)."
     }
   ],
   "configSchema": [
     {
-      "key": "inputCompound",
-      "type": "text",
-      "label": "Lead Compound (SMILES or Name)",
-      "placeholder": "e.g. Licochalcone A",
-      "tooltip": "Input lead compound to use as scaffold for generative optimization.",
-      "suggestedField": ["compound", "smiles"]
+      "key": "smiles",
+      "type": "textarea",
+      "label": "SMILES",
+      "required": true,
+      "placeholder": "Paste seed molecule SMILES (e.g. CC1=CC=CC=C1)",
+      "tooltip": "Seed molecule SMILES string. The generation will explore the chemical neighbourhood of this scaffold.",
+      "suggestedField": ["smiles", "SMILES", "Generated compound"]
     },
     {
-      "key": "generationModel",
+      "key": "algorithm",
       "type": "select",
-      "label": "Generation Model",
+      "label": "Algorithm",
       "options": [
-        { "value": "reinventmol", "label": "ReinventMol (Reinforcement Learning)" },
-        { "value": "graph_transformer", "label": "Graph Transformer (Structure-Aware)" },
-        { "value": "diffsbdd", "label": "DiffSBDD (Diffusion-Based)" }
+        { "value": "molmim", "label": "MolMim" }
       ],
-      "defaultValue": "reinventmol",
-      "tooltip": "Generative model to use for molecule optimization."
+      "defaultValue": "molmim",
+      "advanced": true,
+      "tooltip": "Generative algorithm. MolMim uses a masked molecular language model with CMA-ES optimisation in the continuous latent space."
     },
     {
-      "key": "numMolecules",
+      "key": "num_molecules",
       "type": "number",
       "label": "Number of Molecules",
-      "placeholder": "e.g. 10",
-      "defaultValue": 10,
-      "tooltip": "Number of novel molecules to generate."
+      "defaultValue": 20,
+      "advanced": true,
+      "tooltip": "Total number of molecules to generate."
     },
     {
-      "key": "optimizeFor",
-      "type": "multiselect",
-      "label": "Optimization Goals",
+      "key": "optimization_property",
+      "type": "select",
+      "label": "Optimization Property",
       "options": [
-        { "value": "binding_affinity", "label": "Binding Affinity (RPS6KB1)" },
-        { "value": "selectivity", "label": "Selectivity vs RPS6KB2" },
-        { "value": "qed", "label": "Drug-Likeness (QED)" },
-        { "value": "admet", "label": "ADMET Profile" }
+        { "value": "QED", "label": "QED (Drug-likeness)" },
+        { "value": "plogp", "label": "Penalised logP" },
+        { "value": "SA", "label": "Synthetic Accessibility" },
+        { "value": "binding_affinity", "label": "Binding Affinity" }
       ],
-      "defaultValue": ["binding_affinity", "selectivity"],
-      "tooltip": "Properties to optimize during molecular generation."
+      "defaultValue": "QED",
+      "advanced": true,
+      "tooltip": "Molecular property to optimise during latent-space search."
+    },
+    {
+      "key": "minimize_property",
+      "type": "boolean",
+      "label": "Minimize Property",
+      "defaultValue": false,
+      "advanced": true,
+      "tooltip": "If enabled, the algorithm will minimise the target property (e.g. synthetic accessibility score) rather than maximise it."
+    },
+    {
+      "key": "min_similarity",
+      "type": "number",
+      "label": "Minimum Similarity",
+      "defaultValue": 0.4,
+      "advanced": true,
+      "tooltip": "Minimum Tanimoto similarity to the seed molecule. Lower values allow more diverse but potentially less drug-like outputs."
+    },
+    {
+      "key": "cma_particles",
+      "type": "number",
+      "label": "CMA-ES Particles",
+      "defaultValue": 30,
+      "advanced": true,
+      "tooltip": "Population size for the CMA-ES optimisation step. Larger values improve coverage but increase runtime."
+    },
+    {
+      "key": "cma_iterations",
+      "type": "number",
+      "label": "CMA-ES Iterations",
+      "defaultValue": 100,
+      "advanced": true,
+      "tooltip": "Number of CMA-ES iterations. More iterations give better convergence at the cost of compute time."
     }
   ],
   "defaultConfig": {
-    "generationModel": "reinventmol",
-    "numMolecules": 10,
-    "optimizeFor": ["binding_affinity", "selectivity"]
+    "algorithm": "molmim",
+    "num_molecules": 20,
+    "optimization_property": "QED",
+    "minimize_property": false,
+    "min_similarity": 0.4,
+    "cma_particles": 30,
+    "cma_iterations": 100
   }
 }

@@ -1,2 +1,2 @@
-report_title,format,generated_at,top_candidate,best_delta_g,best_ic50_nm,recommendation
-Drug Discovery Report – RPS6KB1,PDF,2026-03-30,Licochalcone A,-6.42,811.7,Proceed to in vitro validation
+report_id,report_name,report_type,reference_url
+RPT-001,RPT-002 — Breast Cancer Kinase Selectivity Optimization,External Report,https://drive.google.com/file/d/1ku4UyIf30PNDWM4pQPScr1W1rJwmN1jC/view?usp=sharing
