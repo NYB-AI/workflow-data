@@ -1,0 +1,5 @@
+Original_Compound,Original_NYB_ID,Synthesized_SMILES,Synthesized_ID,Generation_Method,QED_Score,SA_Score,Predicted_IC50_nM
+"BrCC(Br)CCC(Br)CBr",NYB0000565,CC(CN(CC(F)F)C(=O)c1ccc(Br)cc1)NC(=O)c1ccc(F)cc1,SYN0000101,MolMim,0.81,2.14,340
+"BrC(I)=CC(Br)Br",NYB0000528,FC(F)(F)c1ccc(NC(=O)CCc2ccc(Br)cc2)cc1,SYN0000102,MolMim,0.76,2.67,520
+"BrCC(Br)CBr",NYB0000525,O=C(Nc1ccc(F)cc1F)c1cc(Br)ccc1NC(=O)CF,SYN0000103,MolMim,0.79,2.41,480
+"BrC(Br)=CC(Br)Br",NYB0000566,CC(C)(C)c1cc(C(=O)Nc2ccc(Br)cc2)cc(C(F)(F)F)c1,SYN0000104,MolMim,0.83,2.28,290

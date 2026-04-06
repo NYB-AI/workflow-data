@@ -1,0 +1,6 @@
+Formulation_ID,Test_Parameter,Target_Value,Measured_Value,Unit,Status
+GFR-BATCH-001,pH,6.6 – 7.0,6.8,pH units,Pass
+GFR-BATCH-001,Viscosity,80 – 120,97,mPa·s,Pass
+GFR-BATCH-001,Glycemic Index,< 55,48,GI units,Pass
+GFR-BATCH-001,Stability (6-month accelerated),No phase separation,No phase separation observed,qualitative,Pass
+GFR-BATCH-001,Taste Score (sensory panel),> 3.5 / 5,3.2,score,Marginal

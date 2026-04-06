@@ -1,0 +1,2 @@
+Model_Name,New_Training_Samples,Previous_MSE,Updated_MSE,Improvement_pct,Retrain_Status
+Formulation AI,5,0.334,0.241,27.8,Complete

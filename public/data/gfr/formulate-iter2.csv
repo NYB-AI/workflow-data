@@ -1,0 +1,13 @@
+Component,percent_w_w,Functional_role
+"Skim milk base",87.6,"Primary carrier matrix; protein stabilization & oral delivery vehicle"
+"Milk protein isolate",4.8,"Satiety support; slows gastric emptying; improves glycemic response"
+"Resistant maltodextrin",2.4,"Low-GI carbohydrate system; attenuates post-prandial glucose spikes"
+"Inulin (prebiotic fiber)",2.0,"Improves insulin sensitivity via microbiome modulation"
+"Caprylic/Capric triglyceride",1.4,"Lipid absorption enhancer for hydrophobic ligands"
+"Isomaltulose",1.1,"Slow-release carbohydrate energy source"
+"SYN0000104",0.032,"Lead synthesized DPP-4 inhibitor (IC50 260 nM) — model-optimized dose"
+"SYN0000101",0.018,"Secondary DPP-4 inhibitor (IC50 310 nM) — complementary activity"
+"Chromium picolinate",0.005,"Insulin signaling cofactor"
+"Magnesium citrate",0.02,"Glucose metabolism support"
+"Vitamin premix",0.3,"Metabolic micronutrient support"
+"Flavor enhancer (natural)",0.325,"Taste score optimization (sensory feedback-guided)"

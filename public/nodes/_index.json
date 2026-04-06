@@ -44,6 +44,11 @@
     "literature-screening",
     "filter-formulation-by-category",
     "ranking-by-count",
-    "final-formulation"
+    "final-formulation",
+    "molecular-generation",
+    "wetlab-validation-bioactivity",
+    "model-feedback-bioactivity",
+    "wetlab-validation-formulation",
+    "model-feedback-formulation"
   ]
 }
