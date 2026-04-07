@@ -9,7 +9,7 @@
         "credits": 800,
         "executionTime": 1
     },
-    "outputMockLabel": "3 compounds",
+    "outputMockLabel": "8 compounds",
     "defaultInputs": [
         {
             "id": "compoundList",
