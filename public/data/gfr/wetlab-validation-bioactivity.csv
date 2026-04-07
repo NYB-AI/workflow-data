@@ -1,5 +1,0 @@
-Compound,NYB_ID,SMILES,Measured_IC50_nM,Predicted_IC50_nM,Prediction_Error_pct,Validation_Status
-SYN0000101,SYN0000101,CC(CN(CC(F)F)C(=O)c1ccc(Br)cc1)NC(=O)c1ccc(F)cc1,310,340,8.8,Pass
-SYN0000102,SYN0000102,FC(F)(F)c1ccc(NC(=O)CCc2ccc(Br)cc2)cc1,490,520,6.0,Pass
-SYN0000103,SYN0000103,O=C(Nc1ccc(F)cc1F)c1cc(Br)ccc1NC(=O)CF,510,480,6.3,Pass
-SYN0000104,SYN0000104,CC(C)(C)c1cc(C(=O)Nc2ccc(Br)cc2)cc(C(F)(F)F)c1,260,290,10.3,Pass
