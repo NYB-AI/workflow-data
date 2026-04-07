@@ -1,0 +1,80 @@
+{
+	"type": "model-feedback-formulation",
+	"label": "Model Feedback (Formulation)",
+	"category": "training",
+	"icon": "brain",
+	"color": "orange",
+	"description": "Feed wetlab formulation results back into the Formulation AI model to refine future composition predictions.",
+	"pricing": {
+		"credits": 0,
+		"executionTime": 1
+	},
+	"outputMockLabel": "1 model updated",
+	"defaultInputs": [
+		{
+			"id": "wetlabFormulationData",
+			"name": "Wetlab Formulation Data",
+			"type": "array",
+			"required": true,
+			"tooltip": "Measured formulation test results from wetlab validation."
+		}
+	],
+	"defaultOutputs": [
+		{
+			"id": "Model_Name",
+			"name": "Model Name",
+			"type": "string",
+			"tooltip": "Name of the updated formulation model."
+		},
+		{
+			"id": "New_Training_Samples",
+			"name": "New Training Samples",
+			"type": "number",
+			"tooltip": "Number of new formulation data points added."
+		},
+		{
+			"id": "Previous_MSE",
+			"name": "Previous MSE",
+			"type": "number",
+			"tooltip": "Mean squared error before retraining."
+		},
+		{
+			"id": "Updated_MSE",
+			"name": "Updated MSE",
+			"type": "number",
+			"tooltip": "Mean squared error after retraining."
+		},
+		{
+			"id": "Improvement_pct",
+			"name": "Improvement (%)",
+			"type": "number",
+			"tooltip": "Percentage improvement in formulation prediction accuracy."
+		}
+	],
+	"configSchema": [
+		{
+			"key": "modelName",
+			"type": "select",
+			"label": "Model to Retrain",
+			"options": [
+				{
+					"value": "formulation_ai",
+					"label": "Formulation AI — Composition optimizer"
+				}
+			],
+			"defaultValue": "formulation_ai",
+			"tooltip": "The formulation composition model to update with wetlab-validated data."
+		},
+		{
+			"key": "retrainStrategy",
+			"type": "select",
+			"label": "Retrain Strategy",
+			"options": [
+				{ "value": "fine_tune", "label": "Fine-tune (fast, incremental)" },
+				{ "value": "full_retrain", "label": "Full retrain (slower, complete)" }
+			],
+			"defaultValue": "fine_tune",
+			"tooltip": "Fine-tuning adds new samples incrementally; full retrain rebuilds from all data."
+		}
+	]
+}

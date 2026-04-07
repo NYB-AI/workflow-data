@@ -1,0 +1,89 @@
+{
+	"type": "molecular-generation",
+	"label": "Molecular Generation",
+	"category": "generation",
+	"icon": "molecule",
+	"color": "violet",
+	"description": "Generate synthesized analogs from natural compound scaffolds using generative AI.",
+	"pricing": {
+		"credits": 1200,
+		"executionTime": 2
+	},
+	"defaultInputs": [
+		{
+			"id": "compoundList",
+			"name": "Compound List",
+			"type": "array",
+			"required": true,
+			"tooltip": "Input list of natural compound SMILES to use as generation seeds."
+		},
+		{
+			"id": "targetList",
+			"name": "Target List",
+			"type": "array",
+			"required": false,
+			"tooltip": "Protein targets for property optimization during generation."
+		}
+	],
+	"defaultOutputs": [
+		{
+			"id": "Synthesized_SMILES",
+			"name": "Synthesized SMILES",
+			"type": "string",
+			"tooltip": "Generated synthesized analog SMILES."
+		},
+		{
+			"id": "Score",
+			"name": "Score",
+			"type": "number",
+			"tooltip": "Score of the synthesized compound."
+		}
+	],
+	"configSchema": [
+		{
+			"key": "smiles",
+			"type": "text",
+			"label": "Seed SMILES",
+			"placeholder": "e.g. BrCC(Br)CCC(Br)CBr",
+			"tooltip": "Comma-separated SMILES or map from compound list output.",
+			"suggestedField": ["smiles", "SMILES", "compound"]
+		},
+		{
+			"key": "algorithm",
+			"type": "select",
+			"label": "Generation Algorithm",
+			"options": [
+				{
+					"value": "molmim",
+					"label": "MolMim — Latent space interpolation"
+				}
+			],
+			"defaultValue": "molmim",
+			"tooltip": "Select the generative model. **MolMim** uses a continuous latent space to interpolate between natural scaffold and optimized drug-like analogs."
+		},
+		{
+			"key": "numGenerations",
+			"type": "select",
+			"label": "Number of Generations",
+			"options": [
+				{ "value": "4", "label": "4" },
+				{ "value": "8", "label": "8" },
+				{ "value": "16", "label": "16" }
+			],
+			"defaultValue": "4",
+			"tooltip": "Number of analogs to generate per seed compound."
+		},
+		{
+			"key": "optimizeFor",
+			"type": "select",
+			"label": "Optimize For",
+			"options": [
+				{ "value": "ic50", "label": "Binding Affinity (IC50)" },
+				{ "value": "qed", "label": "Drug-likeness (QED)" },
+				{ "value": "both", "label": "Both (multi-objective)" }
+			],
+			"defaultValue": "both",
+			"tooltip": "Property objective for the generative optimization."
+		}
+	]
+}

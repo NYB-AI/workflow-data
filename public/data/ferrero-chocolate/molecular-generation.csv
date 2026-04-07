@@ -1,0 +1,11 @@
+Synthesized_SMILES,Score
+Cn1c(C(=O)NC[C@@H]2CCCC2(C)C)cccc1=O,0.9048
+CCC(=O)N1CC(NC(=O)[C@@H](C)c2ccsc2)C1,0.8994
+Cn1c(=O)c2c(ncn2C)n(CCC(=O)NC2CCCC2)c1=O,0.8506
+Cn1c(=O)c2c(ncn2CC[C@@H](CCN)C(F)F)n(C)c1=O,0.816
+C[C@H]1SCC[C@@H]1n1c(S)nc2nn(C)c(=O)cc21,0.8052
+Cn1c(=O)c2c(ncn2CCN(CC2CCCCC2)C2CC2)n(C)c1=O,0.7836
+Cn1c(Br)cc2c(cnn2C2CCCC2)c1=O,0.7589
+Cn1c(=O)c2c(ncn2CCCCCF)n(C)c1=O,0.7449
+Cn1c(=O)c2c(ncn2CCC(=O)N2CC[C@H](C(=O)O)C2)n(C)c1=O,0.737
+Cn1c(=O)c2c(ncn2CCCS(C)(=O)=O)n(C)c1=O,0.7116

@@ -79,6 +79,12 @@
       "name": "Reference (dosage)",
       "type": "string",
       "tooltip": "Dosage reference notes from pharmacopoeia or clinical guidelines."
+    },
+    {
+      "id": "Image",
+      "name": "Image",
+      "type": "image",
+      "tooltip": "Botanical image of the ingredient."
     }
   ],
   "configSchema": [

@@ -1,0 +1,3 @@
+Model_Name,New_Training_Samples,Previous_RMSE,Updated_RMSE,Improvement_pct,Retrain_Status
+LigaSpace,4,0.412,0.287,30.3,Complete
+DTIGN,4,0.538,0.391,27.3,Complete
