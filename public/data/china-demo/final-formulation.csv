@@ -1,15 +1,15 @@
-SKU,成分,Role,日剂量（建议）,Animal Dosage,Animal Type,HED (human equivalent dosage)
-Longevix™ (Daily Healthspan Maintenance · 长期稳态),黄芪 (Astragalus),Direct,0.8 g,6.4-400.0 mg/kg (mouse/mice); 200.0 mg/kg (rat),"mouse/mice, rat",0.53-33.33 mg/kg
-,灵芝 (Reishi (Ganoderma lucidum)),Direct,0.8 g,50.0-1000.0 mg/kg (mouse/mice); 200.0-1000.0 mg/kg (rat),"mouse/mice, rat",4.17-162.16 mg/kg
-,铁皮石斛 (Dendrobium (Dendrobium officinale)),Supportive,0.5 g,320.0-1000.0 mg/kg (mouse/mice),mouse/mice,26.67-83.33 mg/kg
-,杜仲叶 (Eucommia leaf (Eucommia ulmoidesfolium)),Supportive,0.5 g,70.0-140.0 mg/kg (mouse/mice),mouse/mice,5.83-11.67 mg/kg
-,黄精 (Polygonatum sibiricum),Direct,0.5 g,500.0-8000.0 mg/kg (mouse/mice),mouse/mice,41.67-666.67 mg/kg
-,枸杞 (Lycium barbarum),Supportive (Optional),0.6 g,1.0-100.0 mg/kg (mouse/mice); 1.0 mg/kg (rat),"mouse/mice, rat",0.08-8.33 mg/kg
-,,,,,,
-Rejuvenix™ (Cyclical Recovery & Renewal · 阶段性恢复更新),党参 (Codonopsis (Codonopsis pilosula)),Direct,0.8 g,100.0-1200.0 mg/kg (mouse/mice); 400.0-1200.0 mg/kg (rat),"mouse/mice, rat",8.33-194.59 mg/kg
-,天麻 ((Gastrodia (Gastrodia elata)),Supportive,0.4 g,25.0-1000.0 mg/kg (mouse/mice); 300.0-1000.0 mg/kg (rat),"mouse/mice, rat",2.08-162.16 mg/kg
-,山茱萸 (Cornus (Cornus officinalis)),Supportive,0.4 g,30.0-180.0 mg/kg (mouse/mice); 180.0 mg/kg (rat),"mouse/mice, rat",2.50-29.19 mg/kg
-,麦冬 (Ophiopogon (Ophiopogon japonicus)),Supportive,0.5 g,2.5-10.0 mg/kg (rat),rat,0.41-1.62 mg/kg
-,余甘子（Phyllanthus emblica）,Direct,0.3 g,100.0-400.0 mg/kg (mouse/mice); 100.0 mg/kg (rat),"mouse/mice, rat",8.33-33.33 mg/kg
-,茯苓（Poria cocos）,Supportive,0.4 g,20.0-100.0 mg/kg (mouse/mice),mouse/mice,1.67-8.33 mg/kg
-,阿拉伯半乳聚糖（落叶松）(Arabinogalactan),Direct,2.0 g,50.0 mg/kg (mouse/mice),mouse/mice,4.17 mg/kg
+SKU,成分,Role,日剂量（建议）,Animal Dosage,Animal Type,HED (human equivalent dosage),Image
+Longevix™ (Daily Healthspan Maintenance · 长期稳态),黄芪 (Astragalus),Direct,0.8 g,6.4-400.0 mg/kg (mouse/mice); 200.0 mg/kg (rat),"mouse/mice, rat",0.53-33.33 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/astragalus.png
+,灵芝 (Reishi (Ganoderma lucidum)),Direct,0.8 g,50.0-1000.0 mg/kg (mouse/mice); 200.0-1000.0 mg/kg (rat),"mouse/mice, rat",4.17-162.16 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/reishi.png
+,铁皮石斛 (Dendrobium (Dendrobium officinale)),Supportive,0.5 g,320.0-1000.0 mg/kg (mouse/mice),mouse/mice,26.67-83.33 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Dendrobium.png
+,杜仲叶 (Eucommia leaf (Eucommia ulmoidesfolium)),Supportive,0.5 g,70.0-140.0 mg/kg (mouse/mice),mouse/mice,5.83-11.67 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Eucommia.png
+,黄精 (Polygonatum sibiricum),Direct,0.5 g,500.0-8000.0 mg/kg (mouse/mice),mouse/mice,41.67-666.67 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Polygonatum.png
+,枸杞 (Lycium barbarum),Supportive (Optional),0.6 g,1.0-100.0 mg/kg (mouse/mice); 1.0 mg/kg (rat),"mouse/mice, rat",0.08-8.33 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Lycium.png
+,,,,,,,
+Rejuvenix™ (Cyclical Recovery & Renewal · 阶段性恢复更新),党参 (Codonopsis (Codonopsis pilosula)),Direct,0.8 g,100.0-1200.0 mg/kg (mouse/mice); 400.0-1200.0 mg/kg (rat),"mouse/mice, rat",8.33-194.59 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Codonopsis.png
+,天麻 ((Gastrodia (Gastrodia elata)),Supportive,0.4 g,25.0-1000.0 mg/kg (mouse/mice); 300.0-1000.0 mg/kg (rat),"mouse/mice, rat",2.08-162.16 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Gastrodia.png
+,山茱萸 (Cornus (Cornus officinalis)),Supportive,0.4 g,30.0-180.0 mg/kg (mouse/mice); 180.0 mg/kg (rat),"mouse/mice, rat",2.50-29.19 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Cornus.png
+,麦冬 (Ophiopogon (Ophiopogon japonicus)),Supportive,0.5 g,2.5-10.0 mg/kg (rat),rat,0.41-1.62 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Ophiopogon.png
+,余甘子（Phyllanthus emblica）,Direct,0.3 g,100.0-400.0 mg/kg (mouse/mice); 100.0 mg/kg (rat),"mouse/mice, rat",8.33-33.33 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Phyllanthus emblica.png
+,茯苓（Poria cocos）,Supportive,0.4 g,20.0-100.0 mg/kg (mouse/mice),mouse/mice,1.67-8.33 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Poria cocos.png
+,阿拉伯半乳聚糖（落叶松）(Arabinogalactan),Direct,2.0 g,50.0 mg/kg (mouse/mice),mouse/mice,4.17 mg/kg,https://workflow-data-2sa8.vercel.app/data/images/Arabinogalactan.png
