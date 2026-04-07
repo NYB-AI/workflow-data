@@ -1,0 +1,119 @@
+{
+  "type": "wetlab-validation",
+  "label": "Wetlab Validation",
+  "category": "validation",
+  "icon": "test-tube",
+  "color": "cyan",
+  "description": "Design and generate a wetlab experimental plan to validate the safety and functional claims of the proposed formulation.",
+  "pricing": {
+    "credits": 0,
+    "executionTime": 1
+  },
+  "outputMockLabel": "1 plan",
+  "defaultInputs": [
+    {
+      "id": "formulation",
+      "name": "Formulation",
+      "type": "object",
+      "required": true,
+      "tooltip": "Final formulation data to design the validation study around."
+    }
+  ],
+  "defaultOutputs": [
+    {
+      "id": "Plan_id",
+      "name": "Plan ID",
+      "type": "string",
+      "tooltip": "Unique identifier for the generated experimental plan."
+    },
+    {
+      "id": "Plan Name",
+      "name": "Plan Name",
+      "type": "string",
+      "tooltip": "Descriptive name of the experimental plan."
+    },
+    {
+      "id": "Plan Type",
+      "name": "Plan Type",
+      "type": "string",
+      "tooltip": "Format of the output plan document (e.g. PDF, spreadsheet)."
+    },
+    {
+      "id": "Reference_URL",
+      "name": "Reference URL",
+      "type": "string",
+      "tooltip": "Link to the generated experimental plan document."
+    }
+  ],
+  "configSchema": [
+    {
+      "key": "administration",
+      "type": "select",
+      "label": "Administration",
+      "tooltip": "Route of administration for the product being validated.",
+      "options": [
+        { "value": "oral_food", "label": "Oral ingestion (food, supplement, drink)" },
+        { "value": "oral_capsule", "label": "Oral ingestion (capsule / tablet)" },
+        { "value": "topical", "label": "Topical application" },
+        { "value": "inhalation", "label": "Inhalation" }
+      ],
+      "defaultValue": "oral_food"
+    },
+    {
+      "key": "dailyIntakeFrequency",
+      "type": "textarea",
+      "label": "Daily Intake Frequency",
+      "tooltip": "How many times per day the product is consumed (e.g. 'Once daily with meal', '2× per day').",
+      "placeholder": "Enter daily intake frequency..."
+    },
+    {
+      "key": "servingSize",
+      "type": "textarea",
+      "label": "Serving Size",
+      "tooltip": "Amount consumed per serving, including unit (e.g. '30 g', '2 capsules', '250 mL').",
+      "placeholder": "Enter serving size..."
+    },
+    {
+      "key": "intent",
+      "type": "multiselect",
+      "label": "Intent",
+      "tooltip": "Intended purpose of the product being validated.",
+      "options": [
+        { "value": "functional", "label": "Functional" },
+        { "value": "medicinal", "label": "Medicinal" },
+        { "value": "cosmetic", "label": "Cosmetic" },
+        { "value": "nutraceutical", "label": "Nutraceutical" }
+      ],
+      "defaultValue": ["functional"]
+    },
+    {
+      "key": "targetPopulation",
+      "type": "select",
+      "label": "Target Population",
+      "tooltip": "The intended consumer group for whom the validation study is designed.",
+      "options": [
+        { "value": "general_adult", "label": "General adult population" },
+        { "value": "elderly", "label": "Elderly (65+)" },
+        { "value": "children", "label": "Children (6–12)" },
+        { "value": "athletes", "label": "Athletes / Active adults" },
+        { "value": "pregnant", "label": "Pregnant / Lactating women" }
+      ],
+      "defaultValue": "general_adult"
+    },
+    {
+      "key": "purposeOfTesting",
+      "type": "multiselect",
+      "label": "Purpose of Testing",
+      "tooltip": "Select all objectives this wetlab study is designed to address.",
+      "options": [
+        { "value": "safety_gap", "label": "Close safety data gap" },
+        { "value": "regulatory", "label": "Support regulatory submission" },
+        { "value": "product_claim", "label": "Support product claim" },
+        { "value": "formulation_change", "label": "De-risk formulation change" },
+        { "value": "efficacy", "label": "Demonstrate efficacy" },
+        { "value": "stability", "label": "Stability & shelf-life testing" }
+      ],
+      "defaultValue": ["safety_gap", "regulatory", "product_claim", "formulation_change"]
+    }
+  ]
+}
