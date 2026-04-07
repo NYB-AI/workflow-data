@@ -9,7 +9,7 @@
         "credits": 800,
         "executionTime": 1
     },
-    "outputMockLabel": "8 compounds",
+    "outputMockLabel": "5 compounds",
     "defaultInputs": [
         {
             "id": "compoundList",
@@ -34,16 +34,16 @@
             "tooltip": "Compound identifier"
         },
         {
-            "id": "chrm1_ac50",
-            "name": "CHRM1 - AC50 (nM)",
+            "id": "smiles",
+            "name": "SMILES",
             "type": "string",
-            "tooltip": "AC50 for CHRM1 (Assay: CHEMBL5291759)"
+            "tooltip": "SMILES of the compound"
         },
         {
-            "id": "drd1_ac50",
-            "name": "DRD1 - AC50 (nM)",
+            "id": "OR2J3_IC50",
+            "name": "OR2J3_IC50 (nM)",
             "type": "string",
-            "tooltip": "AC50 for DRD1 (Assay: CHEMBL5291777)"
+            "tooltip": "IC50 for OR2J3"
         }
     ],
     "configSchema": [

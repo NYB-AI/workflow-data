@@ -26,10 +26,10 @@
 			"tooltip": "Name of the compound."
 		},
 		{
-			"id": "nyb_id",
-			"name": "NYB ID",
+			"id": "Smiles",
+			"name": "Smiles",
 			"type": "string",
-			"tooltip": "NYB internal identifier for the compound."
+			"tooltip": "smiles string of the compound."
 		},
 		{
 			"id": "MW",
