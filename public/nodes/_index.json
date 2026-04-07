@@ -46,9 +46,8 @@
     "ranking-by-count",
     "final-formulation",
     "molecular-generation",
-    "wetlab-validation-bioactivity",
     "model-feedback-bioactivity",
-    "wetlab-validation-formulation",
+    "wetlab-validation",
     "model-feedback-formulation"
   ]
 }
