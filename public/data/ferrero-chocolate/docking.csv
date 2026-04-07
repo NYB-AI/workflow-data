@@ -1,8 +1,8 @@
 docked_structure,compound,target,delta_g
 https://workflow-data-2sa8.vercel.app/data/docking/caffein.pdb,Caffeine,OR2J3,-3.5
 https://workflow-data-2sa8.vercel.app/data/docking/theobromine.pdb,Theobromine,OR2J3,-8.1
+https://workflow-data-2sa8.vercel.app/data/docking/catechin.pdb,Catechin,OR2J3,-9
 https://workflow-data-2sa8.vercel.app/data/docking/7S61-COMPOUND_CID_64982-d4xxf_DOCKED.pdb,(-)-Epicatechin,OR2J3,2.9
-https://workflow-data-2sa8.vercel.app/data/docking/7S61-COMPOUND_CID_64982-d4xxf_DOCKED.pdb,Catechin,OR2J3,-9
 https://workflow-data-2sa8.vercel.app/data/docking/7S61-COMPOUND_CID_64982-d4xxf_DOCKED.pdb,L-Theanine,OR2J3,-1.8
 https://workflow-data-2sa8.vercel.app/data/docking/7S61-COMPOUND_CID_64982-d4xxf_DOCKED.pdb,Vanillin,OR2J3,-5.6
 https://workflow-data-2sa8.vercel.app/data/docking/7S61-COMPOUND_CID_64982-d4xxf_DOCKED.pdb,Ethyl vanillin,OR2J3,-9.9
