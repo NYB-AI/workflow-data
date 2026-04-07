@@ -66,7 +66,8 @@
         "smiles",
         "name",
         "ingredient_name",
-        "inci_name"
+        "inci_name",
+        "compound"
       ],
       "accept": ".csv,.txt,.smi"
     },

@@ -79,6 +79,13 @@
 			],
 			"defaultValue": "fine_tune",
 			"tooltip": "Fine-tuning adds new samples incrementally; full retrain rebuilds from all data."
+		},
+		{
+			"key": "wetlabData",
+			"type": "file",
+			"label": "Upload Wetlab bioactivity results",
+			"accept": ".pdf,.csv,.xlsx,.xls",
+			"tooltip": "Upload a wetlab bioactivity results file."
 		}
 	]
 }

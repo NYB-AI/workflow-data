@@ -75,6 +75,13 @@
 			],
 			"defaultValue": "fine_tune",
 			"tooltip": "Fine-tuning adds new samples incrementally; full retrain rebuilds from all data."
+		},
+		{
+			"key": "wetlabData",
+			"type": "file",
+			"label": "Upload Wetlab formulation results",
+			"accept": ".pdf,.csv,.xlsx,.xls",
+			"tooltip": "Upload a wetlab formulation results file."
 		}
 	]
 }

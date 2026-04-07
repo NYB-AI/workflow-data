@@ -66,9 +66,9 @@
 			"type": "select",
 			"label": "Number of Generations",
 			"options": [
-				{ "value": "4", "label": "4" },
-				{ "value": "8", "label": "8" },
-				{ "value": "16", "label": "16" }
+				{ "value": "10", "label": "10" },
+				{ "value": "15", "label": "15" },
+				{ "value": "20", "label": "20" }
 			],
 			"defaultValue": "4",
 			"tooltip": "Number of analogs to generate per seed compound."
