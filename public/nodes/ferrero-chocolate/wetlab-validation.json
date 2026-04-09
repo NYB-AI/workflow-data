@@ -55,7 +55,9 @@
         { "value": "oral_food", "label": "Oral ingestion (food, supplement, drink)" },
         { "value": "oral_capsule", "label": "Oral ingestion (capsule / tablet)" },
         { "value": "topical", "label": "Topical application" },
-        { "value": "inhalation", "label": "Inhalation" }
+        { "value": "inhalation", "label": "Inhalation" },
+        { "value": "iv", "label": "IV" },
+        { "value": "parental", "label": "Parental"}
       ],
       "defaultValue": "oral_food"
     },
