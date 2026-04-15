@@ -77,6 +77,10 @@
         "type": "string"
       }
     },
+    "rulesEndpoint": {
+      "type": "string",
+      "description": "Optional backend endpoint that exposes rule/threshold documentation for this node. When set, the config panel can render a 'Filtering logic' view fetched from this path."
+    },
     "defaultConfig": {
       "type": "object",
       "description": "Optional: Default configuration values. Prefer using 'defaultValue' in configSchema fields instead."
