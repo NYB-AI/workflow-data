@@ -341,6 +341,13 @@ export function ConfigFieldRenderer({ field, value, onChange }: ConfigFieldRende
         </div>
       )
 
+    case 'compound-value-upload':
+      return (
+        <div className="text-sm text-muted-foreground p-3 border rounded-md">
+          Compound upload is available in the workflow builder.
+        </div>
+      )
+
     default:
       return null
   }
