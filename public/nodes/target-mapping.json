@@ -69,7 +69,7 @@
     {
       "key": "requireHumanReview",
       "type": "boolean",
-      "label": "Require human review before proceeding",
+      "label": "Require review before proceeding",
       "tooltip": "Pause after this step so you can review the resolved targets and choose which rows continue to downstream nodes.",
       "defaultValue": true
     }
