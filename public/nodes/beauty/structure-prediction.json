@@ -22,7 +22,7 @@
 	],
 	"defaultOutputs": [
 		{
-			"id": "Protein name",
+			"id": "protein_name",
 			"name": "Protein name",
 			"type": "string",
 			"tooltip": "Name or identifier of the protein."

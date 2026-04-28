@@ -20,13 +20,13 @@
 	],
 	"defaultOutputs": [
 		{
-			"id": "Compound",
+			"id": "compound",
 			"name": "Compound",
 			"type": "string",
 			"tooltip": "Name of the compound."
 		},
 		{
-			"id": "SMILES",
+			"id": "smiles",
 			"name": "SMILES",
 			"type": "string",
 			"tooltip": "SMILES string of the compound."
