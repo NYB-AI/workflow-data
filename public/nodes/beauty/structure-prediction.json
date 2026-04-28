@@ -69,21 +69,17 @@
 			"tooltip": "Select proteins for prediction.",
 			"options": [
 				{
-					"value": "OR2J3",
-					"label": "OR2J3"
+					"value": "AQP3",
+					"label": "AQP3 (Aquaporin-3)"
 				},
 				{
-					"value": "Dopamine receptor D1 (DRD1)",
-					"label": "Dopamine receptor D1 (DRD1)"
+					"value": "COL1A1",
+					"label": "Collagen type I alpha 1 chain"
 				},
 				{
-					"value": "Adrenergic receptor α2A (ADRA2A)",
-					"label": "Adrenergic receptor α2A (ADRA2A)"
-				},
-                {
-                    "value": "Muscarinic acetylcholine receptor M1 (CHRM1)",
-                    "label": "Muscarinic acetylcholine receptor M1 (CHRM1)"
-                }
+					"value": "HAS2",
+					"label": "Hyaluronan synthase 2"
+				}
 			],
 			"showWhen": [{ "field": "proteinListText", "hasValue": true }]
 		},

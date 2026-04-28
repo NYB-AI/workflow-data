@@ -12,37 +12,37 @@
     "defaultInputs": [],
     "defaultOutputs": [
         {
-            "id": "Protein target",
+            "id": "protein_target",
             "name": "Protein target",
             "type": "string",
             "tooltip": "The specific protein being targeted."
         },
         {
-            "id": "Biological system",
+            "id": "biological_system",
             "name": "Biological system",
             "type": "string",
             "tooltip": "The biological system associated with the target."
         },
         {
-            "id": "Desired modulation",
+            "id": "desired_modulation",
             "name": "Desired modulation",
             "type": "string",
             "tooltip": "The intended effect on the target (e.g. inhibition, activation)."
         },
         {
-            "id": "Corresponding assay",
+            "id": "corresponding_assay",
             "name": "Corresponding assay",
             "type": "string",
             "tooltip": "The assay used to measure the effect."
         },
         {
-            "id": "Metric used",
+            "id": "metric_used",
             "name": "Metric used",
             "type": "string",
             "tooltip": "The metric used for measurement (e.g. EC50, IC50)."
         },
         {
-            "id": "Rationale for intervention",
+            "id": "rationale_for_intervention",
             "name": "Rationale for intervention",
             "type": "string",
             "tooltip": "Reasoning behind targeting this protein."
