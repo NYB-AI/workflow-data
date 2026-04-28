@@ -329,17 +329,17 @@
       ]
     },
     {
-      "key": "ingredientListFile",
-      "type": "file",
-      "label": "Or upload Compound List",
-      "accept": ".pdf,.doc,.docx,.txt,.csv",
-      "tooltip": "Upload your own compound list; parsed names/SMILES will be merged into the library.",
-      "showWhen": [
-        {
-          "field": "mode",
-          "in": ["upload"]
-        }
-      ]
+      "key": "compoundFile",
+      "type": "compound-value-upload",
+      "label": "Upload Compound List",
+      "accept": ".csv,.xlsx,.xls",
+      "standardType": "COMPOUND",
+      "columns": {
+        "smiles": { "required": true, "aliases": ["smiles", "smile", "smiles_string", "canonical_smiles"] },
+        "name": { "required": false, "aliases": ["name", "compound", "mol_name", "compound_name", "compound_id"] }
+      },
+      "tooltip": "Upload a CSV or Excel file with compound SMILES. Name column is optional.",
+      "showWhen": [{ "field": "mode", "in": ["upload"] }]
     }
   ]
 }

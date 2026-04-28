@@ -86,12 +86,12 @@
           "label": "DiffDock"
         },
         {
-          "value": "swissdock",
-          "label": "SwissDock"
+          "value": "boltz2",
+          "label": "Boltz-2"
         }
       ],
       "defaultValue": "vina",
-      "tooltip": "Select a docking backend:\n- **AutoDock Vina** – accurate classical docking.\n- **DiffDock** – fast ML‑based pose prediction.\n- **SwissDock** – convenient web‑style presets for quick exploration."
+      "tooltip": "Select a docking backend:\n- **AutoDock Vina** – accurate classical docking.\n- **DiffDock** – fast ML‑based pose prediction.\n- **Boltz-2** – high-accuracy alchemical docking with physics-based scoring."
     },
     {
       "key": "vina_exhaustiveness",
@@ -130,7 +130,7 @@
       "showWhen": [
         {
           "field": "engine",
-          "in": ["vina", "swissdock"]
+          "in": ["vina", "boltz2"]
         }
       ],
       "advanced": true,
@@ -166,55 +166,59 @@
       "tooltip": "Advanced: minimum DiffDock confidence score to keep a predicted pose."
     },
     {
-      "key": "swissdock_run_type",
+      "key": "boltz2_sampling_method",
       "type": "select",
-      "label": "SwissDock Run Type (Simple)",
+      "label": "Boltz-2 Sampling Method (Simple)",
       "options": [
         {
-          "value": "quick",
-          "label": "Quick – fastest, coarse search"
+          "value": "mc",
+          "label": "Monte Carlo – stochastic sampling"
         },
         {
-          "value": "balanced",
-          "label": "Balanced – default preset"
+          "value": "md",
+          "label": "Molecular Dynamics – trajectory-based sampling"
         },
         {
-          "value": "precise",
-          "label": "Precise – slower, higher accuracy"
+          "value": "hybrid",
+          "label": "Hybrid – combined MC/MD approach"
         }
       ],
-      "defaultValue": "balanced",
+      "defaultValue": "hybrid",
       "showWhen": [
         {
           "field": "engine",
-          "in": ["swissdock"]
+          "in": ["boltz2"]
         }
       ],
-      "description": "Simple preset selector for **SwissDock** controlling the trade-off between speed and accuracy."
+      "description": "Simple preset selector for **Boltz-2** controlling the conformational sampling strategy."
     },
     {
-      "key": "swissdock_precision",
+      "key": "boltz2_force_field",
       "type": "select",
-      "label": "SwissDock Advanced Precision",
+      "label": "Boltz-2 Force Field (Advanced)",
       "options": [
         {
-          "value": "standard",
-          "label": "Standard grid"
+          "value": "amber99sb",
+          "label": "AMBER99SB – classical, well-tested"
         },
         {
-          "value": "fine",
-          "label": "Fine grid (more detailed scoring)"
+          "value": "charmm36",
+          "label": "CHARMM36 – advanced, better water interactions"
+        },
+        {
+          "value": "opls",
+          "label": "OPLS-AA – optimized for ligands"
         }
       ],
-      "defaultValue": "standard",
+      "defaultValue": "amber99sb",
       "showWhen": [
         {
           "field": "engine",
-          "in": ["swissdock"]
+          "in": ["boltz2"]
         }
       ],
       "advanced": true,
-      "tooltip": "Advanced: switch between standard and fine‑grid scoring for SwissDock."
+      "tooltip": "Advanced: select the force field for **Boltz-2** physics-based scoring and energy calculations."
     }
   ]
 }

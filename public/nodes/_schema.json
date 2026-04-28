@@ -77,6 +77,10 @@
         "type": "string"
       }
     },
+    "rulesEndpoint": {
+      "type": "string",
+      "description": "Optional backend endpoint that exposes rule/threshold documentation for this node. When set, the config panel can render a 'Filtering logic' view fetched from this path."
+    },
     "defaultConfig": {
       "type": "object",
       "description": "Optional: Default configuration values. Prefer using 'defaultValue' in configSchema fields instead."
@@ -177,7 +181,8 @@
                 "filter",
                 "range",
                 "pocket_selector",
-                "structure_viewer"
+                "structure_viewer",
+                "compound-value-upload"
               ]
             },
             {
@@ -197,7 +202,8 @@
                   "filter",
                   "range",
                   "pocket_selector",
-                  "structure_viewer"
+                  "structure_viewer",
+                  "compound-value-upload"
                 ]
               },
               "minItems": 1
@@ -332,6 +338,29 @@
         "showBox": {
           "type": "boolean",
           "description": "For structure_viewer fields: whether to show interactive 3D box controls (default: false)"
+        },
+        "standardType": {
+          "type": "string",
+          "description": "For compound-value-upload fields: backend StandardType identifier (e.g. 'COMPOUND')"
+        },
+        "columns": {
+          "type": "object",
+          "description": "For compound-value-upload fields: defines expected columns with required flag and aliases",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["required", "aliases"],
+            "properties": {
+              "required": {
+                "type": "boolean",
+                "description": "Whether this column is required"
+              },
+              "aliases": {
+                "type": "array",
+                "description": "Accepted column header variants (case-insensitive)",
+                "items": { "type": "string" }
+              }
+            }
+          }
         },
         "boxCenter": {
           "type": "array",
