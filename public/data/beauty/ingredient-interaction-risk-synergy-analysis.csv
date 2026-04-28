@@ -1,7 +1,7 @@
 Pair,Predicted Interaction Signal,Risk Type (Dominant),Confidence,Flag
-Niacinamide + Ferulic acid,Moderate interaction likelihood,pH-dependent hydrolysis risk (niacinamide → nicotinic acid conversion under acidic conditions),Medium,AMBER
-Niacinamide + EGCG,Low interaction likelihood,Polyphenol–amide compatibility generally stable across cosmetic pH window,High,GREEN
-Niacinamide + Panthenol,Minimal interaction likelihood,Compatible humectant/barrier-support co-formulation,High,GREEN
-Ferulic acid + EGCG,Moderate interaction likelihood,Redox coupling and oxidative stability competition between phenolic antioxidants,Medium,AMBER
-Ferulic acid + Panthenol,Low interaction likelihood,No direct reactive functional group conflict,High,GREEN
-EGCG + Panthenol,Moderate interaction likelihood,EGCG oxidation sensitivity influenced by aqueous humectant environment,Medium,AMBER
+Niacinamide + Ferulic acid,Moderate interaction likelihood,pH-dependent hydrolysis risk (niacinamide → nicotinic acid conversion under acidic conditions),Medium,Needs review
+Niacinamide + EGCG,Low interaction likelihood,Polyphenol–amide compatibility generally stable across cosmetic pH window,High,Good
+Niacinamide + Panthenol,Minimal interaction likelihood,Compatible humectant/barrier-support co-formulation,High,Good
+Ferulic acid + EGCG,Moderate interaction likelihood,Redox coupling and oxidative stability competition between phenolic antioxidants,Medium,Needs review
+Ferulic acid + Panthenol,Low interaction likelihood,No direct reactive functional group conflict,High,Good
+EGCG + Panthenol,Moderate interaction likelihood,EGCG oxidation sensitivity influenced by aqueous humectant environment,Medium,Needs review
