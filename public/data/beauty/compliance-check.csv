@@ -1,0 +1,13 @@
+Ingredient Name,INCI Name,CAS Number,Concentration (% w/w),Market,Regulatory Status,Restriction Type,Max Allowed Concentration,Reason,Regulation Source,Last Regulation Update
+Phenoxyethanol,Phenoxyethanol,122-99-6,0.8,EU,Restricted,Annex V preservative,1.00%,Preservative concentration cap,EU Cosmetic Regulation 1223/2009 Annex V,2024
+Phenoxyethanol,Phenoxyethanol,122-99-6,0.8,ASEAN,Restricted,Annex VI preservative list,1.00%,Preservative concentration cap,ASEAN Cosmetic Directive Annex VI,2023
+Niacinamide,Niacinamide,98-92-0,4,EU,Allowed,None,Not specified,No concentration restriction for leave-on use,EU Cosmetic Regulation 1223/2009,2024
+Niacinamide,Niacinamide,98-92-0,4,ASEAN,Allowed,None,Not specified,No concentration restriction for leave-on use,ASEAN Cosmetic Directive,2023
+Panthenol,Panthenol,81-13-0,2,EU,Allowed,None,Not specified,Skin-conditioning agent permitted,EU Cosmetic Regulation 1223/2009,2024
+Panthenol,Panthenol,81-13-0,2,ASEAN,Allowed,None,Not specified,Skin-conditioning agent permitted,ASEAN Cosmetic Directive,2023
+Sodium PCA,Sodium PCA,28874-51-3,2,EU,Allowed,None,Not specified,NMF-compatible humectant,EU Cosmetic Regulation 1223/2009,2024
+Sodium PCA,Sodium PCA,28874-51-3,1.5,ASEAN,Allowed,None,Not specified,NMF-compatible humectant,ASEAN Cosmetic Directive,2023
+Sodium Hyaluronate,Sodium Hyaluronate,9067-32-7,0.25,EU,Allowed,None,Not specified,Hydration polymer permitted,EU Cosmetic Regulation 1223/2009,2024
+Sodium Hyaluronate,Sodium Hyaluronate,9067-32-7,0.25,ASEAN,Allowed,None,Not specified,Hydration polymer permitted,ASEAN Cosmetic Directive,2023
+Madecassoside,Madecassoside,34540-22-2,0.1,EU,Allowed,None,Not specified,Botanical derivative permitted,EU Cosmetic Regulation 1223/2009,2024
+Madecassoside,Madecassoside,34540-22-2,0.1,ASEAN,Allowed,None,Not specified,Botanical derivative permitted,ASEAN Cosmetic Directive,2023

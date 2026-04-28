@@ -47,6 +47,10 @@ export const CLIENTS = [
 		name: "Bayer",
 		value: "bayer",
 	},
+	{
+		name: "Beauty",
+		value: "beauty",
+	},
 ] as const
 
 export const VALID_CLIENTS = CLIENTS.map((c) => c.value) as string[]

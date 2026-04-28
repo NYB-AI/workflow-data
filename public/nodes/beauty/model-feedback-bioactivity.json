@@ -1,0 +1,97 @@
+{
+	"type": "model-feedback-bioactivity",
+	"label": "Model Feedback (Bioactivity)",
+	"category": "training",
+	"icon": "brain",
+	"color": "orange",
+	"description": "Feed wetlab bioactivity data back into LigaSpace and DTIGN model training to improve future predictions.",
+	"pricing": {
+		"credits": 0,
+		"executionTime": 1
+	},
+	"outputMockLabel": "2 models updated",
+	"defaultInputs": [
+		{
+			"id": "wetlabData",
+			"name": "Wetlab Validation Data",
+			"type": "array",
+			"required": true,
+			"tooltip": "Measured IC50 results from wetlab validation."
+		}
+	],
+	"defaultOutputs": [
+		{
+			"id": "Model_Name",
+			"name": "Model Name",
+			"type": "string",
+			"tooltip": "Name of the updated prediction model."
+		},
+		{
+			"id": "New_Training_Samples",
+			"name": "New Training Samples",
+			"type": "number",
+			"tooltip": "Number of new data points added to training set."
+		},
+		{
+			"id": "Previous_RMSE",
+			"name": "Previous RMSE",
+			"type": "number",
+			"tooltip": "Root mean squared error before retraining."
+		},
+		{
+			"id": "Updated_RMSE",
+			"name": "Updated RMSE",
+			"type": "number",
+			"tooltip": "Root mean squared error after retraining."
+		},
+		{
+			"id": "Improvement_pct",
+			"name": "Improvement (%)",
+			"type": "number",
+			"tooltip": "Percentage improvement in prediction accuracy."
+		},
+		{
+			"id": "Retrain_Status",
+			"name": "Retrain Status",
+			"type": "string",
+			"tooltip": "Status of the retraining process."
+		}
+	],
+	"configSchema": [
+		{
+			"key": "modelsToUpdate",
+			"type": "multiselect",
+			"label": "Models to Retrain",
+			"options": [
+				{
+					"value": "ligospace",
+					"label": "LigaSpace — Graph-based bioactivity model"
+				},
+				{
+					"value": "dtign",
+					"label": "DTIGN — Drug-Target Interaction Graph Network"
+				}
+			],
+			"defaultValue": ["ligospace", "dtign"],
+			"tooltip": "Select which bioactivity prediction models to update with the new wetlab data."
+		},
+		{
+			"key": "retrainStrategy",
+			"type": "select",
+			"label": "Retrain Strategy",
+			"options": [
+				{ "value": "fine_tune", "label": "Fine-tune (fast, incremental)" },
+				{ "value": "full_retrain", "label": "Full retrain (slower, complete)" }
+			],
+			"defaultValue": "fine_tune",
+			"tooltip": "Fine-tuning adds new samples incrementally; full retrain rebuilds from all data."
+		},
+		{
+			"key": "wetlabData",
+			"type": "file",
+			"label": "Upload Wetlab bioactivity results",
+			"accept": ".pdf,.csv,.xlsx,.xls",
+			"tooltip": "Upload a wetlab bioactivity results file."
+		}
+	]
+}

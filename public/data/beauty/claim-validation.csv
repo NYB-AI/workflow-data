@@ -1,0 +1,25 @@
+ID,Proposed Claim,Claim Type,Market,Validation Status,Claim Issue,Market-Specific Compliance Issue,Conditional Usage Rules,Suggestion
+1,Improves focus,Marketing,EU,CONDITIONALLY VALID,Absolute cognitive improvement,"Improves" implies guaranteed cognitive outcome,Allowed only with support / maintenance framing,Rewrite to "helps support focus"
+2,Improves focus,Marketing,US,CONDITIONALLY VALID,Performance enhancement risk,Could be interpreted as guaranteed mental performance,Allowed with subjective or probabilistic language,Change to "designed to support focus"
+3,Improves focus,Marketing,Japan,INVALID,Overstated cognitive efficacy,Cognitive improvement claims treated as quasi-medical,Not allowed,Replace with sensory or experience-based wording
+4,Improves focus,Marketing,China,INVALID,Misleading functional claim,Cognitive enhancement claims considered deceptive,Not allowed,Do not use; soften claim
+5,Supports focus,Marketing,EU,VALID,None,Acceptable general well-being wording,No restriction,No action needed
+6,Supports focus,Marketing,US,VALID,None,Common functional food phrasing,No restriction,No action needed
+7,Supports focus,Marketing,Japan,CONDITIONALLY VALID,Scope limitation,Must avoid implication of cognitive enhancement,Allowed with daily-life context,Use "supports focus during daily activities"
+8,Supports focus,Marketing,China,VALID,None,Permitted general functional description,No restriction,No action needed
+9,Helps maintain concentration,Marketing,EU,VALID,None,Maintenance framing acceptable,No restriction,No action needed
+10,Helps maintain concentration,Marketing,US,VALID,None,Widely accepted phrasing,No restriction,No action needed
+11,Helps maintain concentration,Marketing,Japan,CONDITIONALLY VALID,Context sensitivity,Must avoid clinical or academic performance implication,Allowed with situational framing,Use "helps maintain concentration while working or studying"
+12,Helps maintain concentration,Marketing,China,VALID,None,Acceptable functional phrasing,No restriction,No action needed
+13,Cocoa-derived caffeine supports alertness,Functional,EU,VALID,None,Ingredient–function linkage acceptable,No restriction,No action needed
+14,Cocoa-derived caffeine supports alertness,Functional,US,VALID,None,Mechanism-based food claim allowed,No restriction,No action needed
+15,Cocoa-derived caffeine supports alertness,Functional,Japan,VALID,None,Ingredient explanation permitted,No restriction,No action needed
+16,Cocoa-derived caffeine supports alertness,Functional,China,VALID,None,Acceptable ingredient-function description,No restriction,No action needed
+17,Enhances cognitive performance,Marketing,EU,INVALID,Broad cognitive enhancement claim,Considered medical / neurological implication,Not allowed,Remove claim entirely
+18,Enhances cognitive performance,Marketing,US,CONDITIONALLY VALID,Ambiguous cognitive benefit,Requires strong substantiation,Generally discouraged,Replace with "supports focus"
+19,Enhances cognitive performance,Marketing,Japan,INVALID,Cognitive function intervention,Treated as medical efficacy,Not allowed,Do not use
+20,Enhances cognitive performance,Marketing,China,INVALID,Misleading health claim,Cognitive enhancement restricted,Not allowed,Do not use
+21,Clinically proven to improve focus,Marketing,EU,INVALID,Scientific substantiation misuse,"Clinically proven" not appropriate for foods,Not allowed,Remove claim entirely
+22,Clinically proven to improve focus,Marketing,US,INVALID,Unsupported clinical claim,No recognized clinical endpoints,Not allowed,Do not use
+23,Clinically proven to improve focus,Marketing,Japan,INVALID,Scientific authority misuse,Considered misleading,Not allowed,Do not use
+24,Clinically proven to improve focus,Marketing,China,INVALID,False scientific endorsement,Prohibited advertising language,Not allowed,Do not use

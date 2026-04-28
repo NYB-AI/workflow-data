@@ -1,0 +1,41 @@
+Compound,Vecurate ID,SMILES
+"2,3-Dihydroxybenzoic acid",NYB0000001,C1=CC(=C(C(=C1)O)O)C(=O)O
+3-methyl-2-oxopentanoic acid,NYB0000002,CCC(C)C(=O)C(=O)O
+α-Ketoisovalerate,NYB0000003,CC(C)C(=O)C(=O)O
+2-Oxoglutarate,NYB0000004,C(CC(=O)O)C(=O)C(=O)O
+α-Ketoisocaproate,NYB0000005,CC(C)CC(=O)C(=O)O
+Protocatechuic acid,NYB0000006,C1=CC(=C(C=C1C(=O)O)O)O
+3-Hydroxyanthranilic acid,NYB0000007,C1=CC(=C(C(=C1)O)N)C(=O)O
+Diacetate,NYB0000008,CC(=O)CC(=O)O
+3-Hydroxybenzaldehyde,NYB0000009,C1=CC(=CC(=C1)O)C=O
+3-Hydroxymethylphenol,NYB0000010,C1=CC(=CC(=C1)O)CO
+Benzenepropanoic acid,NYB0000011,C1=CC=C(C=C1)CCC(=O)O
+GABA,NYB0000012,C(CC(=O)O)CN
+P-hydroxybenzyl alcohol,NYB0000013,C1=CC(=CC=C1CO)O
+P-hydroxybenzaldehyde,NYB0000014,C1=CC(=CC=C1C=O)O
+2-(4-Hydroxyphenyl)acetic acid,NYB0000015,C1=CC(=CC=C1CC(=O)O)O
+4-Methylpentanal,NYB0000016,CC(C)CCC=O
+4-Hydroxybenzoic acid,NYB0000017,C1=CC(=CC=C1C(=O)O)O
+5-Aminolevulinic acid,NYB0000018,C(CC(=O)O)C(=O)CN
+5-Hydroxytryptophan,NYB0000019,C1=CC2=C(C=C1O)C(=CN2)CC(C(=O)O)N
+Acetate,NYB0000020,CC(=O)[O-]
+Acetic acid,NYB0000021,CC(=O)O
+Acetaldehyde,NYB0000022,CC=O
+Acetoine,NYB0000023,CC(C(=O)C)O
+Acetone,NYB0000024,CC(=O)C
+Acetylcholine,NYB0000025,CC(=O)OCC[N+](C)(C)C
+Adenine,NYB0000026,C1=NC2=NC=NC(=C2N1)N
+Agmatine,NYB0000027,C(CCN=C(N)N)CN
+Allantoin,NYB0000028,C1(C(=O)NC(=O)N1)NC(=O)N
+Anthranilic acid,NYB0000029,C1=CC=C(C(=C1)C(=O)O)N
+Arginin,NYB0000030,C(CC(C(=O)O)N)CN=C(N)N
+Asparagin,NYB0000031,C(C(C(=O)O)N)C(=O)N
+β-Alanine,NYB0000032,C(CN)C(=O)O
+Benzaldehyde,NYB0000033,C1=CC=C(C=C1)C=O
+Benzoic acid,NYB0000034,C1=CC=C(C=C1)C(=O)O
+Benzyl alcohol,NYB0000035,C1=CC=C(C=C1)CO
+Betaine,NYB0000036,C[N+](C)(C)CC(=O)[O-]
+Butanal,NYB0000037,CCCC=O
+"2,3-Butanediol",NYB0000038,CC(C(C)O)O
+Butanol,NYB0000039,CCCCO
+Butyric acid,NYB0000040,CCCC(=O)O

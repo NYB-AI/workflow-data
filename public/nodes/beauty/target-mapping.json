@@ -1,0 +1,78 @@
+{
+    "type": "target-mapping",
+    "label": "Target Mapping",
+    "category": "analysis",
+    "icon": "target",
+    "color": "rose",
+    "description": "Map specific protein targets to biological systems and desired modulations (Ferrero specific)",
+    "pricing": {
+        "credits": 500,
+        "executionTime": 1
+    },
+    "defaultInputs": [],
+    "defaultOutputs": [
+        {
+            "id": "Protein target",
+            "name": "Protein target",
+            "type": "string",
+            "tooltip": "The specific protein being targeted."
+        },
+        {
+            "id": "Biological system",
+            "name": "Biological system",
+            "type": "string",
+            "tooltip": "The biological system associated with the target."
+        },
+        {
+            "id": "Desired modulation",
+            "name": "Desired modulation",
+            "type": "string",
+            "tooltip": "The intended effect on the target (e.g. inhibition, activation)."
+        },
+        {
+            "id": "Corresponding assay",
+            "name": "Corresponding assay",
+            "type": "string",
+            "tooltip": "The assay used to measure the effect."
+        },
+        {
+            "id": "Metric used",
+            "name": "Metric used",
+            "type": "string",
+            "tooltip": "The metric used for measurement (e.g. EC50, IC50)."
+        },
+        {
+            "id": "Rationale for intervention",
+            "name": "Rationale for intervention",
+            "type": "string",
+            "tooltip": "Reasoning behind targeting this protein."
+        },
+        {
+            "id": "Crystalized structure available?",
+            "name": "Crystalized structure available?",
+            "type": "string",
+            "tooltip": "Whether a crystal structure exists for the target (YES/NO)."
+        }
+    ],
+    "configSchema": [
+        {
+            "key": "targetList",
+            "type": [
+                "text",
+                "file"
+            ],
+            "label": "Target List",
+            "placeholder": "Enter or upload target list...",
+            "suggestedField": [
+                "target",
+                "protein",
+                "gene"
+            ],
+            "tooltip": "List of protein targets to analyze.",
+            "accept": ".txt,.csv"
+        }
+    ],
+    "defaultConfig": {
+        "targetList": ""
+    }
+}

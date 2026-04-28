@@ -1,0 +1,9 @@
+Brand,Product,Ingredients,Description,URL,Price_usd,Size,format,rating,review_count,image_url
+La Roche-Posay,Hyalu B5 Serum,"Hyaluronic acid, Vitamin B5 (panthenol), madecassoside",Hydrating serum supporting barrier repair and skin elasticity,https://www.laroche-posay.com,39.99,30 mL,serum,4.6,12500,https://example.com/hyalu-b5.jpg
+The Ordinary,Hyaluronic Acid 2% + B5,"Sodium hyaluronate, Vitamin B5",Multi-weight hyaluronic acid hydration serum for moisture retention,https://theordinary.com,8.9,30 mL,serum,4.5,84000,https://example.com/ordinary-ha.jpg
+SkinCeuticals,Hydrating B5 Gel,"Hyaluronic acid, panthenol",Lightweight gel enhancing hydration and improving skin smoothness,https://skinceuticals.com,90,30 mL,gel serum,4.7,4200,https://example.com/skinceuticals-b5.jpg
+COSRX,Hyaluronic Acid Hydra Power Essence,"Sodium hyaluronate, glycerin, panthenol",Deep hydration essence improving moisture retention and plumpness,https://cosrx.com,23,100 mL,essence,4.6,31000,https://example.com/cosrx-ha.jpg
+CeraVe,Hydrating Hyaluronic Acid Serum,"Hyaluronic acid, ceramides, niacinamide",Barrier-support serum delivering sustained hydration,https://cerave.com,19.99,30 mL,serum,4.5,54000,https://example.com/cerave-ha.jpg
+Torriden,Dive-In Hyaluronic Acid Serum,"Low-molecular hyaluronic acid, panthenol, allantoin",Lightweight hydration serum designed for sensitive skin types,https://torriden.com,22,50 mL,serum,4.6,21000,https://example.com/torriden-ha.jpg
+L’Oréal Paris,Revitalift 1.5% Pure Hyaluronic Acid Serum,High + low molecular hyaluronic acid,Multi-depth hydration serum improving fine lines and moisture levels,https://lorealparis.com,24.99,30 mL,serum,4.4,48000,https://example.com/revitalift-ha.jpg
+Neutrogena,Hydro Boost Hyaluronic Serum,"Hyaluronic acid, glycerin",Lightweight hydration booster improving skin softness,https://neutrogena.com,18.99,30 mL,serum,4.5,62000,https://example.com/hydroboost.jpg
