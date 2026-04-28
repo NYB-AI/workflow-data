@@ -52,6 +52,12 @@
             "name": "Crystalized structure available?",
             "type": "string",
             "tooltip": "Whether a crystal structure exists for the target (YES/NO)."
+        },
+        {
+            "id": "3D structure",
+            "name": "3D structure (if available)",
+            "type": "structure",
+            "tooltip": "URL to the 3D structure file (e.g. PDB) if available."
         }
     ],
     "configSchema": [
